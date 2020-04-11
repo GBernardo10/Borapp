@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Bora</string>
+    <string name="e_mail_ou_apelido">E-mail ou Apelido</string>
+    <string name="login">Login</string>
+    <string name="icone_logo">logo</string>
+    <string name="senha">Senha</string>
+    <string name="cadastra_se">Cadastra-se</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
 </resources>
