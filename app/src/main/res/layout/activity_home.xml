@@ -48,7 +48,7 @@
                 android:textColor="#fff"
                 android:layout_marginTop="180dp"
                 android:layout_marginLeft="10dp"
-                android:text="@string/minha_conta"
+                android:text="@string/my_account"
                 />
             <Button
                 android:id="@+id/add_role"

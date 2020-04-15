@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Bora</string>
-    <string name="e_mail_ou_apelido">E-mail ou Apelido</string>
+    <string name="username">E-mail ou Apelido</string>
     <string name="login">Login</string>
     <string name="icone_logo">logo</string>
     <string name="senha">Senha</string>
-    <string name="cadastra_se">Cadastra-se</string>
-    <string name="esqueci_minha_senha">Esqueci minha senha</string>
-    <string name="minha_conta">Minha conta</string>
+    <string name="register">Cadastra-se</string>
+    <string name="forgot_password">Esqueci minha senha</string>
+    <string name="my_account">Minha conta</string>
     <string name="add_role">BORA CRIAR UM ROLÊ?</string>
     <string name="my_role">MEUS ROLÊS</string>
     <string name="settings">MINHAS PREFERÊNCIAS</string>
