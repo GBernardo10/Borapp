@@ -6,4 +6,12 @@
     <string name="senha">Senha</string>
     <string name="cadastra_se">Cadastra-se</string>
     <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="minha_conta">Minha conta</string>
+    <string name="add_role">BORA CRIAR UM ROLÊ?</string>
+    <string name="my_role">MEUS ROLÊS</string>
+    <string name="settings">MINHAS PREFERÊNCIAS</string>
+    <string name="confirm_event">CONFIRMAR EVENTO</string>
+    <string name="notification">Notificações</string>
+    <string name="search">Pesquisar</string>
+    <string name="home">Home</string>
 </resources>

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#320236"
+    android:padding="50dp"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:id="@+id/rl_login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="50dp"
         >
         <ImageView
             android:layout_width="100dp"
@@ -72,8 +73,10 @@
             android:paddingStart="20dp"
             android:labelFor="@id/label_senha"
             android:paddingEnd="20dp"
+            android:inputType="text"
             android:layout_below="@id/login"
-            android:background="#fff">
+            android:background="#fff"
+            android:autofillHints="">
         </EditText>
         <Button
             android:id="@+id/btnEntrar"
@@ -81,6 +84,7 @@
             android:layout_height="58dp"
             android:text="ENTRAR"
             android:textSize="20dp"
+            android:onClick="irHome"
             android:background="#00BEFF"
             android:layout_below="@id/senha"
             android:layout_marginTop="20dp"
