@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TesteActivity"></activity>
+        <activity android:name=".EventosPreferencias"></activity>
+        <activity android:name=".MeusRoles" />
+        <activity android:name=".TesteActivity" />
         <activity android:name=".TabBarActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">

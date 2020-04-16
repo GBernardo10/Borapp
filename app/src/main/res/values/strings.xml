@@ -14,4 +14,10 @@
     <string name="notification">Notificações</string>
     <string name="search">Pesquisar</string>
     <string name="home">Home</string>
+    <string name="roles">ROLÊS</string>
+    <string name="preferencias">Baseado em suas preferencias, temos:</string>
+    <string name="encontreSeuRole">Encontre seu rolê...</string>
+    <string name="naoEncontrou">Não encontrou?</string>
+    <string name="rolesCriados">Meus rolês criados (1)</string>
+    <string name="rolesParticipo">Rolês que participo (1)</string>
 </resources>
