@@ -4,6 +4,14 @@
     <string name="login">Login</string>
     <string name="icone_logo">logo</string>
     <string name="senha">Senha</string>
-    <string name="cadastra_se">Cadastra-se</string>
+    <string name="cadastra_se">cadastra-se</string>
     <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="seu_whatsapp">Seu whatsapp</string>
+    <string name="CNPJ">Digite seu CNPJ</string>
+    <string name="nome_da_empresa">Nome da empresa</string>
+    <string name="digite_cpf">Digite seu cpf</string>
+    <string name="nome_usuario">Nome de usuário</string>
+    <string name="email_ou_login">E-mail ou login</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="inserir_foto_perfil">Insira sua foto de perfil</string>
 </resources>
