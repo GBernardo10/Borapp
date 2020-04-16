@@ -6,4 +6,7 @@
     <string name="senha">Senha</string>
     <string name="cadastra_se">Cadastra-se</string>
     <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="organizador">Organizador</string>
+    <string name="detalhe_evento">Detalhe do Evento</string>
+    <string name="participante">Participantes</string>
 </resources>

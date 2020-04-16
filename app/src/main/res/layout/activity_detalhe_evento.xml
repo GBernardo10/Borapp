@@ -14,7 +14,7 @@
         android:layout_height="40dp"
         android:text="Bora"
         android:textAlignment="center"
-        android:textColor="@color/TextoBranco"
+        android:textColor="@color/cor_branca"
         android:textSize="30sp" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:text="Futebas do Bolivia"
-        android:textColor="@color/TextoAzul"
+        android:textColor="@color/cor_azul"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/vCirculo"
@@ -40,8 +40,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:text="Organizador: "
-        android:textColor="@color/TextoBranco"
+        android:text="@string/organizador"
+        android:textColor="@color/cor_branca"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/vCirculo"
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Boliva123"
-        android:textColor="@color/TextoBranco"
+        android:textColor="@color/cor_branca"
         android:textSize="15sp"
         app:layout_constraintLeft_toRightOf="@id/tvTituloOrganizador"
         app:layout_constraintTop_toBottomOf="@+id/tvTituloEvento" />
@@ -105,7 +105,7 @@
         android:layout_marginTop="6dp"
         android:text="Rua Elite dos bravos, 53 - Vila Invernada - SP"
         android:textAlignment="center"
-        android:textColor="@color/TextoAzul"
+        android:textColor="@color/cor_azul"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/vCirculo" />
@@ -115,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="R$ 20,00"
-        android:textColor="@color/TextoVerde"
+        android:textColor="@color/cor_verde"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/tvEndereco" />
@@ -131,7 +131,7 @@
         android:layout_height="25dp"
         android:id="@+id/tvTempoCarro"
         android:text="12H"
-        android:textColor="@color/TextoBranco"
+        android:textColor="@color/cor_branca"
         android:textSize="20dp"
         android:layout_marginTop="8dp"
         app:layout_constraintLeft_toRightOf="@+id/ivCarro"
@@ -151,7 +151,7 @@
         android:layout_height="25dp"
         android:id="@+id/tvTempoOnibus"
         android:text="12H"
-        android:textColor="@color/TextoBranco"
+        android:textColor="@color/cor_branca"
         android:textSize="20dp"
         android:layout_marginTop="8dp"
         app:layout_constraintLeft_toRightOf="@+id/ivOnibus"
@@ -163,7 +163,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="127dp"
         android:text="Sábado as 13H"
-        android:textColor="@color/TextoBranco"
+        android:textColor="@color/cor_branca"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/tvValor"
@@ -175,7 +175,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="155dp"
         android:text="12/06"
-        android:textColor="@color/TextoAzul"
+        android:textColor="@color/cor_azul"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/tvValor"
@@ -185,8 +185,8 @@
         android:id="@+id/tvTituloDetalhe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Detalhe do evento"
-        android:textColor="@color/TextoBranco"
+        android:text="@string/detalhe_evento"
+        android:textColor="@color/cor_branca"
         android:textSize="20sp"
         android:layout_marginTop="6dp"
         android:textStyle="bold"
@@ -197,7 +197,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
-        android:textColor="@color/TextoBranco"
+        android:textColor="@color/cor_branca"
         app:layout_constraintTop_toBottomOf="@id/tvTituloDetalhe" />
 
     <TextView
@@ -206,7 +206,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
         android:text="Este evento foi criado em 01/03/2019"
-        android:textColor="@color/TextoBranco"
+        android:textColor="@color/cor_branca"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/tvDetalhe" />
 
@@ -216,7 +216,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:text="Esporte | Futebol | Futsal"
-        android:textColor="@color/TextoAzul"
+        android:textColor="@color/cor_azul"
         app:layout_constraintTop_toBottomOf="@id/tvCriacao" />
 
     <Button
@@ -224,10 +224,10 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:background="@color/TextoAzul"
+        android:background="@color/cor_azul"
         android:text="BORA!"
         android:textAlignment="center"
-        android:textColor="@color/TextoRoxo"
+        android:textColor="@color/cor_roxo"
         android:textSize="36sp"
         app:layout_constraintTop_toBottomOf="@id/tvCategoria"
         app:layout_editor_absoluteX="120dp" />
@@ -238,7 +238,7 @@
         android:layout_height="wrap_content"
         android:text="* seu saldo R$ 14,00"
         android:textAlignment="center"
-        android:textColor="@color/TextoBranco"
+        android:textColor="@color/cor_branca"
         android:textSize="15sp"
         app:layout_constraintTop_toBottomOf="@+id/btBora"
         app:layout_editor_absoluteX="125dp" />
@@ -248,9 +248,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Participantes"
+        android:text="@string/participante"
         android:textAlignment="center"
-        android:textColor="@color/TextoBranco"
+        android:textColor="@color/cor_branca"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/tvSaldo" />

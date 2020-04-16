@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="TextoBranco">#FFF</color>
-    <color name="TextoAzul">#00BEFF</color>
-    <color name="TextoVerde">#03D871</color>
-    <color name="TextoRoxo">#441B5D</color>
-
     <color name="colorPrimary">#FFF</color>
     <color name="colorPrimaryDark">#FFF</color>
     <color name="colorAccent">#FFF</color>
+
+    <color name="cor_branca">#FFF</color>
+    <color name="cor_azul">#00BEFF</color>
+    <color name="cor_verde">#03D871</color>
+    <color name="cor_roxo">#441B5D</color>
+
 </resources>
 
