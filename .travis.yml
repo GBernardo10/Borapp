@@ -12,3 +12,4 @@ env:
 # Run assemble and unit tests
 script:
   - ./gradlew clean assembleDebug assembleRelease testDebug
+  
