@@ -39,7 +39,7 @@
             android:layout_marginTop="10dp"
             android:layout_below="@id/logo"
             android:layout_height="55dp"
-            android:paddingStarwrap_contentt="20dp"
+            android:paddingStart="20dp"
             android:layout_marginStart="10dp"
             android:paddingEnd="20dp"
             android:layout_centerVertical="true"
