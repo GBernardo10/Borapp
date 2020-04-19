@@ -21,19 +21,4 @@ android:
 # Run assemble and unit tests
 script:
   - ./gradlew clean assembleDebug assembleRelease testDebug jacocoFullReport
-  - mv build/reports/jacoco/ build/reports/jacoco/
-  - mv build/reports/jacoco/jacocoFullReport.xml build/reports/jacoco/jacocoFullReport.xml
   - bash <(curl -s https://codecov.io/bash)
-
-#html {
-  #            enabled true
-  #            destination file('build/reports/jacoco/html')
-  #        }
-  #        csv {
-  #            enabled true
-  #            destination file('build/reports/jacoco/jacocoFullReport.csv')
-  #        }
-  #        xml{
-  #            enabled true
-  #            description file('build/reports/jacoco/xml')
-  #        }
