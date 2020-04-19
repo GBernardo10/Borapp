@@ -14,9 +14,9 @@ configure(coveredProject) { prj ->
         description = 'Generate Jacoco coverage'
 
         reports {
-            csv.enabled = true
-            xml.enabled = false
-            html.enabled = true
+            html.enabled true
+            csv.enabled true
+            xml.enabled true
         }
 
         final fileFilter = [
@@ -67,6 +67,10 @@ task jacocoFullReport(type: JacocoReport, group: 'Coverage reports') {
         csv {
             enabled true
             destination file('build/reports/jacoco/jacocoFullReport.csv')
+        }
+        xml{
+            enabled true
+            destination file('build/reports/jacoco/jacocoFullReport.xml')
         }
     }
 
