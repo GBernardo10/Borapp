@@ -11,7 +11,7 @@
         android:id="@+id/main_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemBackground="@color/tab_bar"
+        app:itemBackground="@color/c_white"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:layout_constraintBottom_toBottomOf="parent"
