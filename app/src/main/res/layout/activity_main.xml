@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#320236"
+    android:padding="50dp"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:id="@+id/rl_login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="50dp"
         >
         <ImageView
             android:layout_width="100dp"
@@ -38,8 +39,8 @@
         <EditText
             android:id="@+id/login"
             android:labelFor="@id/label_login"
-            android:hint="@string/e_mail_ou_apelido"
-            android:layout_width="339dp"
+            android:hint="@string/username"
+            android:layout_width="match_parent"
             android:textColor="#000"
             android:layout_height="55dp"
             android:paddingStart="20dp"
@@ -52,10 +53,10 @@
 
 
         <TextView
-            android:id="@+id/label_senha"
+            android:id="@+id/label_pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/senha"
+            android:layout_above="@id/pass"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:layout_marginBottom="-40dp"
             android:text="@string/senha"
@@ -64,44 +65,49 @@
         </TextView>
 
         <EditText
-            android:id="@+id/senha"
+            android:id="@+id/pass"
             android:hint="@string/senha"
-            android:layout_width="339dp"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="50dp"
             android:paddingStart="20dp"
-            android:labelFor="@id/label_senha"
+            android:labelFor="@id/label_pass"
             android:paddingEnd="20dp"
+            android:inputType="text"
             android:layout_below="@id/login"
-            android:background="#fff">
+            android:background="#fff"
+            android:autofillHints="">
         </EditText>
         <Button
-            android:id="@+id/btnEntrar"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="58dp"
-            android:text="ENTRAR"
+            android:text="@string/login"
             android:textSize="20dp"
+            android:onClick="irHome"
             android:background="#00BEFF"
-            android:layout_below="@id/senha"
+            android:layout_below="@id/pass"
             android:layout_marginTop="20dp"
             >
         </Button>
         <TextView
-            android:id="@+id/esqueciSenha"
+            android:id="@+id/forgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/esqueci_minha_senha"
+            android:text="@string/forgot_password"
             android:textColor="#00BEFF"
-            android:layout_below="@id/btnEntrar">
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/btnLogin">
         </TextView>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cadastra_se"
+            android:text="@string/register"
             android:textColor="#00BEFF"
-            android:layout_marginStart="100dp"
-            android:layout_toEndOf="@id/esqueciSenha"
-            android:layout_below="@id/btnEntrar">
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/forgotPassword">
         </TextView>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

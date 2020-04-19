@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Bora</string>
-    <string name="e_mail_ou_apelido">E-mail ou Apelido</string>
+    <string name="username">E-mail ou Apelido</string>
     <string name="login">Login</string>
     <string name="icone_logo">logo</string>
     <string name="senha">Senha</string>
@@ -9,4 +9,20 @@
     <string name="organizador">Organizador</string>
     <string name="detalhe_evento">Detalhe do Evento</string>
     <string name="participante">Participantes</string>
+    <string name="register">Cadastra-se</string>
+    <string name="forgot_password">Esqueci minha senha</string>
+    <string name="my_account">Minha conta</string>
+    <string name="add_role">BORA CRIAR UM ROLÊ?</string>
+    <string name="my_role">MEUS ROLÊS</string>
+    <string name="settings">MINHAS PREFERÊNCIAS</string>
+    <string name="confirm_event">CONFIRMAR EVENTO</string>
+    <string name="notification">Notificações</string>
+    <string name="search">Pesquisar</string>
+    <string name="home">Home</string>
+    <string name="roles">ROLÊS</string>
+    <string name="preferencias">Baseado em suas preferencias, temos:</string>
+    <string name="encontreSeuRole">Encontre seu rolê...</string>
+    <string name="naoEncontrou">Não encontrou?</string>
+    <string name="rolesCriados">Meus rolês criados (1)</string>
+    <string name="rolesParticipo">Rolês que participo (1)</string>
 </resources>
