@@ -1,7 +1,7 @@
 language: android
 android:
   components:
-    - android-29
+    - android-28
     - build-tools-27.0.3
 
 env:
@@ -12,4 +12,3 @@ env:
 # Run assemble and unit tests
 script:
   - ./gradlew clean assembleDebug assembleRelease testDebug
-  
