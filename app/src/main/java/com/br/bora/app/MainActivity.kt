@@ -17,4 +17,9 @@ class MainActivity : AppCompatActivity() {
         val telaHome = Intent(this,HomeActivity::class.java)
         startActivity(telaHome)
     }
+
+    fun irCadastrar(v:View){
+        val telaCadastro = Intent(this,CadastroActivity::class.java)
+        startActivity(telaCadastro)
+    }
 }

@@ -4,9 +4,11 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="tab_bar">#fff</color>
-    <color name="cor_branca">#FFF</color>
+    <color name="cor_branco">#FFF</color>
     <color name="cor_azul">#00BEFF</color>
     <color name="cor_verde">#03D871</color>
-    <color name="cor_roxo">#441B5D</color>
+    <color name="cor_roxo">#320236</color>
+    <color name="cor_preto">#000000</color>
+    <color name="cor_laranja">#FF7A00</color>
 </resources>
 

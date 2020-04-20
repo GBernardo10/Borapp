@@ -71,6 +71,7 @@
             android:textAlignment="textStart"
             android:background="@drawable/view_evento"
             android:layout_below="@id/labelRoles"
+            android:onClick="IrDetalhar"
             />
 
         <ImageView

@@ -107,7 +107,8 @@
             android:textColor="#00BEFF"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/forgotPassword">
+            android:layout_below="@id/forgotPassword"
+            android:onClick="irCadastrar">
         </TextView>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

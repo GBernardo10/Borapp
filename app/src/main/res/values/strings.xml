@@ -33,4 +33,8 @@
     <string name="email_ou_login">E-mail ou login</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="inserir_foto_perfil">Insira sua foto de perfil</string>
+    <string name="pessoa_fisica">Pessoa Física</string>
+    <string name="pessoa_juridica">Pessoa Juridica</string>
+    <string name="tipo_acesso">Qual seu tipo de acesso?</string>
+    <string name="bora_detalhar">Bora!</string>
 </resources>
