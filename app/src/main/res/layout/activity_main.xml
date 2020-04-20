@@ -84,7 +84,6 @@
             android:layout_height="58dp"
             android:text="@string/login"
             android:textSize="20sp"
-            android:onClick="irHome"
             android:background="#00BEFF"
             android:layout_below="@id/pass"
             android:layout_marginTop="20dp"
