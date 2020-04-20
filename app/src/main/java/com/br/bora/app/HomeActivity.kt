@@ -3,22 +3,27 @@ package com.br.bora.app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 
-class HomeActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+class HomeActivity : Fragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.activity_home,container,false)
     }
 
-    fun IrPreferencias(v:View){
-        val telaEventosPreferenciais = Intent(this, EventosPreferencias::class.java);
-        startActivity(telaEventosPreferenciais);
-    }
-
-    fun IrRoles(v:View){
-        val telaMeusRoles = Intent(this, MeusRoles::class.java);
-        startActivity(telaMeusRoles);
-    }
+//    fun IrPreferencias(v:View){
+//        val telaEventosPreferenciais = Intent(this, EventosPreferencias::class.java);
+//        startActivity(telaEventosPreferenciais);
+//    }
+//
+//    fun IrRoles(v:View){
+//        val telaMeusRoles = Intent(this, MeusRoles::class.java);
+//        startActivity(telaMeusRoles);
+//    }
 }
