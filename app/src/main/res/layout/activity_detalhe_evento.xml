@@ -19,8 +19,9 @@
 
     <TextView
         android:id="@+id/vCirculo"
-        android:layout_width="92dp"
+        android:layout_width="90dp"
         android:layout_height="90dp"
+        android:background="@drawable/view_circle"
         app:layout_constraintTop_toBottomOf="@+id/tvLogo"
         tools:ignore="MissingConstraints" />
 

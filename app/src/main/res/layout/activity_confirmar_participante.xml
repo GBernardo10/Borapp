@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cor_roxo"
+    android:padding="15dp"
+    tools:context=".ConfirmarParticipanteActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="38dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="130dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:contentDescription="@string/icone_logo"
+            android:src="@drawable/bora_branco"></ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginStart="350dp"
+            android:src="@drawable/menu" />
+        
+        <TextView
+            android:id="@+id/tvTituloConfParticipantes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:text="@string/confirmarParticipante"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/cor_branco"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvTituloIdentificador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTituloConfParticipantes"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/identificador"
+            android:textColor="@color/cor_azul"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvIdentificador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTituloConfParticipantes"
+            android:layout_toRightOf="@+id/tvTituloIdentificador"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="35dp"
+            android:text="0002"
+            android:textColor="@color/cor_branco"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvTituloEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTituloIdentificador"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="10sp"
+            android:text="@string/evento"
+            android:textColor="@color/cor_azul"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvIdentificador"
+            android:layout_toRightOf="@+id/tvTituloEvento"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="74dp"
+            android:text="Futebas do chileno"
+            android:textColor="@color/cor_branco"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvTituloLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTituloEvento"
+            android:layout_marginLeft="43dp"
+            android:layout_marginTop="10sp"
+            android:text="@string/local"
+            android:textColor="@color/cor_azul"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEvento"
+            android:layout_toRightOf="@id/tvTituloLocal"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="83dp"
+            android:text="Tivit filial Brás"
+            android:textColor="@color/cor_branco"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvTituloHorario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTituloLocal"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="43dp"
+            android:text="@string/horario"
+            android:textColor="@color/cor_azul"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvHorario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvLocal"
+            android:layout_toRightOf="@+id/tvTituloHorario"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="70dp"
+            android:text="18:40"
+            android:textColor="@color/cor_branco"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/tvTituloHorario"
+            android:background="@drawable/view_qrcode"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
