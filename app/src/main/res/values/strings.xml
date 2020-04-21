@@ -36,7 +36,14 @@
     <string name="pessoa_fisica">Pessoa Física</string>
     <string name="pessoa_juridica">Pessoa Juridica</string>
     <string name="tipo_acesso">Qual seu tipo de acesso?</string>
+    <string name="confirmar_role">Podemos confirma-lo neste rolê?</string>
     <string name="bora_detalhar">Bora!</string>
+    <string name="identificador">IDENTIFICADOR</string>
+    <string name="evento">EVENTO</string>
+    <string name="local">LOCAL</string>
+    <string name="horario">HORARIO</string>
+    <string name="yes">SIM</string>
+    <string name="no">NÃO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
