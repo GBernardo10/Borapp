@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import com.br.bora.app.model.RequestUserLogin
 import com.br.bora.app.services.UserService
@@ -21,9 +22,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnLogin.setOnClickListener {
-            val loginInput = findViewById<EditText>(R.id.login).text.toString()
-            val pwdInput = findViewById<EditText>(R.id.pass).text.toString()
-            signin(loginInput,pwdInput)
+            irHome()
+//            val loginInput = findViewById<EditText>(R.id.login).text.toString()
+//            val pwdInput = findViewById<EditText>(R.id.pass).text.toString()
+//            signin(loginInput,pwdInput)
         }
     }
     private fun signin(username:String,password:String){
@@ -51,5 +53,10 @@ class MainActivity : AppCompatActivity() {
     fun irHome(){
         val telaHome = Intent(this,TabBarActivity::class.java)
         startActivity(telaHome)
+    }
+
+    fun irCadastrar(v: View){
+        val telaCadastro = Intent(this,CadastroActivity::class.java)
+        startActivity(telaCadastro)
     }
 }

@@ -1,7 +1,8 @@
 package com.br.bora.app
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,5 +15,11 @@ class EventosPreferencias : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.activity_eventos_preferencias,container,false)
+
     }
+
+    //fun IrDetalhar (v:View){
+    //    val telaDetalhar = Intent(this,DetalheEventoActivity::class.java);
+    //    startActivity(telaDetalhar);
+    //}
 }

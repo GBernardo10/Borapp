@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.br.bora.app">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".EventosPreferencias" />
+        <activity android:name=".DetalheEventoActivity" />
         <activity android:name=".MeusRoles" />
         <activity android:name=".TabBarActivity" />
         <activity android:name=".HomeActivity" />
+        <activity android:name=".CadastroPfActivity" />
+        <activity android:name=".CadastroActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,5 +26,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

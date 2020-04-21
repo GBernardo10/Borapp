@@ -1,5 +1,7 @@
 package com.br.bora.app
 
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,4 +16,14 @@ class HomeActivity : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.activity_home,container,false)
     }
+
+//    fun IrPreferencias(v:View){
+//        val telaEventosPreferenciais = Intent(this, EventosPreferencias::class.java);
+//        startActivity(telaEventosPreferenciais);
+//    }
+//
+//    fun IrRoles(v:View){
+//        val telaMeusRoles = Intent(this, MeusRoles::class.java);
+//        startActivity(telaMeusRoles);
+//    }
 }
