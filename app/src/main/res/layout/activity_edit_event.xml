@@ -47,14 +47,14 @@
                 android:textSize="25sp"
                 android:gravity="center"
                 android:layout_marginTop="20dp"
-                android:id="@+id/string_cadastre_seu_evento"
+                android:id="@+id/string_editando_evento"
                 >
             </TextView>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/string_cadastre_seu_evento"
+                android:layout_below="@+id/string_editando_evento"
                 android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/icon_upload_image"
@@ -79,10 +79,51 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="Nome do evento"
+                android:text="@string/tipo_evento"
                 android:textColor="#fff"
                 android:textSize="17sp"
                 android:layout_below="@id/description_upload_image"
+                android:id="@+id/description_tipo_evento"
+
+                >
+            </TextView>
+
+            <Button
+                android:id="@+id/btnPublic"
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:text="@string/desciption_button_public"
+                android:textSize="15dp"
+                android:background="#000"
+                android:layout_below="@id/description_tipo_evento"
+                android:textColor="#ffff"
+                android:layout_marginLeft="10dp"
+                >
+            </Button>
+            <Button
+                android:id="@+id/btnPrivate"
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:text="@string/desciption_button_private"
+                android:textSize="15dp"
+                android:background="#FF7A00"
+                android:layout_below="@id/description_tipo_evento"
+                android:textColor="#ffff"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                >
+            </Button>
+
+
+            <TextView
+                android:layout_width="500dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Nome do evento"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:layout_below="@id/btnPrivate"
                 android:id="@+id/string_nome_evento"
                 android:layout_marginTop="10dp"
                 >
@@ -477,7 +518,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="Atualizar evento"
+                android:text="Atualizar Evento"
                 android:layout_below="@+id/icon_ver_mais"
                 android:layout_marginTop="10dp"
                 android:background="#00BEFF"
