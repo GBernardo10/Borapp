@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".EventosPreferencias" />
         <activity android:name=".DetalheEventoActivity" />
         <activity android:name=".MeusRoles" />
@@ -18,12 +19,9 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".CadastroPfActivity" />
         <activity android:name=".CadastroActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".EditEventActivity"/>
+        <activity android:name=".CreateEventActivity"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 </manifest>
