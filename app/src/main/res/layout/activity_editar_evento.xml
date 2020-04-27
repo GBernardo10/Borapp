@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#320236"
-    tools:context=".CreateEventActivity"
+    tools:context=".CriarEventoActivity"
 
     >
 
@@ -42,19 +42,19 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="@string/cadastre_um_evento"
+                android:text="@string/editar_um_evento"
                 android:textColor="#00BEFF"
                 android:textSize="25sp"
                 android:gravity="center"
                 android:layout_marginTop="20dp"
-                android:id="@+id/string_cadastre_seu_evento"
+                android:id="@+id/string_editando_evento"
                 >
             </TextView>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/string_cadastre_seu_evento"
+                android:layout_below="@+id/string_editando_evento"
                 android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/icon_upload_image"
@@ -518,7 +518,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="Cadastrar Evento"
+                android:text="Atualizar Evento"
                 android:layout_below="@+id/icon_ver_mais"
                 android:layout_marginTop="10dp"
                 android:background="#00BEFF"
