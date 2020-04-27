@@ -55,6 +55,9 @@
     <string name="info_evento_horario">Horario</string>
     <string name="info_evento_valor">Valor em R$</string>
     <string name="editar_um_evento">Editando evento...</string>
-
+    <string name="lembrar_senha">Lembrar minha senha</string>
+    <string name="nova_senha">Nova Senha</string>
+    <string name="confirmar_nova_senha">Confirmar nova senha</string>
+    <string name="salvar_senha">Salvar senha</string>
 
 </resources>

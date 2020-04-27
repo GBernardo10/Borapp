@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.br.bora.app">
 
@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".SalvarNovaSenha"></activity>
+        <activity android:name=".EsqueciMinhaSenha" />
         <activity android:name=".EventosPreferencias" />
         <activity android:name=".DetalheEventoActivity" />
         <activity android:name=".MeusRoles" />
@@ -19,9 +20,15 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".CadastroPfActivity" />
         <activity android:name=".CadastroActivity" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".EditEventActivity"/>
-        <activity android:name=".CreateEventActivity"/>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".EditarEventoActivity" />
+        <activity android:name=".CriarEventoActivity" />
     </application>
+
 </manifest>
