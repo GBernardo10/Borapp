@@ -66,31 +66,31 @@
         <EditText
             android:layout_width="360dp"
             android:layout_height="55dp"
-            android:hint="@string/digite_cpf"
+            android:hint="@string/nome_usuario"
             android:background="@color/cor_branco"
             android:textSize="25dp"
             android:layout_below="@+id/etWhats"
             android:layout_marginTop="10dp"
             app:layout_editor_absoluteX="10dp"
             android:layout_marginStart="20dp"
-            android:id="@+id/etCnpj"/>
+            android:id="@+id/etLogin"/>
 
         <EditText
             android:layout_width="360dp"
             android:layout_height="55dp"
-            android:hint="@string/nome_usuario"
+            android:hint="@string/senha"
             android:background="@color/cor_branco"
             android:textSize="25dp"
-            android:layout_below="@+id/etCnpj"
+            android:layout_below="@+id/etLogin"
             android:layout_marginTop="10dp"
             app:layout_editor_absoluteX="10dp"
             android:layout_marginStart="20dp"
-            android:id="@+id/etLogin"
+            android:id="@+id/etSenha"
             />
         <Button
             android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/etLogin"
+            android:layout_below="@+id/etSenha"
             android:textAlignment="center"
             android:text="@string/cadastrar"
             android:layout_centerHorizontal="true"
