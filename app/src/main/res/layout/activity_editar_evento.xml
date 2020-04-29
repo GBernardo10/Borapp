@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#320236"
-    tools:context=".CriarEventoActivity"
+    tools:context=".EditarEventoActivity"
 
     >
 
@@ -47,14 +47,14 @@
                 android:textSize="25sp"
                 android:gravity="center"
                 android:layout_marginTop="20dp"
-                android:id="@+id/string_editando_evento"
+                android:id="@+id/string_cadastre_seu_evento"
                 >
             </TextView>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/string_editando_evento"
+                android:layout_below="@+id/string_cadastre_seu_evento"
                 android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/icon_upload_image"
@@ -90,7 +90,7 @@
 
             <Button
                 android:id="@+id/btnPublic"
-                android:layout_width="170dp"
+                android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:text="@string/desciption_button_public"
                 android:textSize="15dp"
@@ -102,7 +102,7 @@
             </Button>
             <Button
                 android:id="@+id/btnPrivate"
-                android:layout_width="170dp"
+                android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:text="@string/desciption_button_private"
                 android:textSize="15dp"
@@ -143,7 +143,7 @@
             </EditText>
 
             <TextView
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/label_nome_evento"
                 android:text="@string/info_evento_cep"
@@ -158,7 +158,7 @@
             </TextView>
 
             <EditText
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/string_cep_evento"
                 android:layout_marginLeft="10dp"
@@ -172,7 +172,7 @@
             </EditText>
 
             <TextView
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/label_nome_evento"
                 android:text="@string/info_evento_numero_rua"
@@ -188,7 +188,7 @@
             </TextView>
 
             <EditText
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/string_numero_rua_evento"
                 android:layout_marginEnd="10dp"
@@ -204,7 +204,7 @@
             </EditText>
 
             <TextView
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/label_cep_evento"
                 android:text="@string/info_evento_data"
@@ -219,7 +219,7 @@
             </TextView>
 
             <EditText
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/string_data_evento"
                 android:layout_marginLeft="10dp"
@@ -234,7 +234,7 @@
 
 
             <TextView
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/label_numero_rua_evento"
                 android:text="@string/info_evento_horario"
@@ -250,7 +250,7 @@
             </TextView>
 
             <EditText
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/string_horario_evento"
                 android:layout_marginEnd="10dp"
@@ -264,7 +264,7 @@
             </EditText>
 
             <TextView
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/label_data_evento"
                 android:text="@string/info_evento_valor"
@@ -279,7 +279,7 @@
             </TextView>
 
             <EditText
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/string_valor_evento"
                 android:layout_marginLeft="10dp"
@@ -298,7 +298,7 @@
                 android:id="@+id/checkbox_valor_evento"
                 android:layout_marginTop="5dp"
                 android:layout_below="@+id/string_valor_evento"
-                android:layout_marginEnd="145dp"
+                android:layout_marginEnd="130dp"
                 android:buttonTint="#fff"
                 android:layout_alignParentEnd="true"
                 >
@@ -314,7 +314,7 @@
                 android:layout_below="@+id/string_valor_evento"
                 android:layout_alignParentEnd="true"
                 android:layout_toStartOf="@+id/checkbox_valor_evento"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="11dp"
 
                 >
@@ -401,7 +401,7 @@
 
 
             <EditText
-                android:layout_width="160dp"
+                android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/string_categoria_adicionada"
                 android:layout_marginEnd="10dp"
@@ -518,7 +518,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="Atualizar Evento"
+                android:text="Atualizar evento"
                 android:layout_below="@+id/icon_ver_mais"
                 android:layout_marginTop="10dp"
                 android:background="#00BEFF"
