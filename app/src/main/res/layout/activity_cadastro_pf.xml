@@ -42,45 +42,49 @@
 
         <EditText
             android:id="@+id/etEmail"
-            android:layout_width="380dp"
+            android:layout_width="360dp"
             android:layout_height="60dp"
             android:hint="@string/email_ou_login"
             android:background="@color/cor_branco"
-            android:textSize="45dp"
+            android:textSize="25dp"
             android:layout_below="@+id/tvFoto"
             android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
             app:layout_editor_absoluteX="10dp"/>
 
         <EditText
-            android:layout_width="380dp"
-            android:layout_height="60dp"
+            android:layout_width="360dp"
+            android:layout_height="55dp"
             android:hint="@string/seu_whatsapp"
             android:background="@color/cor_branco"
-            android:textSize="50dp"
+            android:textSize="25dp"
             android:layout_below="@+id/etEmail"
             android:layout_marginTop="10dp"
             app:layout_editor_absoluteX="10dp"
+            android:layout_marginStart="20dp"
             android:id="@+id/etWhats"/>
         <EditText
-            android:layout_width="380dp"
-            android:layout_height="60dp"
+            android:layout_width="360dp"
+            android:layout_height="55dp"
             android:hint="@string/digite_cpf"
             android:background="@color/cor_branco"
-            android:textSize="50dp"
+            android:textSize="25dp"
             android:layout_below="@+id/etWhats"
             android:layout_marginTop="10dp"
             app:layout_editor_absoluteX="10dp"
+            android:layout_marginStart="20dp"
             android:id="@+id/etCnpj"/>
 
         <EditText
-            android:layout_width="380dp"
-            android:layout_height="60dp"
+            android:layout_width="360dp"
+            android:layout_height="55dp"
             android:hint="@string/nome_usuario"
             android:background="@color/cor_branco"
-            android:textSize="43dp"
+            android:textSize="25dp"
             android:layout_below="@+id/etCnpj"
             android:layout_marginTop="10dp"
             app:layout_editor_absoluteX="10dp"
+            android:layout_marginStart="20dp"
             android:id="@+id/etLogin"
             />
         <Button
@@ -92,7 +96,7 @@
             android:layout_centerHorizontal="true"
             android:textSize="30dp"
             android:layout_marginTop="30dp"
-            android:background="@color/colorAccent"/>
+            android:background="@drawable/btn_default"/>
     </RelativeLayout>
 
 
