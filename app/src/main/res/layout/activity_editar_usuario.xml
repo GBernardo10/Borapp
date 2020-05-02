@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#320236"
+    android:layout_height="match_parent"
+    tools:context=".EditarUsuarioActivity"
+    android:padding="20dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/rl_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivConfiguracao"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:src="@drawable/menu"
+                android:layout_toRightOf="@+id/tvLogo"
+                android:layout_marginLeft="45dp"/>
+            <ImageView
+                android:id="@+id/tvLogo"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:contentDescription="@string/icone_logo"
+                android:src="@drawable/bora_branco"
+                android:textColor="@color/cor_branco"
+                android:layout_centerHorizontal="true"/>
+
+            <ImageView
+                android:id="@+id/ivFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_add_a_photo_black_24dp"
+                android:layout_below="@+id/tvLogo"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/tvAlteraFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivFoto"
+                android:text="@string/altera_foto"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/cor_azul"/>
+            
+            <TextView
+                android:id="@+id/tvQualificacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/qualificacao_usuario"
+                android:layout_below="@+id/tvAlteraFoto"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/cor_azul"/>
+
+            <ImageView
+                android:id="@+id/ivEstrelaUm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAlteraFoto"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/tvQualificacao"
+                android:background="@drawable/star_yellow" />
+
+            <ImageView
+                android:id="@+id/ivEstrelaDois"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAlteraFoto"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/ivEstrelaUm"
+                android:background="@drawable/star_yellow" />
+
+            <ImageView
+                android:id="@+id/ivEstrelaTres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/star_yellow"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/ivEstrelaDois"
+                android:layout_below="@id/tvAlteraFoto"/>
+
+            <ImageView
+                android:id="@+id/ivEstrelaQuatro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/star_yellow"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/ivEstrelaTres"
+                android:layout_below="@id/tvAlteraFoto" />
+
+            <ImageView
+                android:id="@+id/ivEstrelaCinco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/star_black"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/ivEstrelaQuatro"
+                android:layout_below="@id/tvAlteraFoto" />
+
+            <TextView
+                android:id="@+id/tvTituloUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nome_usuario"
+                android:layout_below="@+id/tvQualificacao"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/cor_azul"/>
+            <TextView
+                android:id="@+id/tvUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WilldoJotinha"
+                android:layout_toRightOf="@+id/tvTituloUsuario"
+                android:layout_below="@+id/tvQualificacao"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/cor_branco"/>
+
+            <TextView
+                android:id="@+id/tvTituloCpf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_cpf"
+                android:layout_below="@+id/tvTituloUsuario"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/cor_azul"/>
+            <TextView
+                android:id="@+id/tvCpf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="000.000.000-00"
+                android:layout_toRightOf="@+id/tvTituloUsuario"
+                android:layout_below="@+id/tvTituloUsuario"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/cor_branco"/>
+
+            <EditText
+                android:id="@+id/etCelular"
+                android:hint="@string/seu_whatsapp"
+                android:layout_width="match_parent"
+                android:textColor="@color/cor_preto"
+                android:layout_height="45dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_below="@+id/tvTituloCpf"
+                android:layout_marginTop="20dp"
+                android:background="@color/cor_branco"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:hint="@string/email"
+                android:layout_width="match_parent"
+                android:textColor="@color/cor_preto"
+                android:layout_height="45dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_below="@+id/etCelular"
+                android:layout_marginTop="20dp"
+                android:background="@color/cor_branco"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btAlterar"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="@string/login"
+                android:textSize="20sp"
+                android:background="@color/cor_azul"
+                android:layout_below="@id/etEmail"
+                android:layout_marginTop="20dp"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

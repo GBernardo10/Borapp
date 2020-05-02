@@ -42,6 +42,11 @@
     <string name="local">Local</string>
     <string name="horario">Horario</string>
     <string name="confirmarParticipante">Confirmar Participante</string>
+    <string name="altera_foto">Alterar foto</string>
+    <string name="qualificacao_usuario">Qualificações</string>
+    <string name="titulo_cpf">CPF</string>
+    <string name="email">Email</string>
+    <string name="alterar">Alterar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

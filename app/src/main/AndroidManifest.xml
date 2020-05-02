@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConfirmarParticipanteActivity"></activity>
+        <activity android:name=".EditarUsuarioActivity"></activity>
+        <activity android:name=".ConfirmarParticipanteActivity" />
         <activity android:name=".ConfirmarParticipante" />
         <activity android:name=".EventosPreferencias" />
         <activity android:name=".DetalheEventoActivity" />
