@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConfirmarEvento"></activity>
-        <activity android:name=".EventosPreferencias" />
+        <activity android:name=".ConfiguracaoPreferenciaActivity"></activity>
+        <activity android:name=".ConfiguracoesActivity" />
+        <activity android:name=".ConfirmarEventoActivity" />
+        <activity android:name=".EventosPreferenciasActivity" />
         <activity android:name=".DetalheEventoActivity" />
-        <activity android:name=".MeusRoles" />
+        <activity android:name=".MeusRolesActivity" />
         <activity android:name=".TabBarActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".CadastroPfActivity" />

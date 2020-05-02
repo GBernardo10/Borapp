@@ -39,9 +39,23 @@
     <string name="confirmar_role">Podemos confirma-lo neste rolê?</string>
     <string name="bora_detalhar">Bora!</string>
     <string name="identificador">IDENTIFICADOR</string>
+    <string name="labelPreferencias">PREFERÊNCIAS</string>
     <string name="evento">EVENTO</string>
     <string name="local">LOCAL</string>
     <string name="horario">HORARIO</string>
+    <string name="configEditarPerfil">Editar Perfil</string>
+    <string name="configPreferencias">Preferências</string>
+    <string name="configNotificacoes">Notificações</string>
+    <string name="save">Salvar</string>
+    <string name="labelTipoEventos">Quais tipos de eventos que você mais gosta?</string>
+    <string name="configuracoes">CONFIGURAÇÕES</string>
+    <string name="eventosFutebol">FUTEBOL</string>
+    <string name="eventosRpg">RPG</string>
+    <string name="eventosFestas">FESTAS</string>
+    <string name="eventosBares">BARES</string>
+    <string name="eventosShows">SHOWS</string>
+    <string name="eventosYoga">IOGA</string>
+    <string name="logout">Sair</string>
     <string name="yes">SIM</string>
     <string name="no">NÃO</string>
     <!-- TODO: Remove or change this placeholder text -->

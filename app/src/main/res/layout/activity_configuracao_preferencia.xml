@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cor_roxo"
+    android:padding="15dp"
+    tools:context=".ConfiguracaoPreferenciaActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="130dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:contentDescription="@string/icone_logo"
+            android:src="@drawable/bora_branco" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="0dp"
+            />
+
+
+        <TextView
+            android:id="@+id/labelConfig"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/labelPreferencias"
+            android:textColor="@color/cor_branco"
+            android:textSize="23sp"
+            android:layout_marginStart="0dp"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="20dp"
+        />
+
+        <TextView
+            android:id="@+id/preferencias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_below="@id/labelConfig"
+            android:text="@string/labelTipoEventos"
+            android:textColor="@color/cor_azul"
+            android:textSize="17sp"
+            />
+
+
+        <Button
+            android:id="@+id/card1"
+            android:layout_marginTop="20dp"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:background="@drawable/eventos_futebol"
+            android:text="@string/eventosFutebol"
+            android:scaleType="fitXY"
+            android:textColor="@color/cor_branco"
+            android:layout_below="@id/preferencias"
+        />
+
+        <Button
+            android:id="@+id/card2"
+            android:layout_toRightOf="@+id/card1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:background="@drawable/eventos_rpg"
+            android:text="@string/eventosRpg"
+            android:scaleType="fitXY"
+            android:textColor="@color/cor_branco"
+            android:layout_below="@id/preferencias"
+        />
+
+        <Button
+            android:id="@+id/card3"
+            android:layout_marginTop="20dp"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:background="@drawable/eventos_festas"
+            android:text="@string/eventosFestas"
+            android:scaleType="fitXY"
+            android:textColor="@color/cor_branco"
+            android:layout_below="@id/card1"
+            />
+
+        <Button
+            android:id="@+id/card4"
+            android:layout_toRightOf="@+id/card1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:background="@drawable/eventos_bares"
+            android:text="@string/eventosBares"
+            android:scaleType="fitXY"
+            android:textColor="@color/cor_branco"
+            android:layout_below="@id/card2"
+            />
+
+        <Button
+            android:id="@+id/card5"
+            android:layout_marginTop="20dp"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:background="@drawable/eventos_yoga"
+            android:text="@string/eventosYoga"
+            android:scaleType="fitXY"
+            android:textColor="@color/cor_branco"
+            android:layout_below="@id/card3"
+        />
+
+        <Button
+            android:id="@+id/card6"
+            android:layout_toRightOf="@+id/card1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:background="@drawable/eventos_show"
+            android:text="@string/eventosShows"
+            android:scaleType="fitXY"
+            android:textColor="@color/cor_branco"
+            android:layout_below="@id/card4"
+            />
+
+        <Button
+            android:id="@+id/btSalvar"
+            android:layout_marginTop="50dp"
+            android:layout_width="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:textSize="20sp"
+            android:textColor="@color/cor_branco"
+            android:background="@drawable/btn_default"
+            android:layout_below="@id/card5"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

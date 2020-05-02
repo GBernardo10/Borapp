@@ -2,9 +2,7 @@ package com.br.bora.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_tab_bar.*
 
 class TabBarActivity : AppCompatActivity() {
@@ -22,7 +20,7 @@ class TabBarActivity : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.nav_search -> {
-                    loadFragment(EventosPreferencias())
+                    loadFragment(EventosPreferenciasActivity())
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.nav_notification -> {
