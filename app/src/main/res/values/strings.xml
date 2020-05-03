@@ -37,6 +37,10 @@
     <string name="pessoa_juridica">Pessoa Juridica</string>
     <string name="click_cadastrar">Clique para cadastrar</string>
     <string name="bora_detalhar">Bora!</string>
+    <string name="cadastre_preferencia">Cadastre suas preferências de evento</string>
+    <string name="esporte_favorito">Esporte favorito</string>
+    <string name="festa_favorita">Tipo de festa</string>
+    <string name="social_favorito">Evento social favorito</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

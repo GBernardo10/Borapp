@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:background="@color/colorPrimary"
+    tools:context=".CadastroPreferenciasActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rl_preferencias_cadastro">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="130dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:contentDescription="@string/icone_logo"
+                android:src="@drawable/bora_branco" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cadastre_preferencia"
+                android:textSize="20dp"
+                android:textColor="@color/c_white"
+                android:layout_below="@+id/logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:id="@+id/cadastro"/>
+
+            <EditText
+            android:id="@+id/etPref1"
+            android:layout_width="330dp"
+            android:layout_height="60dp"
+            android:hint="@string/esporte_favorito"
+            android:background="@color/cor_branco"
+            android:textSize="20dp"
+            android:layout_below="@+id/cadastro"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp"
+            app:layout_editor_absoluteX="10dp"/>
+
+            <EditText
+                android:id="@+id/etPref2"
+                android:layout_width="330dp"
+                android:layout_height="60dp"
+                android:hint="@string/festa_favorita"
+                android:background="@color/cor_branco"
+                android:textSize="20dp"
+                android:layout_below="@+id/etPref1"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="10dp"
+                app:layout_editor_absoluteX="10dp"/>
+
+            <EditText
+                android:id="@+id/etPref3"
+                android:layout_width="330dp"
+                android:layout_height="60dp"
+                android:hint="@string/social_favorito"
+                android:background="@color/cor_branco"
+                android:textSize="20dp"
+                android:layout_below="@+id/etPref2"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="10dp"
+                app:layout_editor_absoluteX="10dp"/>
+
+            <Button
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etPref3"
+                android:textAlignment="center"
+                android:text="@string/cadastrar"
+                android:layout_centerHorizontal="true"
+                android:textSize="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_default"/>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
