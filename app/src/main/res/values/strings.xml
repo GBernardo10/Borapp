@@ -59,5 +59,6 @@
     <string name="nova_senha">Nova Senha</string>
     <string name="confirmar_nova_senha">Confirmar nova senha</string>
     <string name="salvar_senha">Salvar senha</string>
-
+    <string name="cadastrar_evento">Cadastrar Evento</string>
+    <string name="editar_evento">Editar Evento</string>
 </resources>
