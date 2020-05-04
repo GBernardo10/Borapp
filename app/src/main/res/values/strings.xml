@@ -6,7 +6,6 @@
     <string name="senha">Senha</string>
     <string name="cadastra_se">cadastra-se</string>
     <string name="esqueci_minha_senha">Esqueci minha senha</string>
-
     <string name="organizador">Organizador</string>
     <string name="detalhe_evento">Detalhe do Evento</string>
     <string name="participante">Participantes</string>
@@ -36,7 +35,7 @@
     <string name="inserir_foto_perfil">Insira sua foto de perfil</string>
     <string name="pessoa_fisica">Pessoa Física</string>
     <string name="pessoa_juridica">Pessoa Juridica</string>
-    <string name="tipo_acesso">Qual seu tipo de acesso?</string>
+    <string name="click_cadastrar">Clique para cadastrar</string>
     <string name="bora_detalhar">Bora!</string>
     <string name="identificador">Identificador</string>
     <string name="evento">Evento</string>
@@ -48,9 +47,12 @@
     <string name="titulo_cpf">CPF</string>
     <string name="email">Email</string>
     <string name="alterar">Alterar</string>
+    <string name="cadastre_preferencia">Cadastre suas preferências de evento</string>
+    <string name="esporte_favorito">Esporte favorito</string>
+    <string name="festa_favorita">Tipo de festa</string>
+    <string name="social_favorito">Evento social favorito</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="cadastre_um_evento">Cadastre seu evento</string>
     <string name="insira_imagem">Insira uma imagem</string>
     <string name="tipo_evento">Tipo de evento</string>

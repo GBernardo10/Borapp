@@ -15,6 +15,7 @@
         <activity android:name=".ConfirmarParticipanteActivity" />
         <activity android:name=".SalvarNovaSenha"></activity>
         <activity android:name=".EsqueciMinhaSenha" />
+        <activity android:name=".CadastroPreferenciasActivity"></activity>
         <activity android:name=".EventosPreferencias" />
         <activity android:name=".DetalheEventoActivity" />
         <activity android:name=".MeusRoles" />

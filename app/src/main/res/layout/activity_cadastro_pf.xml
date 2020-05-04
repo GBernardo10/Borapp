@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cor_roxo"
+    android:padding="30dp"
     tools:context=".CadastroPfActivity">
-
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl_cadastro"
+        >
         <ImageView
             android:id="@+id/logo"
             android:layout_width="130dp"
@@ -37,66 +42,67 @@
             android:text="@string/inserir_foto_perfil"
             android:layout_below="@+id/ivUsuario"
             android:layout_centerHorizontal="true"
-            android:textSize="28dp"
+            android:textSize="22dp"
             android:textColor="@color/cor_branco"/>
 
         <EditText
             android:id="@+id/etEmail"
-            android:layout_width="380dp"
+            android:layout_width="330dp"
             android:layout_height="60dp"
             android:hint="@string/email_ou_login"
             android:background="@color/cor_branco"
-            android:textSize="45dp"
+            android:textSize="20dp"
             android:layout_below="@+id/tvFoto"
             android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp"
             app:layout_editor_absoluteX="10dp"/>
 
         <EditText
-            android:layout_width="380dp"
-            android:layout_height="60dp"
+            android:layout_width="360dp"
+            android:layout_height="55dp"
             android:hint="@string/seu_whatsapp"
             android:background="@color/cor_branco"
-            android:textSize="50dp"
+            android:textSize="20dp"
             android:layout_below="@+id/etEmail"
             android:layout_marginTop="10dp"
             app:layout_editor_absoluteX="10dp"
+            android:layout_marginStart="10dp"
             android:id="@+id/etWhats"/>
         <EditText
-            android:layout_width="380dp"
-            android:layout_height="60dp"
-            android:hint="@string/digite_cpf"
+            android:layout_width="360dp"
+            android:layout_height="55dp"
+            android:hint="@string/nome_usuario"
             android:background="@color/cor_branco"
-            android:textSize="50dp"
+            android:textSize="20dp"
             android:layout_below="@+id/etWhats"
             android:layout_marginTop="10dp"
             app:layout_editor_absoluteX="10dp"
-            android:id="@+id/etCnpj"/>
+            android:layout_marginStart="10dp"
+            android:id="@+id/etLogin"/>
 
         <EditText
-            android:layout_width="380dp"
-            android:layout_height="60dp"
-            android:hint="@string/nome_usuario"
+            android:layout_width="360dp"
+            android:layout_height="55dp"
+            android:hint="@string/senha"
             android:background="@color/cor_branco"
-            android:textSize="43dp"
-            android:layout_below="@+id/etCnpj"
+            android:textSize="20dp"
+            android:layout_below="@+id/etLogin"
             android:layout_marginTop="10dp"
             app:layout_editor_absoluteX="10dp"
-            android:id="@+id/etLogin"
+            android:layout_marginStart="10dp"
+            android:id="@+id/etSenha"
             />
         <Button
             android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/etLogin"
+            android:layout_below="@+id/etSenha"
             android:textAlignment="center"
             android:text="@string/cadastrar"
             android:layout_centerHorizontal="true"
             android:textSize="30dp"
             android:layout_marginTop="30dp"
-            android:background="@color/colorAccent"/>
+            android:background="@drawable/btn_default"/>
     </RelativeLayout>
+        </ScrollView>
 
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -17,8 +17,4 @@ class CadastroActivity : AppCompatActivity() {
         startActivity(telaPf);
     }
 
-    fun IrCadastroPj(v:View){
-        val telaPj = Intent(this,CadastroPjActivity::class.java);
-        startActivity(telaPj);
-    }
 }
