@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cor_roxo"
+    android:padding="15dp"
+    tools:context=".ConfiguracoesActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="130dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:contentDescription="@string/icone_logo"
+            android:src="@drawable/bora_branco" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="0dp"
+            />
+
+
+        <TextView
+            android:id="@+id/labelConfig"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/configuracoes"
+            android:textColor="@color/cor_azul"
+            android:textSize="23sp"
+            android:layout_marginStart="20dp"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/btEditarPerfil"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/configEditarPerfil"
+            android:textSize="20sp"
+            android:onClick="irEditarPerfil"
+            android:textColor="@color/cor_branco"
+            android:background="@drawable/btn_default"
+            android:layout_below="@id/labelConfig"
+            />
+
+        <Button
+            android:id="@+id/btPreferencias"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/configPreferencias"
+            android:textSize="20sp"
+            android:textColor="@color/cor_branco"
+            android:background="@drawable/btn_default"
+            android:onClick="irConfiguracoesPreferenciais"
+            android:layout_below="@id/btEditarPerfil"
+            />
+
+        <Button
+            android:id="@+id/btNotificacoes"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/configNotificacoes"
+            android:textSize="20sp"
+            android:textColor="@color/cor_branco"
+            android:background="@drawable/btn_default"
+            android:layout_below="@id/btPreferencias"
+            />
+
+        <Button
+            android:id="@+id/btSair"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:background="@color/cor_laranja"
+            android:layout_below="@+id/btNotificacoes"
+            android:layout_toRightOf="@+id/btPf"
+            android:textAlignment="center"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            android:onClick="logout"
+            android:text="@string/logout"
+            android:textSize="15dp"
+            android:textColor="@color/cor_branco"
+            />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,9 +16,12 @@
         <activity android:name=".SalvarNovaSenha"></activity>
         <activity android:name=".EsqueciMinhaSenha" />
         <activity android:name=".CadastroPreferenciasActivity"></activity>
-        <activity android:name=".EventosPreferencias" />
+        <activity android:name=".ConfiguracaoPreferenciaActivity"></activity>
+        <activity android:name=".ConfiguracoesActivity" />
+        <activity android:name=".ConfirmarEventoActivity" />
+        <activity android:name=".EventosPreferenciasActivity" />
         <activity android:name=".DetalheEventoActivity" />
-        <activity android:name=".MeusRoles" />
+        <activity android:name=".MeusRolesActivity" />
         <activity android:name=".TabBarActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".CadastroPfActivity" />
