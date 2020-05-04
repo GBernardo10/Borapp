@@ -54,12 +54,14 @@
             />
 
 
-        <Button
+        <ImageView
             android:id="@+id/card1"
             android:layout_marginTop="20dp"
             android:layout_width="180dp"
             android:layout_height="100dp"
-            android:background="@drawable/eventos_futebol"
+            android:src="@drawable/eventos_futebol"
+            android:padding="1dp"
+            android:background="#EC0000"
             android:onClick="onChangeFutebol"
             android:text="@string/eventosFutebol"
             android:scaleType="fitXY"
