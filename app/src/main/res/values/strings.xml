@@ -6,6 +6,7 @@
     <string name="senha">Senha</string>
     <string name="cadastra_se">cadastra-se</string>
     <string name="esqueci_minha_senha">Esqueci minha senha</string>
+
     <string name="organizador">Organizador</string>
     <string name="detalhe_evento">Detalhe do Evento</string>
     <string name="participante">Participantes</string>
@@ -49,4 +50,25 @@
     <string name="alterar">Alterar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="cadastre_um_evento">Cadastre seu evento</string>
+    <string name="insira_imagem">Insira uma imagem</string>
+    <string name="tipo_evento">Tipo de evento</string>
+    <string name="desciption_button_public">PUBLICO</string>
+    <string name="desciption_button_private">PRIVADO</string>
+    <string name="info_evento_nome">Insira o nome do evento</string>
+    <string name="info_hint_evento1">nome do seu evento</string>
+    <string name="info_evento_cep">Cep</string>
+    <string name="info_evento_numero_rua">Nº da rua</string>
+    <string name="info_hint_evento3">Numero</string>
+    <string name="info_evento_data">Data</string>
+    <string name="info_evento_horario">Horario</string>
+    <string name="info_evento_valor">Valor em R$</string>
+    <string name="editar_um_evento">Editando evento...</string>
+    <string name="lembrar_senha">Lembrar minha senha</string>
+    <string name="nova_senha">Nova Senha</string>
+    <string name="confirmar_nova_senha">Confirmar nova senha</string>
+    <string name="salvar_senha">Salvar senha</string>
+    <string name="cadastrar_evento">Cadastrar Evento</string>
+    <string name="editar_evento">Editar Evento</string>
 </resources>

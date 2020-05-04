@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#320236"
+    tools:context=".CriarEventoActivity"
+
+    >
+
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/icon_logo_logged"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/logo_bora_logado"
+        >
+    </ImageView>
+
+    <ImageView
+        android:layout_height="60dp"
+        android:layout_width="60dp"
+        android:src="@drawable/icon_menu_top"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentEnd="true"
+        >
+    </ImageView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="900dp"
+        android:layout_below="@+id/logo_bora_logado"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerHorizontal="true"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/cadastrar_evento"
+                android:textColor="#00BEFF"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:id="@+id/string_cadastre_seu_evento"
+                >
+            </TextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/string_cadastre_seu_evento"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/icon_upload_image"
+                android:id="@+id/icon_upload_image"
+                >
+            </ImageView>
+
+            <TextView
+                android:layout_width="500dp"
+                android:layout_height="30dp"
+                android:text="@string/insira_imagem"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_below="@id/icon_upload_image"
+                android:id="@+id/description_upload_image"
+                >
+            </TextView>
+
+            <TextView
+                android:layout_width="500dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/tipo_evento"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:layout_below="@id/description_upload_image"
+                android:id="@+id/description_tipo_evento"
+
+                >
+            </TextView>
+
+            <Button
+                android:id="@+id/btnPublic"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:text="@string/desciption_button_public"
+                android:textSize="15dp"
+                android:background="#000"
+                android:layout_below="@id/description_tipo_evento"
+                android:textColor="#ffff"
+                android:layout_marginLeft="10dp"
+                >
+            </Button>
+            <Button
+                android:id="@+id/btnPrivate"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:text="@string/desciption_button_private"
+                android:textSize="15dp"
+                android:background="#FF7A00"
+                android:layout_below="@id/description_tipo_evento"
+                android:textColor="#ffff"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                >
+            </Button>
+
+
+            <TextView
+                android:layout_width="500dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Nome do evento"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:layout_below="@id/btnPrivate"
+                android:id="@+id/string_nome_evento"
+                android:layout_marginTop="10dp"
+                >
+            </TextView>
+            <EditText
+                android:layout_width="500dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/string_nome_evento"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#fff"
+                android:hint="@string/info_evento_nome"
+                android:id="@+id/label_nome_evento"
+
+                >
+
+            </EditText>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_nome_evento"
+                android:text="@string/info_evento_cep"
+                android:textColor="#ffff"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/string_cep_evento"
+                android:layout_marginLeft="10dp"
+
+                >
+
+            </TextView>
+
+            <EditText
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/string_cep_evento"
+                android:layout_marginLeft="10dp"
+                android:background="#fff"
+                android:hint="@string/info_evento_cep"
+                android:id="@+id/label_cep_evento"
+                android:layout_marginTop="5dp"
+
+                >
+
+            </EditText>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_nome_evento"
+                android:text="@string/info_evento_numero_rua"
+                android:textColor="#ffff"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/string_numero_rua_evento"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+
+                >
+
+            </TextView>
+
+            <EditText
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/string_numero_rua_evento"
+                android:layout_marginEnd="10dp"
+                android:background="#fff"
+                android:hint="@string/info_evento_numero_rua"
+                android:id="@+id/label_numero_rua_evento"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentEnd="true"
+
+
+                >
+
+            </EditText>
+
+            <TextView
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_cep_evento"
+                android:text="@string/info_evento_data"
+                android:textColor="#ffff"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/string_data_evento"
+                android:layout_marginLeft="10dp"
+
+                >
+
+            </TextView>
+
+            <EditText
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/string_data_evento"
+                android:layout_marginLeft="10dp"
+                android:background="#fff"
+                android:hint="Data"
+                android:id="@+id/label_data_evento"
+                android:layout_marginTop="5dp"
+
+                >
+
+            </EditText>
+
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_numero_rua_evento"
+                android:text="@string/info_evento_horario"
+                android:textColor="#ffff"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/string_horario_evento"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+
+                >
+
+            </TextView>
+
+            <EditText
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/string_horario_evento"
+                android:layout_marginEnd="10dp"
+                android:background="#fff"
+                android:hint="@string/info_evento_horario"
+                android:id="@+id/label_horario_evento"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentEnd="true"
+                >
+
+            </EditText>
+
+            <TextView
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_data_evento"
+                android:text="@string/info_evento_valor"
+                android:textColor="#ffff"
+                android:textSize="17sp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/string_valor_evento"
+                android:layout_marginLeft="10dp"
+
+                >
+
+            </TextView>
+
+            <EditText
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/string_valor_evento"
+                android:layout_marginLeft="10dp"
+                android:background="#fff"
+                android:hint="@string/info_evento_valor"
+                android:id="@+id/label_valor_evento"
+                android:layout_marginTop="5dp"
+                android:textSize="17sp"
+                >
+
+            </EditText>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkbox_valor_evento"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/string_valor_evento"
+                android:layout_marginEnd="128dp"
+                android:buttonTint="#fff"
+                android:layout_alignParentEnd="true"
+                >
+
+            </CheckBox>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Evento Gratuito"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                android:layout_below="@+id/string_valor_evento"
+                android:layout_alignParentEnd="true"
+                android:layout_toStartOf="@+id/checkbox_valor_evento"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="11dp"
+
+                >
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adicionar Categoria"
+                android:textColor="#fff"
+                android:textSize="17dp"
+                android:layout_below="@+id/label_valor_evento"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/string_adicionar_categoria"
+
+                >
+            </TextView>
+
+            <EditText
+                android:layout_width="500dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/string_adicionar_categoria"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#fff"
+                android:hint="Ex Futebol, Natação, Basquete"
+                android:id="@+id/label_adicionar_categoria_evento"
+                android:layout_marginTop="5dp"
+                >
+
+            </EditText>
+
+
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Futebol"
+                android:id="@+id/string_categoria_adicionada"
+                android:layout_below="@+id/label_adicionar_categoria_evento"
+                android:background="#00BEFF"
+                android:textSize="15dp"
+                android:textColor="#000"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_horizontal"
+                >
+
+            </TextView>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Volêi"
+                android:id="@+id/string_categoria_adicionada2"
+                android:layout_below="@+id/label_adicionar_categoria_evento"
+                android:background="#00BEFF"
+                android:textSize="15dp"
+                android:textColor="#000"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/string_categoria_adicionada"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_horizontal"
+                >
+
+            </TextView>
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/string_categoria_adicionada"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/string_quantidade_participante"
+                android:layout_marginTop="15dp"
+                android:text="Defina a quantidade de Participantes"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                >
+
+            </TextView>
+
+
+            <EditText
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/string_categoria_adicionada"
+                android:layout_marginEnd="10dp"
+                android:background="#fff"
+                android:hint="1"
+                android:id="@+id/label_qtd_participantes"
+                android:layout_marginTop="15dp"
+                android:layout_alignParentEnd="true"
+                android:textSize="20dp"
+                >
+
+            </EditText>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adicionar Participantes"
+                android:textColor="#fff"
+                android:textSize="17dp"
+                android:layout_below="@+id/string_quantidade_participante"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/string_adicionar_participantes"
+
+
+                >
+            </TextView>
+
+            <EditText
+                android:layout_width="500dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/string_adicionar_participantes"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#fff"
+                android:hint="ex chileno123"
+                android:id="@+id/label_adicionar_participantes"
+                android:layout_marginTop="5dp"
+                >
+
+            </EditText>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/label_adicionar_participantes"
+                android:id="@+id/scroll2"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#00BEFF"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:id="@+id/usuario_adicionado_novo"
+                    >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/avatar"
+                        android:id="@+id/icon_avatar_image"
+                        >
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Capixaba06"
+                        android:layout_toEndOf="@id/icon_avatar_image"
+                        android:layout_marginTop="15dp">
+
+                    </TextView>
+
+
+
+                </RelativeLayout>
+
+
+
+
+            </ScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver Mais"
+                android:layout_below="@+id/scroll2"
+                android:textColor="#FFFF"
+                android:gravity="center_horizontal"
+                android:id="@+id/string_ver_mais_usuarios">
+            </TextView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/string_ver_mais_usuarios"
+                android:src="@drawable/ic_arrow_downward_black_24dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/icon_ver_mais"
+                >
+
+
+            </ImageView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/cadastrar_evento"
+                android:layout_below="@+id/icon_ver_mais"
+                android:layout_marginTop="10dp"
+                android:background="#00BEFF"
+                android:textColor="#000"
+                android:textSize="15dp">
+
+            </Button>
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+</RelativeLayout>
