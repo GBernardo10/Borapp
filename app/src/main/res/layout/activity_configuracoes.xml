@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:text="@string/configEditarPerfil"
             android:textSize="20sp"
+            android:onClick="irEditarPerfil"
             android:textColor="@color/cor_branco"
             android:background="@drawable/btn_default"
             android:layout_below="@id/labelConfig"
@@ -62,6 +63,7 @@
             android:textSize="20sp"
             android:textColor="@color/cor_branco"
             android:background="@drawable/btn_default"
+            android:onClick="irConfiguracoesPreferenciais"
             android:layout_below="@id/btEditarPerfil"
             />
 
@@ -87,6 +89,7 @@
             android:textAlignment="center"
             android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"
+            android:onClick="logout"
             android:text="@string/logout"
             android:textSize="15dp"
             android:textColor="@color/cor_branco"
