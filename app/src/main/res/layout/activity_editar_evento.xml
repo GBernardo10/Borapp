@@ -472,10 +472,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/avatar"
-                        android:id="@+id/icon_avatar_image"
-                        >
-
+                        android:id="@+id/icon_avatar_image">
                     </ImageView>
 
                     <TextView
@@ -533,17 +530,5 @@
 
 
         </RelativeLayout>
-
-
-
-
-
     </ScrollView>
-
-
-
-
-
-
-
 </RelativeLayout>

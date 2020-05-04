@@ -60,7 +60,6 @@
                 android:textColor="@color/cor_branco"
                 android:background="@drawable/btn_default"
                 android:layout_below="@id/wallet"
-                android:onClick="CadastrarRole"
                 />
 
             <Button
