@@ -14,14 +14,7 @@ import kotlinx.android.synthetic.main.activity_confirmar_evento.view.*
 
 class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
 
-    var futebolSelected = false;
-    var rpgSelected = false;
-    var festasSelected = false;
-    var baresSelected = false;
-    var iogaSelected = false;
-    var showsSelected = false;
     var preferencias:SharedPreferences? = null
-    val editor = preferencias?.edit()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,12 +22,12 @@ class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
 
         preferencias = getPreferences(Context.MODE_PRIVATE)
 
-        val futebol = preferencias?.getBoolean("futebol", this.futebolSelected)
-        val rpg = preferencias?.getBoolean("rpg", this.rpgSelected)
-        val festas = preferencias?.getBoolean("festas", this.festasSelected)
-        val bares = preferencias?.getBoolean("bares", this.baresSelected)
-        val ioga = preferencias?.getBoolean("ioga", this.iogaSelected)
-        val shows = preferencias?.getBoolean("shows", this.showsSelected)
+        val futebol = preferencias?.getBoolean("futebol", false)
+        val rpg = preferencias?.getBoolean("rpg", false)
+        val festas = preferencias?.getBoolean("festas", false)
+        val bares = preferencias?.getBoolean("bares", false)
+        val ioga = preferencias?.getBoolean("ioga", false)
+        val shows = preferencias?.getBoolean("shows", false)
 
         if (futebol == true) {
             card1.setPadding(3, 3, 3, 3)
@@ -56,7 +49,15 @@ class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
         }
     }
 
+    var futebolSelected = false;
+    var rpgSelected = false;
+    var festasSelected = false;
+    var baresSelected = false;
+    var iogaSelected = false;
+    var showsSelected = false;
+
     fun onChangeFutebol(v: View) {
+        val editor = preferencias?.edit()
         if (futebolSelected == false) {
             this.futebolSelected = true
             editor?.putBoolean("futebol", true)
@@ -67,10 +68,10 @@ class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
             card1.setPadding(0, 0,0, 0)
         }
         editor?.commit()
-        editor?.apply()
     }
 
     fun onChangeRpg(v: View) {
+        val editor = preferencias?.edit()
         if (rpgSelected == false) {
             this.rpgSelected = true
             editor?.putBoolean("rpg", true)
@@ -84,6 +85,7 @@ class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
     }
 
     fun onChangeFestas(v: View) {
+        val editor = preferencias?.edit()
         if (festasSelected == false) {
             this.festasSelected = true
             editor?.putBoolean("festas", true)
@@ -97,6 +99,7 @@ class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
     }
 
     fun onChangeBares(v: View) {
+        val editor = preferencias?.edit()
         if (baresSelected == false) {
             this.baresSelected = true
             editor?.putBoolean("bares", true)
@@ -110,6 +113,7 @@ class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
     }
 
     fun onChangeIoga(v: View) {
+        val editor = preferencias?.edit()
         if (iogaSelected == false) {
             this.iogaSelected = true
             editor?.putBoolean("ioga", true)
@@ -123,6 +127,7 @@ class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
     }
 
     fun onChangeShows(v: View) {
+        val editor = preferencias?.edit()
         if (showsSelected == false) {
             this.showsSelected = true
             editor?.putBoolean("shows", true)
@@ -141,6 +146,7 @@ class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
     }
 
     fun salvar(v: View) {
+        val editor = preferencias?.edit()
         editor?.commit()
     }
 }

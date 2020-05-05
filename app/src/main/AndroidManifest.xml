@@ -11,13 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConfiguracaoPreferenciaActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ConfiguracaoPreferenciaActivity" />
         <activity android:name=".ConfiguracoesActivity" />
         <activity android:name=".ConfirmarEventoActivity" />
         <activity android:name=".EventosPreferenciasActivity" />
@@ -28,7 +22,11 @@
         <activity android:name=".CadastroPfActivity" />
         <activity android:name=".CadastroActivity" />
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
