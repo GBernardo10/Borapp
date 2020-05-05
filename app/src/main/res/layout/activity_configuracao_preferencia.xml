@@ -27,6 +27,7 @@
             android:src="@drawable/back"
             android:layout_marginTop="10dp"
             android:layout_marginStart="0dp"
+            android:onClick="irConfiguracao"
             />
 
 
@@ -56,12 +57,14 @@
 
         <ImageView
             android:id="@+id/card1"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="true"
             android:layout_marginTop="20dp"
-            android:layout_width="180dp"
-            android:layout_height="100dp"
+            android:layout_width="140dp"
+            android:layout_height="90dp"
             android:src="@drawable/eventos_futebol"
-            android:padding="1dp"
-            android:background="#EC0000"
+            android:padding="0dp"
+            android:background="#2196F3"
             android:onClick="onChangeFutebol"
             android:text="@string/eventosFutebol"
             android:scaleType="fitXY"
@@ -69,27 +72,33 @@
             android:layout_below="@id/preferencias"
         />
 
-        <Button
+        <ImageView
             android:id="@+id/card2"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
             android:layout_toRightOf="@+id/card1"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
-            android:layout_width="180dp"
-            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
             android:onClick="onChangeRpg"
-            android:background="@drawable/eventos_rpg"
+            android:padding="0dp"
+            android:background="#2196F3"
+            android:src="@drawable/eventos_rpg"
             android:text="@string/eventosRpg"
             android:scaleType="fitXY"
             android:textColor="@color/cor_branco"
             android:layout_below="@id/preferencias"
         />
 
-        <Button
+        <ImageView
             android:id="@+id/card3"
             android:layout_marginTop="20dp"
-            android:layout_width="180dp"
-            android:layout_height="100dp"
-            android:background="@drawable/eventos_festas"
+            android:layout_width="140dp"
+            android:layout_height="90dp"
+            android:padding="0dp"
+            android:background="#2196F3"
+            android:src="@drawable/eventos_festas"
             android:text="@string/eventosFestas"
             android:onClick="onChangeFestas"
             android:scaleType="fitXY"
@@ -97,27 +106,33 @@
             android:layout_below="@id/card1"
             />
 
-        <Button
+        <ImageView
             android:id="@+id/card4"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
             android:layout_toRightOf="@+id/card1"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
-            android:layout_width="180dp"
-            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
             android:onClick="onChangeBares"
-            android:background="@drawable/eventos_bares"
+            android:padding="0dp"
+            android:background="#2196F3"
+            android:src="@drawable/eventos_bares"
             android:text="@string/eventosBares"
             android:scaleType="fitXY"
             android:textColor="@color/cor_branco"
             android:layout_below="@id/card2"
             />
 
-        <Button
+        <ImageView
             android:id="@+id/card5"
             android:layout_marginTop="20dp"
-            android:layout_width="180dp"
+            android:layout_width="140dp"
             android:layout_height="100dp"
-            android:background="@drawable/eventos_yoga"
+            android:padding="0dp"
+            android:background="#2196F3"
+            android:src="@drawable/eventos_yoga"
             android:text="@string/eventosYoga"
             android:onClick="onChangeIoga"
             android:scaleType="fitXY"
@@ -125,15 +140,19 @@
             android:layout_below="@id/card3"
         />
 
-        <Button
+        <ImageView
             android:id="@+id/card6"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
             android:layout_toRightOf="@+id/card1"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:layout_width="180dp"
             android:layout_height="100dp"
             android:onClick="onChangeShows"
-            android:background="@drawable/eventos_show"
+            android:padding="0dp"
+            android:background="#2196F3"
+            android:src="@drawable/eventos_show"
             android:text="@string/eventosShows"
             android:scaleType="fitXY"
             android:textColor="@color/cor_branco"
@@ -152,9 +171,6 @@
             android:background="@drawable/btn_default"
             android:layout_below="@id/card5"
             />
-
-
-
     </RelativeLayout>
 
 
