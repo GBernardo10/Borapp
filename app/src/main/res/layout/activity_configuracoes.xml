@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="@string/configuracoes"
-            android:textColor="@color/cor_azul"
+            android:textColor="@color/cor_branco"
             android:textSize="23sp"
             android:layout_marginStart="20dp"
             android:layout_below="@id/logo"

@@ -13,7 +13,7 @@ class ConfiguracoesActivity : AppCompatActivity() {
     }
 
     fun irEditarPerfil(v: View) {
-        val telaEditarPerfil = Intent(this,CadastroPfActivity::class.java)
+        val telaEditarPerfil = Intent(this,EditarUsuarioActivity::class.java)
         startActivity(telaEditarPerfil)
     }
 

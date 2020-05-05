@@ -85,6 +85,7 @@
             android:textAlignment="textStart"
             android:background="@drawable/view_evento"
             android:layout_below="@id/labelMeusRolesCriados"
+            android:onClick="irAlterarEventos"
             />
 
         <ImageView
@@ -271,6 +272,7 @@
             android:textAlignment="textStart"
             android:background="@drawable/view_evento"
             android:layout_below="@id/labelMeusRolesParticipo"
+            android:onClick="irVisualizarEventos"
             />
 
         <ImageView

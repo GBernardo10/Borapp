@@ -48,15 +48,16 @@ class MainActivity : AppCompatActivity() {
 	"password":"#futebol1996"
 
  */
-
-
+    fun irEsqueciSenha(v:View){
+        val telaEsqueciSenha = Intent(this,EsqueciMinhaSenha::class.java)
+        startActivity(telaEsqueciSenha);
+    }
     fun irHome(){
         val telaHome = Intent(this,TabBarActivity::class.java)
         startActivity(telaHome)
     }
-
     fun irCadastrar(v: View){
-        val telaCadastro = Intent(this,CadastroActivity::class.java)
+        val telaCadastro = Intent(this,CadastroPfActivity::class.java)
         startActivity(telaCadastro)
     }
 }
