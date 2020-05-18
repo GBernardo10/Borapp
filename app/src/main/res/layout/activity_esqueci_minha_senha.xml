@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,73 +7,33 @@
     android:background="#320236"
     tools:context=".EsqueciMinhaSenha">
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/botaoVoltar"
-        android:src="@drawable/button_previous_page"
-        >
-    </ImageView>
+    <RelativeLayout style="@style/RelativeBody">
 
-
-    <RelativeLayout
-        android:id="@+id/rl_login"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="50dp"
-        >
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
             android:id="@+id/logo"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:src="@mipmap/logo"
-            android:contentDescription="@string/icone_logo">
-        </ImageView>
+            style="@style/LogoCircle"
+            android:src="@drawable/logobora_foreground" />
 
         <TextView
-            android:textColor="#fff"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:layout_above="@id/login"
-            android:layout_marginBottom="10dp"
-            android:text="@string/email"
             android:id="@+id/label_login"
-            >
-        </TextView>
+            style="@style/FormLabel"
+            android:layout_above="@id/login"
+            android:text="@string/email"/>
 
         <EditText
             android:id="@+id/login"
-            android:labelFor="@id/label_login"
-            android:hint="@string/username"
-            android:layout_width="match_parent"
-            android:textColor="#000"
-            android:layout_height="55dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:layout_centerVertical="true"
-            android:background="@color/c_white"
+            style="@style/FormEditText"
             android:autofillHints=""
-            android:inputType="text">
-        </EditText>
-
-
+            android:hint="@string/username"
+            android:inputType="text"
+            android:labelFor="@id/label_login"></EditText>
 
         <Button
             android:id="@+id/btnLembrarSenha"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:text="@string/lembrar_senha"
-            android:textSize="20sp"
-            android:background="#00BEFF"
+            style="@style/ButtonDefault"
             android:layout_below="@id/login"
             android:layout_marginTop="20dp"
-            android:onClick="irMain">
-        </Button>
-
-
+            android:onClick="irMain"
+            android:text="@string/lembrar_senha"></Button>
     </RelativeLayout>
 </RelativeLayout>

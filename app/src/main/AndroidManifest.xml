@@ -3,6 +3,7 @@
     package="com.br.bora.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +26,6 @@
         <activity android:name=".TabBarActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".CadastroPfActivity" />
-        <activity android:name=".CadastroActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

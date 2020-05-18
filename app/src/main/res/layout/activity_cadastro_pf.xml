@@ -1,108 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cor_roxo"
-    android:padding="20dp"
     tools:context=".CadastroPfActivity">
+    <ImageView
+        android:id="@+id/logo"
+        style="@style/Logo"
+        android:src="@drawable/bora_branco" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <RelativeLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rl_cadastro">
+        android:layout_below="@id/logo">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="130dp"
-            android:layout_height="70dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="0dp"
-            android:contentDescription="@string/icone_logo"
-            android:src="@drawable/bora_branco" />
+        <RelativeLayout style="@style/RelativeBody">
 
-        <ImageView
-            android:id="@+id/ivUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_add_a_photo_black_24dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/logo"
-            android:layout_marginTop="20dp"
-            app:layout_editor_absoluteX="160dp"
-            />
+            <ImageView
+                android:id="@+id/ivCirculo"
+                android:onClick="ImageSelect"
+                style="@style/PhotoView" />
 
-        <TextView
-            android:id="@+id/tvFoto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/inserir_foto_perfil"
-            android:layout_below="@+id/ivUsuario"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/cor_azul"/>
+            <TextView
+                android:id="@+id/tvFoto"
+                style="@style/TitleImage"
+                android:layout_below="@+id/ivCirculo"
+                android:text="@string/inserir_foto_perfil" />
 
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:hint="@string/email_ou_login"
-            android:background="@color/cor_branco"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textSize="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_below="@+id/tvFoto"/>
+            <TextView
+                android:id="@+id/tvLabelLogin"
+                style="@style/FormLabel"
+                android:layout_below="@+id/tvFoto"
+                android:text="@string/login" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:hint="@string/seu_whatsapp"
-            android:background="@color/cor_branco"
-            android:textSize="20dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:layout_below="@+id/etEmail"
-            android:layout_marginTop="20dp"
-            android:id="@+id/etWhats"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:hint="@string/nome_usuario"
-            android:background="@color/cor_branco"
-            android:textSize="20dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:layout_below="@+id/etWhats"
-            android:layout_marginTop="20dp"
-            android:id="@+id/etLogin"/>
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/FormEditText"
+                android:layout_below="@+id/tvLabelLogin"
+                android:hint="@string/email_ou_login" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:hint="@string/senha"
-            android:background="@color/cor_branco"
-            android:textSize="20dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:layout_below="@+id/etLogin"
-            android:layout_marginTop="20dp"
-            android:id="@+id/etSenha"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_below="@+id/etSenha"
-            android:textAlignment="center"
-            android:text="@string/cadastrar"
-            android:layout_centerHorizontal="true"
-            android:textSize="30dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_default"
-            android:onClick="irMain"/>
-    </RelativeLayout>
-        </ScrollView>
+            <TextView
+                android:id="@+id/tvLabelCelular"
+                style="@style/FormLabel"
+                android:layout_below="@+id/etEmail"
+                android:text="@string/celular" />
+
+            <EditText
+                android:id="@+id/etCelular"
+                style="@style/FormEditText"
+                android:layout_below="@+id/tvLabelCelular"
+                android:hint="@string/seu_celular" />
+
+            <TextView
+                android:id="@+id/tvLabelUsuario"
+                style="@style/FormLabel"
+                android:layout_below="@+id/etCelular"
+                android:text="@string/nome_usuario" />
+
+            <EditText
+                android:id="@+id/etLogin"
+                style="@style/FormEditText"
+                android:layout_below="@+id/tvLabelUsuario"
+                android:hint="@string/nome_usuario" />
+
+            <TextView
+                android:id="@+id/tvLabelSenha"
+                style="@style/FormLabel"
+                android:layout_below="@+id/etLogin"
+                android:text="@string/senha" />
+
+            <EditText
+                android:id="@+id/etSenha"
+                style="@style/FormEditText"
+                android:layout_below="@+id/tvLabelSenha"
+                android:hint="@string/senha"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/btCadastrar"
+                style="@style/ButtonDefault"
+                android:layout_below="@+id/etSenha"
+                android:layout_marginTop="20dp"
+                android:onClick="irMain"
+                android:text="@string/cadastrar" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

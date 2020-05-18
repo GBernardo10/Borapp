@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,170 +7,141 @@
     android:background="@color/cor_roxo"
     tools:context=".ConfirmarEventoActivity">
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/logo"
+        style="@style/Logo"
+        android:src="@drawable/bora_branco" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/logo">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="130dp"
-            android:layout_height="70dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="0dp"
-            android:contentDescription="@string/icone_logo"
-            android:src="@drawable/bora_branco" />
+        <RelativeLayout style="@style/RelativeBody">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:src="@drawable/menu"
-            android:layout_marginStart="350dp"
-            />
+            <TextView
+                android:id="@+id/tvLabelConfirmarEvento"
+                style="@style/TitleActivity"
+                android:layout_marginStart="20dp"
+                android:text="@string/confirmar_role" />
 
-        <TextView
-            android:id="@+id/tvLabelConfirmarEvento"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/logo"
-            android:text="@string/confirmar_role"
-            android:textColor="@color/cor_branco"
-            android:textSize="23sp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"/>
+            <View
+                android:id="@+id/border"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/tvLabelConfirmarEvento"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/white_shape_border"></View>
 
-        <View
-            android:id="@+id/border"
-            android:layout_width="match_parent"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/tvLabelConfirmarEvento"
-            android:background="@drawable/white_shape_border"
-            >
-        </View>
+            <TextView
+                android:id="@+id/labelIdentificador"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvLabelConfirmarEvento"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/identificador"
+                android:textColor="@color/cor_azul_claro"
+                android:textSize="23sp" />
 
-        <TextView
-            android:id="@+id/labelIdentificador"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/tvLabelConfirmarEvento"
-            android:text="@string/identificador"
-            android:textColor="@color/cor_azul_claro"
-            android:textSize="23sp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/identificador"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvLabelConfirmarEvento"
+                android:layout_marginStart="-210dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/labelIdentificador"
+                android:text="0001"
+                android:textColor="@color/cor_branco"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/identificador"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/tvLabelConfirmarEvento"
-            android:text="0001"
-            android:textColor="@color/cor_branco"
-            android:textSize="20sp"
-            android:layout_toRightOf="@id/labelIdentificador"
-            android:layout_marginStart="-210dp"
-            android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/labelEvento"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvLabelConfirmarEvento"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/evento"
+                android:textColor="@color/cor_azul_claro"
+                android:textSize="23sp" />
 
-        <TextView
-            android:id="@+id/labelEvento"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/tvLabelConfirmarEvento"
-            android:text="@string/evento"
-            android:textColor="@color/cor_azul_claro"
-            android:textSize="23sp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"/>
+            <TextView
+                android:id="@+id/evento"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvLabelConfirmarEvento"
+                android:layout_marginStart="-210dp"
+                android:layout_marginTop="50dp"
+                android:layout_toRightOf="@id/labelIdentificador"
+                android:text="Futebas do bolivinha"
+                android:textColor="@color/cor_branco"
+                android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/evento"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/tvLabelConfirmarEvento"
-            android:text="Futebas do bolivinha"
-            android:textColor="@color/cor_branco"
-            android:textSize="20dp"
-            android:layout_toRightOf="@id/labelIdentificador"
-            android:layout_marginStart="-210dp"
-            android:layout_marginTop="50dp"/>
+            <TextView
+                android:id="@+id/labelLocal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvLabelConfirmarEvento"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="80dp"
+                android:text="@string/local"
+                android:textColor="@color/cor_azul_claro"
+                android:textSize="23sp" />
 
-        <TextView
-            android:id="@+id/labelLocal"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/tvLabelConfirmarEvento"
-            android:text="@string/local"
-            android:textColor="@color/cor_azul_claro"
-            android:textSize="23sp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="80dp"/>
+            <TextView
+                android:id="@+id/local"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvLabelConfirmarEvento"
+                android:layout_marginStart="-210dp"
+                android:layout_marginTop="80dp"
+                android:layout_toRightOf="@id/labelIdentificador"
+                android:text="Av. Elite dos bravos"
+                android:textColor="@color/cor_branco"
+                android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/local"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/tvLabelConfirmarEvento"
-            android:text="Av. Elite dos bravos"
-            android:textColor="@color/cor_branco"
-            android:textSize="20dp"
-            android:layout_toRightOf="@id/labelIdentificador"
-            android:layout_marginStart="-210dp"
-            android:layout_marginTop="80dp"/>
+            <TextView
+                android:id="@+id/labelHorario"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvLabelConfirmarEvento"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="110dp"
+                android:text="@string/horario"
+                android:textColor="@color/cor_azul_claro"
+                android:textSize="23sp" />
 
-        <TextView
-            android:id="@+id/labelHorario"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/tvLabelConfirmarEvento"
-            android:text="@string/horario"
-            android:textColor="@color/cor_azul_claro"
-            android:textSize="23sp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="110dp"/>
+            <TextView
+                android:id="@+id/horario"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvLabelConfirmarEvento"
+                android:layout_marginStart="-210dp"
+                android:layout_marginTop="110dp"
+                android:layout_toRightOf="@id/labelIdentificador"
+                android:text="18h40"
+                android:textColor="@color/cor_branco"
+                android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/horario"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/tvLabelConfirmarEvento"
-            android:text="18h40"
-            android:textColor="@color/cor_branco"
-            android:textSize="20dp"
-            android:layout_toRightOf="@id/labelIdentificador"
-            android:layout_marginStart="-210dp"
-            android:layout_marginTop="110dp"/>
+            <Button
+                android:id="@+id/btSim"
+                style="@style/ButtonOrange"
+                android:layout_below="@+id/border"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/yes" />
 
-        <Button
-            android:id="@+id/btSim"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:background="@color/cor_laranja"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@+id/border"
-            android:textAlignment="center"
-            android:layout_marginTop="20dp"
-            android:text="@string/yes"
-            android:textSize="15dp"
-            android:textColor="@color/cor_branco" />
-
-        <Button
-            android:id="@+id/btNao"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/border"
-            android:layout_toRightOf="@id/btSim"
-            android:background="@color/cor_preto"
-            android:textAlignment="center"
-            android:layout_marginStart="30dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/no"
-            android:textSize="15dp"
-            android:textColor="@color/cor_branco"
-            />
-
-    </RelativeLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/btNao"
+                style="@style/ButtonBlack"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/btSim"
+                android:text="@string/no" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
