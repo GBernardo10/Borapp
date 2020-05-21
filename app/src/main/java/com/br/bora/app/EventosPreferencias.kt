@@ -15,11 +15,11 @@ class EventosPreferencias : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.activity_eventos_preferencias,container,false)
-
     }
 
-    //fun IrDetalhar (v:View){
-    //    val telaDetalhar = Intent(this,DetalheEventoActivity::class.java);
-    //    startActivity(telaDetalhar);
-    //}
+//    fun IrDetalhar (v:View){
+//        //val telaDetalhar = Intent(this,DetalheEventoActivity::class.java);
+////        val telaDetalhar = Intent(this,DetalheEventoActivity::class.java)
+//        startActivity(telaDetalhar);
+//    }
 }

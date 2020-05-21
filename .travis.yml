@@ -23,5 +23,6 @@ android:
 
 # Run assemble and unit tests
 script:
+  - commitlint-travis
   - ./gradlew clean assembleDebug assembleRelease testDebug jacocoFullReport
   - bash <(curl -s https://codecov.io/bash)
