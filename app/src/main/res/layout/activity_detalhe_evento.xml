@@ -66,7 +66,7 @@
                 android:layout_below="@+id/tvTituloOrganizador"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@id/ivCirculo"
-                android:background="@drawable/star_yellow" />
+                android:background="@drawable/ic_star_yellow" />
 
             <ImageView
                 android:id="@+id/ivEstrelaDois"
@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvTituloOrganizador"
                 android:layout_toRightOf="@id/ivEstrelaUm"
-                android:background="@drawable/star_yellow" />
+                android:background="@drawable/ic_star_yellow" />
 
             <ImageView
                 android:id="@+id/ivEstrelaTres"
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvTituloOrganizador"
                 android:layout_toRightOf="@id/ivEstrelaDois"
-                android:background="@drawable/star_yellow" />
+                android:background="@drawable/ic_star_yellow" />
 
             <ImageView
                 android:id="@+id/ivEstrelaQuatro"
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvTituloOrganizador"
                 android:layout_toRightOf="@id/ivEstrelaTres"
-                android:background="@drawable/star_yellow" />
+                android:background="@drawable/ic_star_yellow" />
 
             <ImageView
                 android:id="@+id/ivEstrelaCinco"
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvTituloOrganizador"
                 android:layout_toRightOf="@id/ivEstrelaQuatro"
-                android:background="@drawable/star_black" />
+                android:background="@drawable/ic_star_black" />
 
             <TextView
                 android:id="@+id/tvEndereco"
@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvValor"
-                android:background="@drawable/carro"
+                android:background="@drawable/ic_car_white"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -146,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvValor"
                 android:layout_toRightOf="@+id/tvTempoCarro"
-                android:background="@drawable/onibus" />
+                android:background="@drawable/ic_bus_white" />
 
             <TextView
                 android:id="@+id/tvTempoOnibus"

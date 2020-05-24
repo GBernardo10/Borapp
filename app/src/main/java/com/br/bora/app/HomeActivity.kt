@@ -35,6 +35,10 @@ class HomeActivity : Fragment() {
         view.confirm.setOnClickListener{view ->
             startActivity(Intent(view.context,ConfirmarParticipanteActivity::class.java))
         }
+
+        view.settingsIcon.setOnClickListener{view ->
+            startActivity(Intent(view.context,ConfiguracoesActivity::class.java))
+        }
         return view
     }
 }

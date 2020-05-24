@@ -36,106 +36,66 @@
 
             <ImageView
                 android:id="@+id/card1"
-                android:layout_width="140dp"
-                android:layout_height="90dp"
                 android:layout_below="@id/preferencias"
                 android:layout_alignParentLeft="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
-                android:background="#2196F3"
                 android:onClick="onChangeFutebol"
-                android:padding="0dp"
-                android:scaleType="fitXY"
                 android:src="@drawable/eventos_futebol"
                 android:text="@string/eventosFutebol"
-                android:textColor="@color/cor_branco" />
+                style="@style/CardPreference" />
 
             <ImageView
                 android:id="@+id/card2"
-                android:layout_width="100dp"
-                android:layout_height="90dp"
                 android:layout_below="@id/preferencias"
                 android:layout_alignParentRight="true"
-                android:layout_centerHorizontal="true"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
                 android:layout_toRightOf="@+id/card1"
-                android:background="#2196F3"
                 android:onClick="onChangeRpg"
-                android:padding="0dp"
-                android:scaleType="fitXY"
                 android:src="@drawable/eventos_rpg"
                 android:text="@string/eventosRpg"
-                android:textColor="@color/cor_branco" />
+                style="@style/CardPreference"/>
 
             <ImageView
                 android:id="@+id/card3"
-                android:layout_width="140dp"
-                android:layout_height="90dp"
                 android:layout_below="@id/card1"
-                android:layout_marginTop="20dp"
-                android:background="#2196F3"
                 android:onClick="onChangeFestas"
-                android:padding="0dp"
-                android:scaleType="fitXY"
                 android:src="@drawable/eventos_festas"
                 android:text="@string/eventosFestas"
-                android:textColor="@color/cor_branco" />
+                style="@style/CardPreference"/>
 
             <ImageView
                 android:id="@+id/card4"
-                android:layout_width="100dp"
-                android:layout_height="90dp"
                 android:layout_below="@id/card2"
                 android:layout_alignParentRight="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
                 android:layout_toRightOf="@+id/card1"
-                android:background="#2196F3"
+                android:layout_marginStart="15dp"
                 android:onClick="onChangeBares"
-                android:padding="0dp"
-                android:scaleType="fitXY"
                 android:src="@drawable/eventos_bares"
                 android:text="@string/eventosBares"
-                android:textColor="@color/cor_branco" />
+                style="@style/CardPreference"/>
 
             <ImageView
                 android:id="@+id/card5"
-                android:layout_width="140dp"
-                android:layout_height="100dp"
                 android:layout_below="@id/card3"
-                android:layout_marginTop="20dp"
-                android:background="#2196F3"
                 android:onClick="onChangeIoga"
-                android:padding="0dp"
-                android:scaleType="fitXY"
                 android:src="@drawable/eventos_yoga"
                 android:text="@string/eventosYoga"
-                android:textColor="@color/cor_branco" />
+                style="@style/CardPreference"/>
 
             <ImageView
                 android:id="@+id/card6"
-                android:layout_width="180dp"
-                android:layout_height="100dp"
                 android:layout_below="@id/card4"
                 android:layout_alignParentRight="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="20dp"
                 android:layout_toRightOf="@+id/card1"
-                android:background="#2196F3"
                 android:onClick="onChangeShows"
-                android:padding="0dp"
-                android:scaleType="fitXY"
+                android:layout_marginStart="15dp"
                 android:src="@drawable/eventos_show"
                 android:text="@string/eventosShows"
-                android:textColor="@color/cor_branco" />
+                style="@style/CardPreference"/>
 
             <Button
                 android:id="@+id/btSalvar"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                style="@style/ButtonDefault"
                 android:layout_below="@id/card5"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"

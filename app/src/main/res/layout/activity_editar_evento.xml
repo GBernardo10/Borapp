@@ -64,153 +64,91 @@
 
             <EditText
                 android:id="@+id/label_nome_evento"
-                android:layout_width="500dp"
-                android:layout_height="40dp"
+                style="@style/FormEvento"
                 android:layout_below="@+id/string_nome_evento"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="#fff"
-                android:hint="@string/info_evento_nome"
-
-                >
-
-            </EditText>
+                android:hint="@string/info_evento_nome" />
 
             <TextView
                 android:id="@+id/string_cep_evento"
-                style="@style/FormLabel"
-                android:layout_width="100dp"
+                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/label_nome_evento"
                 android:text="@string/info_evento_cep" />
 
             <EditText
                 android:id="@+id/label_cep_evento"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
+                style="@style/FormEventoHalf"
                 android:layout_below="@+id/string_cep_evento"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:background="#fff"
-                android:hint="@string/info_evento_cep"
-
-                >
-
-            </EditText>
+                android:hint="@string/info_evento_cep" />
 
             <TextView
                 android:id="@+id/string_numero_rua_evento"
-                style="@style/FormLabel"
-                android:layout_width="120dp"
+                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/label_nome_evento"
                 android:layout_alignParentEnd="true"
                 android:text="@string/info_evento_numero_rua" />
 
             <EditText
                 android:id="@+id/label_numero_rua_evento"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
+                style="@style/FormEventoHalf"
                 android:layout_below="@+id/string_numero_rua_evento"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:background="#fff"
-                android:hint="@string/info_evento_numero_rua"
-
-
-                >
-
-            </EditText>
+                android:hint="@string/info_evento_numero_rua"/>
 
             <TextView
                 android:id="@+id/string_data_evento"
-                style="@style/FormLabel"
-                android:layout_width="125dp"
+                style="@style/FormLabelEventoHalf"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/label_cep_evento"
                 android:text="@string/info_evento_data" />
 
             <EditText
                 android:id="@+id/label_data_evento"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
+                style="@style/FormEventoHalf"
                 android:layout_below="@+id/string_data_evento"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:background="#fff"
-                android:hint="Data"
-
-                >
-
-            </EditText>
-
+                android:hint="Data"/>
 
             <TextView
                 android:id="@+id/string_horario_evento"
-                style="@style/FormLabel"
-                android:layout_width="120dp"
+                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/label_numero_rua_evento"
                 android:layout_alignParentEnd="true"
                 android:text="@string/info_evento_horario" />
 
             <EditText
                 android:id="@+id/label_horario_evento"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
+                style="@style/FormEventoHalf"
                 android:layout_below="@+id/string_horario_evento"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:background="#fff"
-                android:hint="@string/info_evento_horario">
-
-            </EditText>
+                android:hint="@string/info_evento_horario" />
 
             <TextView
                 android:id="@+id/string_valor_evento"
-                style="@style/FormLabel"
-                android:layout_width="125dp"
+                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/label_data_evento"
                 android:text="@string/info_evento_valor" />
 
             <EditText
                 android:id="@+id/label_valor_evento"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
+                style="@style/FormEventoHalf"
                 android:layout_below="@+id/string_valor_evento"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:background="#fff"
-                android:hint="@string/info_evento_valor"
-                android:textSize="17sp">
+                android:hint="@string/info_evento_valor" />
 
-            </EditText>
+            <TextView
+                android:id="@+id/tvEventoPago"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/label_horario_evento"
+                android:layout_alignParentEnd="true"
+                android:layout_toStartOf="@+id/checkbox_valor_evento"
+                android:text="Evento Gratuito" />
 
-            <CheckBox
+            <Switch
                 android:id="@+id/checkbox_valor_evento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/string_valor_evento"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="128dp"
-                android:buttonTint="#fff">
-
-            </CheckBox>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/string_valor_evento"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="11dp"
-                android:layout_marginEnd="18dp"
-                android:layout_toStartOf="@+id/checkbox_valor_evento"
-                android:text="Evento Gratuito"
-                android:textColor="#fff"
-                android:textSize="15dp"
-
-                ></TextView>
-
+                android:layout_marginEnd="110dp" />
+            
             <TextView
                 android:id="@+id/string_adicionar_categoria"
                 style="@style/FormLabel"
@@ -219,17 +157,9 @@
 
             <EditText
                 android:id="@+id/label_adicionar_categoria_evento"
-                android:layout_width="500dp"
-                android:layout_height="40dp"
+                style="@style/FormEvento"
                 android:layout_below="@+id/string_adicionar_categoria"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:background="#fff"
-                android:hint="Ex Futebol, Natação, Basquete">
-
-            </EditText>
-
+                android:hint="Ex Futebol, Natação, Basquete" />
 
             <TextView
                 android:id="@+id/string_categoria_adicionada"
@@ -272,25 +202,16 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:text="Defina a quantidade de Participantes"
-                android:textColor="#fff"
-                android:textSize="17sp">
-
-            </TextView>
-
+                android:textColor="@color/cor_branco"
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/label_qtd_participantes"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
+                style="@style/FormEventoHalf"
                 android:layout_below="@+id/string_categoria_adicionada"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="10dp"
-                android:background="#fff"
-                android:hint="1"
-                android:textSize="20dp">
-
-            </EditText>
+                android:hint="1" />
 
             <TextView
                 android:id="@+id/string_adicionar_participantes"
@@ -300,16 +221,9 @@
 
             <EditText
                 android:id="@+id/label_adicionar_participantes"
-                android:layout_width="500dp"
-                android:layout_height="40dp"
+                style="@style/FormEvento"
                 android:layout_below="@+id/string_adicionar_participantes"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:background="#fff"
-                android:hint="ex chileno123">
-
-            </EditText>
+                android:hint="ex chileno123" />
 
             <ScrollView
                 android:id="@+id/scroll2"
@@ -323,8 +237,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:background="#00BEFF"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp">
@@ -360,15 +272,13 @@
                 android:layout_height="20dp"
                 android:layout_below="@+id/string_ver_mais_usuarios"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_arrow_downward_black_24dp">
-
-
-            </ImageView>
+                android:src="@drawable/ic_arrow_downward_black_24dp" />
 
             <Button
                 style="@style/ButtonDefault"
                 android:layout_below="@+id/icon_ver_mais"
-                android:text="@string/editar_evento" />
+                android:text="@string/editar_evento"
+                android:layout_marginBottom="20dp"/>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
