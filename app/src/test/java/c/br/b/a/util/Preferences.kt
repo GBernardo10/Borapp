@@ -1,4 +1,4 @@
 package c.br.b.a.util
 
-class Preferences {
+public class Preferences {
 }

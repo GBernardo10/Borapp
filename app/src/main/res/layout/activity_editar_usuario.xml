@@ -18,7 +18,6 @@
         android:layout_below="@+id/logo">
 
         <RelativeLayout style="@style/RelativeBody">
-
             <ImageView
                 android:id="@+id/ivFoto"
                 style="@style/PhotoView"/>
@@ -147,7 +146,7 @@
                 android:layout_below="@id/etEmail"
                 android:layout_marginTop="20dp"
                 android:background="@color/cor_azul"
-                android:text="@string/login" />
+                android:text="@string/alterar" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
