@@ -15,16 +15,6 @@ class EventosPreferenciasActivity : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-<<<<<<< HEAD:app/src/main/java/com/br/bora/app/EventosPreferencias.kt
-        return inflater.inflate(R.layout.activity_eventos_preferencias,container,false)
-    }
-
-//    fun IrDetalhar (v:View){
-//        //val telaDetalhar = Intent(this,DetalheEventoActivity::class.java);
-////        val telaDetalhar = Intent(this,DetalheEventoActivity::class.java)
-//        startActivity(telaDetalhar);
-//    }
-=======
         val view = inflater.inflate(R.layout.activity_eventos_preferencias, container, false)
 
         view.settingsIcon.setOnClickListener { view ->
@@ -32,5 +22,4 @@ class EventosPreferenciasActivity : Fragment() {
         }
         return view;
     }
->>>>>>> feature/gesuvs:app/src/main/java/com/br/bora/app/EventosPreferenciasActivity.kt
 }
