@@ -1,113 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#320236"
-    android:padding="50dp"
+    android:background="@color/cor_roxo"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:id="@+id/rl_login"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        style="@style/RelativeBody">
+
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
             android:id="@+id/logo"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true"
-            android:src="@mipmap/logo"
-            android:contentDescription="@string/icone_logo">
-        </ImageView>
+            style="@style/LogoCircle"
+            android:src="@drawable/logobora_foreground" />
 
         <TextView
-            android:textColor="#fff"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:layout_above="@id/login"
-            android:layout_marginBottom="10dp"
-            android:text="@string/login"
             android:id="@+id/label_login"
-            >
-        </TextView>
+            android:layout_above="@id/login"
+            android:text="@string/login"
+            style="@style/FormLabel" />
 
         <EditText
             android:id="@+id/login"
-            android:labelFor="@id/label_login"
-            android:hint="@string/username"
-            android:layout_width="match_parent"
-            android:textColor="#000"
-            android:layout_height="55dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:layout_centerVertical="true"
-            android:background="@color/c_white"
+            style="@style/FormEditText"
             android:autofillHints=""
-            android:inputType="text">
-        </EditText>
-
+            android:hint="@string/username"
+            android:inputType="text"
+            android:labelFor="@id/label_login" />
 
         <TextView
             android:id="@+id/label_pass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/FormLabel"
             android:layout_above="@id/pass"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:layout_marginBottom="-40dp"
-            android:text="@string/senha"
-            android:textColor="#fff">
-
-        </TextView>
+            android:text="@string/senha"/>
 
         <EditText
             android:id="@+id/pass"
-            android:hint="@string/senha"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="50dp"
-            android:paddingStart="20dp"
-            android:labelFor="@id/label_pass"
-            android:paddingEnd="20dp"
-            android:inputType="text"
+            style="@style/FormEditText"
             android:layout_below="@id/login"
-            android:background="#fff"
-            android:autofillHints="">
-        </EditText>
+            android:layout_marginTop="50dp"
+            android:autofillHints=""
+            android:hint="@string/senha"
+            android:inputType="textPassword"
+            android:labelFor="@id/label_pass"></EditText>
+
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:text="@string/login"
-            android:textSize="20sp"
-            android:background="#00BEFF"
-            android:layout_below="@id/pass"
-            android:layout_marginTop="20dp"
-            >
-        </Button>
+            style="@style/ButtonDefault"
+            android:text="@string/login"></Button>
+
         <TextView
             android:id="@+id/forgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/forgot_password"
-            android:textColor="#00BEFF"
-            android:layout_marginTop="20dp"
+            android:layout_below="@id/btnLogin"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/btnLogin">
-        </TextView>
+            android:layout_marginTop="20dp"
+            android:onClick="irEsqueciSenha"
+            android:text="@string/forgot_password"
+            android:textColor="#00BEFF"></TextView>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/register"
-            android:textColor="#00BEFF"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/forgotPassword"
-            android:onClick="irCadastrar">
-        </TextView>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:onClick="irCadastrar"
+            android:text="@string/register"
+            android:textColor="#00BEFF"></TextView>
     </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

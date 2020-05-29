@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cor_roxo"
+    tools:context=".ConfiguracaoPreferenciaActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        style="@style/Logo"
+        android:src="@drawable/bora_branco" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/logo">
+
+        <RelativeLayout style="@style/RelativeBody">
+
+            <TextView
+                android:id="@+id/labelConfig"
+                style="@style/TitleActivity"
+                android:text="@string/labelPreferencias" />
+
+            <TextView
+                android:id="@+id/preferencias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labelConfig"
+                android:layout_marginTop="6dp"
+                android:text="@string/labelTipoEventos"
+                android:textColor="@color/cor_azul"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/card1"
+                android:layout_below="@id/preferencias"
+                android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="onChangeFutebol"
+                android:src="@drawable/eventos_futebol"
+                android:text="@string/eventosFutebol"
+                style="@style/CardPreference" />
+
+            <ImageView
+                android:id="@+id/card2"
+                android:layout_below="@id/preferencias"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="15dp"
+                android:layout_toRightOf="@+id/card1"
+                android:onClick="onChangeRpg"
+                android:src="@drawable/eventos_rpg"
+                android:text="@string/eventosRpg"
+                style="@style/CardPreference"/>
+
+            <ImageView
+                android:id="@+id/card3"
+                android:layout_below="@id/card1"
+                android:onClick="onChangeFestas"
+                android:src="@drawable/eventos_festas"
+                android:text="@string/eventosFestas"
+                style="@style/CardPreference"/>
+
+            <ImageView
+                android:id="@+id/card4"
+                android:layout_below="@id/card2"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/card1"
+                android:layout_marginStart="15dp"
+                android:onClick="onChangeBares"
+                android:src="@drawable/eventos_bares"
+                android:text="@string/eventosBares"
+                style="@style/CardPreference"/>
+
+            <ImageView
+                android:id="@+id/card5"
+                android:layout_below="@id/card3"
+                android:onClick="onChangeIoga"
+                android:src="@drawable/eventos_yoga"
+                android:text="@string/eventosYoga"
+                style="@style/CardPreference"/>
+
+            <ImageView
+                android:id="@+id/card6"
+                android:layout_below="@id/card4"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/card1"
+                android:onClick="onChangeShows"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/eventos_show"
+                android:text="@string/eventosShows"
+                style="@style/CardPreference"/>
+
+            <Button
+                android:id="@+id/btSalvar"
+                style="@style/ButtonDefault"
+                android:layout_below="@id/card5"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/btn_default"
+                android:text="@string/save"
+                android:textColor="@color/cor_branco"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

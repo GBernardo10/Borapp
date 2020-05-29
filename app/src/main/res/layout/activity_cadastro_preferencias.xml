@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cor_roxo"
+    tools:context=".CadastroPreferenciasActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        style="@style/Logo"
+        android:src="@drawable/bora_branco" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/logo">
+
+        <RelativeLayout style="@style/RelativeBody">
+
+            <TextView
+                android:id="@+id/cadastro"
+                style="@style/TitleActivity"
+                android:text="@string/cadastre_preferencia" />
+
+            <EditText
+                android:id="@+id/etPref1"
+                style="@style/FormEditText"
+                android:layout_below="@+id/cadastro"
+                android:layout_marginTop="40dp"
+                android:hint="@string/esporte_favorito" />
+
+            <EditText
+                android:id="@+id/etPref2"
+                style="@style/FormEditText"
+                android:layout_below="@+id/etPref1"
+                android:layout_marginTop="20dp"
+                android:hint="@string/festa_favorita" />
+
+            <EditText
+                android:id="@+id/etPref3"
+                style="@style/FormEditText"
+                android:layout_below="@+id/etPref2"
+                android:layout_marginTop="20dp"
+                android:hint="@string/social_favorito" />
+
+            <Button
+                style="@style/ButtonDefault"
+                android:layout_below="@+id/etPref3"
+                android:text="@string/cadastrar" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

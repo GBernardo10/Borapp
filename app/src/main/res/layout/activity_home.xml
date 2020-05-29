@@ -1,103 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#320236"
     android:layout_height="match_parent"
+    android:background="#320236"
     tools:context=".HomeActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/rl_home"
-            android:padding="20dp">
+            style="@style/RelativeBody">
+
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:id="@+id/settingsIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_settings"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"/>
+
+            <ImageView
                 android:id="@+id/logo"
-                android:layout_marginTop="30dp"
-                android:layout_centerHorizontal="true"
-                android:src="@mipmap/logo"
-                android:contentDescription="@string/icone_logo">
-            </ImageView>
+                style="@style/LogoCircle"
+                android:src="@drawable/logobora_foreground" />
 
             <TextView
                 android:id="@+id/welcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/cor_branco"
-                android:text="Seja bem vindo, usuario"
                 android:layout_below="@id/logo"
-                />
+                android:text="Seja bem vindo, usuario"
+                android:textColor="@color/cor_branco" />
+
             <View
                 android:id="@+id/wallet"
                 android:layout_width="match_parent"
                 android:layout_height="115dp"
-                android:layout_marginTop="10dp"
                 android:layout_below="@id/welcome"
-                android:background="@drawable/white_shape_border"
-                >
-            </View>
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_shape_border"></View>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/cor_branco"
-                android:layout_marginTop="180dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="180dp"
                 android:text="@string/my_account"
-                />
+                android:textColor="@color/cor_branco" />
+
             <Button
                 android:id="@+id/add_role"
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/add_role"
-                android:textSize="20sp"
-                android:textColor="@color/cor_branco"
-                android:background="@drawable/btn_default"
+                style="@style/ButtonDefaultRadio"
                 android:layout_below="@id/wallet"
-                />
+                android:layout_marginTop="20dp"
+                android:text="@string/add_role" />
 
             <Button
                 android:id="@+id/my_role"
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:text="@string/my_role"
-                android:textSize="20sp"
-                android:textColor="@color/cor_branco"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_default"
+                style="@style/ButtonDefaultRadio"
                 android:layout_below="@id/add_role"
-                />
+                android:layout_marginTop="20dp"
+                android:text="@string/my_role" />
 
             <Button
                 android:id="@+id/settings"
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/settings"
-                android:textSize="20sp"
-                android:textColor="@color/cor_branco"
-                android:background="@drawable/btn_default"
+                style="@style/ButtonDefaultRadio"
                 android:layout_below="@id/my_role"
-                />
+                android:layout_marginTop="20dp"
+                android:text="@string/settings" />
 
             <Button
                 android:id="@+id/confirm"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/btn_default"
-                android:text="@string/confirm_event"
-                android:textSize="20sp"
-                android:textColor="@color/cor_branco"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="100dp"
+                style="@style/ButtonDefaultRadio"
                 android:layout_below="@id/settings"
-                />
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="100dp"
+                android:text="@string/confirm_event" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

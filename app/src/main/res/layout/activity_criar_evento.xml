@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#320236"
+    tools:context=".CriarEventoActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        style="@style/Logo"
+        android:src="@drawable/bora_branco" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo">
+
+        <RelativeLayout style="@style/RelativeBody">
+
+            <TextView
+                android:id="@+id/string_cadastre_seu_evento"
+                style="@style/TitleActivity"
+                android:text="@string/cadastrar_evento" />
+
+            <ImageView
+                android:id="@+id/icon_upload_image"
+                style="@style/PhotoView"
+                android:layout_below="@+id/string_cadastre_seu_evento" />
+
+            <TextView
+                android:id="@+id/description_upload_image"
+                style="@style/TitleImage"
+                android:layout_below="@id/icon_upload_image"
+                android:text="@string/insira_imagem" />
+
+            <TextView
+                android:id="@+id/description_tipo_evento"
+                style="@style/FormLabel"
+                android:layout_below="@id/description_upload_image"
+                android:text="@string/tipo_evento" />
+
+            <Button
+                android:id="@+id/btnPublic"
+                style="@style/ButtonBlack"
+                android:layout_below="@id/description_tipo_evento"
+                android:text="@string/desciption_button_public"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/btnPrivate"
+                style="@style/ButtonOrange"
+                android:layout_below="@id/description_tipo_evento"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:text="@string/desciption_button_private"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:id="@+id/string_nome_evento"
+                style="@style/FormLabel"
+                android:layout_below="@id/btnPrivate"
+                android:text="Nome do evento" />
+
+            <EditText
+                android:id="@+id/label_nome_evento"
+                style="@style/FormEvento"
+                android:layout_below="@+id/string_nome_evento"
+                android:hint="@string/info_evento_nome" />
+
+            <TextView
+                android:id="@+id/string_cep_evento"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/label_nome_evento"
+                android:text="@string/info_evento_cep" />
+
+            <EditText
+                android:id="@+id/label_cep_evento"
+                style="@style/FormEventoHalf"
+                android:layout_below="@+id/string_cep_evento"
+                android:hint="@string/info_evento_cep" />
+
+            <TextView
+                android:id="@+id/string_numero_rua_evento"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/label_nome_evento"
+                android:layout_alignParentEnd="true"
+                android:text="@string/info_evento_numero_rua" />
+
+            <EditText
+                android:id="@+id/label_numero_rua_evento"
+                style="@style/FormEventoHalf"
+                android:layout_below="@+id/string_numero_rua_evento"
+                android:layout_alignParentEnd="true"
+                android:hint="@string/info_evento_numero_rua" />
+
+            <TextView
+                android:id="@+id/string_data_evento"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/label_cep_evento"
+                android:text="@string/info_evento_data" />
+
+            <EditText
+                android:id="@+id/label_data_evento"
+                style="@style/FormEventoHalf"
+                android:layout_below="@+id/string_data_evento"
+                android:hint="Data" />
+
+
+            <TextView
+                android:id="@+id/string_horario_evento"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/label_numero_rua_evento"
+                android:layout_alignParentEnd="true"
+                android:text="@string/info_evento_horario" />
+
+            <EditText
+                android:id="@+id/label_horario_evento"
+                style="@style/FormEventoHalf"
+                android:layout_below="@+id/string_horario_evento"
+                android:layout_alignParentEnd="true"
+                android:hint="@string/info_evento_horario" />
+
+            <TextView
+                android:id="@+id/string_valor_evento"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/label_data_evento"
+                android:text="@string/info_evento_valor" />
+
+            <EditText
+                android:id="@+id/label_valor_evento"
+                style="@style/FormEventoHalf"
+                android:layout_below="@+id/string_valor_evento"
+                android:hint="@string/info_evento_valor" />
+
+            <TextView
+                android:id="@+id/tvEventoPago"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/label_horario_evento"
+                android:layout_alignParentEnd="true"
+                android:layout_toStartOf="@+id/checkbox_valor_evento"
+                android:text="Evento Gratuito" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvEventoPago"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="110dp"/>
+
+            <TextView
+                android:id="@+id/string_adicionar_categoria"
+                style="@style/FormLabel"
+                android:layout_below="@+id/label_valor_evento"
+                android:text="Adicionar Categoria" />
+
+            <EditText
+                android:id="@+id/label_adicionar_categoria_evento"
+                style="@style/FormEvento"
+                android:layout_below="@+id/string_adicionar_categoria"
+                android:hint="Ex Futebol, Natação, Basquete" />
+
+            <TextView
+                android:id="@+id/string_categoria_adicionada"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_adicionar_categoria_evento"
+                android:layout_marginTop="10dp"
+                android:background="#00BEFF"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="Futebol"
+                android:textColor="#000"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/string_categoria_adicionada2"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_adicionar_categoria_evento"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/string_categoria_adicionada"
+                android:background="#00BEFF"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="Volêi"
+                android:textColor="#000"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/string_quantidade_participante"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/string_categoria_adicionada"
+                android:layout_marginTop="15dp"
+                android:text="Defina a quantidade de Participantes"
+                android:textColor="@color/cor_branco"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/label_qtd_participantes"
+                style="@style/FormEventoHalf"
+                android:layout_below="@+id/string_categoria_adicionada"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:hint="1"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/string_adicionar_participantes"
+                style="@style/FormLabel"
+                android:layout_below="@+id/string_quantidade_participante"
+                android:text="Adicionar Participantes" />
+
+
+            <EditText
+                android:id="@+id/label_adicionar_participantes"
+                style="@style/FormEvento"
+                android:layout_below="@+id/string_adicionar_participantes"
+                android:hint="ex chileno123" />
+
+            <ScrollView
+                android:id="@+id/scroll2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_adicionar_participantes"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/usuario_adicionado_novo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#00BEFF"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <ImageView
+                        android:id="@+id/icon_avatar_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@id/icon_avatar_image"
+                        android:text="Capixaba06">
+
+                    </TextView>
+                </RelativeLayout>
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/string_ver_mais_usuarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/scroll2"
+                android:gravity="center_horizontal"
+                android:text="Ver Mais"
+                android:textColor="#FFFF"></TextView>
+
+            <ImageView
+                android:id="@+id/icon_ver_mais"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/string_ver_mais_usuarios"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_arrow_downward_black_24dp" />
+
+            <Button
+                style="@style/ButtonDefault"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/icon_ver_mais"
+                android:text="@string/cadastrar_evento"
+                android:layout_marginBottom="20dp"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
 import com.br.bora.app.model.RequestUserLogin
 import com.br.bora.app.services.UserService
 import com.br.bora.app.services.config.RetrofitInitializer
@@ -48,15 +47,16 @@ class MainActivity : AppCompatActivity() {
 	"password":"#futebol1996"
 
  */
-
-
+    fun irEsqueciSenha(v:View){
+        val telaEsqueciSenha = Intent(this,EsqueciMinhaSenha::class.java)
+        startActivity(telaEsqueciSenha);
+    }
     fun irHome(){
         val telaHome = Intent(this,TabBarActivity::class.java)
         startActivity(telaHome)
     }
-
     fun irCadastrar(v: View){
-        val telaCadastro = Intent(this,CadastroActivity::class.java)
+        val telaCadastro = Intent(this,CadastroPfActivity::class.java)
         startActivity(telaCadastro)
     }
 }

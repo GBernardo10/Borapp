@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#320236"
+    tools:context=".EditarUsuarioActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        style="@style/Logo"
+        android:src="@drawable/bora_branco" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/logo">
+
+        <RelativeLayout style="@style/RelativeBody">
+
+            <ImageView
+                android:id="@+id/ivFoto"
+                style="@style/PhotoView"/>
+
+            <TextView
+                android:id="@+id/tvAlteraFoto"
+                style="@style/TitleImage"
+                android:layout_below="@+id/ivFoto"
+                android:text="@string/altera_foto" />
+
+            <TextView
+                android:id="@+id/tvQualificacao"
+                android:layout_below="@+id/tvAlteraFoto"
+                android:layout_marginTop="30dp"
+                android:text="@string/qualificacao_usuario"
+                style="@style/TitleBodyText"/>
+
+            <ImageView
+                android:id="@+id/ivEstrelaUm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAlteraFoto"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/tvQualificacao"
+                android:background="@drawable/ic_star_yellow" />
+
+            <ImageView
+                android:id="@+id/ivEstrelaDois"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAlteraFoto"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/ivEstrelaUm"
+                android:background="@drawable/ic_star_yellow" />
+
+            <ImageView
+                android:id="@+id/ivEstrelaTres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAlteraFoto"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/ivEstrelaDois"
+                android:background="@drawable/ic_star_yellow" />
+
+            <ImageView
+                android:id="@+id/ivEstrelaQuatro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAlteraFoto"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/ivEstrelaTres"
+                android:background="@drawable/ic_star_yellow" />
+
+            <ImageView
+                android:id="@+id/ivEstrelaCinco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAlteraFoto"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/ivEstrelaQuatro"
+                android:background="@drawable/ic_star_black" />
+
+            <TextView
+                android:id="@+id/tvTituloUsuario"
+                android:layout_below="@+id/tvQualificacao"
+                android:layout_marginTop="30dp"
+                android:text="@string/nome_usuario"
+                style="@style/TitleBodyText"/>
+
+            <TextView
+                android:id="@+id/tvUsuario"
+                android:layout_below="@+id/tvQualificacao"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@+id/tvTituloUsuario"
+                android:text="WilldoJotinha"
+                style="@style/TextBodyText"/>
+
+            <TextView
+                android:id="@+id/tvTituloCpf"
+                android:layout_below="@+id/tvTituloUsuario"
+                android:layout_marginTop="10dp"
+                android:text="@string/titulo_cpf"
+                style="@style/TitleBodyText"/>
+
+            <TextView
+                android:id="@+id/tvCpf"
+                android:layout_below="@+id/tvTituloUsuario"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tvTituloUsuario"
+                android:text="000.000.000-00"
+                style="@style/TextBodyText"/>
+
+            <TextView
+                android:id="@+id/tvLabelCelular"
+                style="@style/FormLabel"
+                android:layout_below="@id/tvCpf"
+                android:text="@string/celular"/>
+
+            <EditText
+                android:id="@+id/etCelular"
+                style="@style/FormEditText"
+                android:layout_below="@+id/tvLabelCelular"
+                android:background="@color/cor_branco"
+                android:hint="@string/celular"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/tvLabelEmail"
+                style="@style/FormLabel"
+                android:layout_below="@id/etCelular"
+                android:text="@string/email"/>
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/FormEditText"
+                android:layout_below="@+id/tvLabelEmail"
+                android:hint="@string/email"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btAlterar"
+                style="@style/ButtonDefault"
+                android:layout_below="@id/etEmail"
+                android:layout_marginTop="20dp"
+                android:background="@color/cor_azul"
+                android:text="@string/login" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

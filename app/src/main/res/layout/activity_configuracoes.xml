@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cor_roxo"
+    tools:context=".ConfiguracoesActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        style="@style/Logo"
+        android:src="@drawable/bora_branco" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/logo">
+
+        <RelativeLayout style="@style/RelativeBody">
+
+            <TextView
+                android:id="@+id/labelConfig"
+                style="@style/TitleActivity"
+                android:text="@string/configuracoes" />
+
+            <Button
+                android:id="@+id/btEditarPerfil"
+                style="@style/ButtonDefaultRadio"
+                android:layout_below="@id/labelConfig"
+                android:layout_marginTop="20dp"
+                android:onClick="irEditarPerfil"
+                android:text="@string/configEditarPerfil" />
+
+            <Button
+                android:id="@+id/btEditarSenha"
+                style="@style/ButtonDefaultRadio"
+                android:layout_below="@id/btEditarPerfil"
+                android:layout_marginTop="20dp"
+                android:onClick="irEditarPerfil"
+                android:text="@string/editarSenha" />
+
+            <Button
+                android:id="@+id/btPreferencias"
+                style="@style/ButtonDefaultRadio"
+                android:layout_below="@id/btEditarSenha"
+                android:layout_marginTop="20dp"
+                android:onClick="irConfiguracoesPreferenciais"
+                android:text="@string/configPreferencias" />
+
+            <Button
+                android:id="@+id/btNotificacoes"
+                style="@style/ButtonDefaultRadio"
+                android:layout_below="@id/btPreferencias"
+                android:layout_marginTop="20dp"
+                android:text="@string/configNotificacoes" />
+
+            <Button
+                android:id="@+id/btSair"
+                style="@style/ButtonOrange"
+                android:layout_below="@+id/btNotificacoes"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:onClick="logout"
+                android:text="@string/logout"
+                android:textSize="15dp" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

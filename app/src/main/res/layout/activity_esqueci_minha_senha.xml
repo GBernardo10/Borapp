@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#320236"
+    tools:context=".EsqueciMinhaSenha">
+
+    <RelativeLayout style="@style/RelativeBody">
+
+        <ImageView
+            android:id="@+id/logo"
+            style="@style/LogoCircle"
+            android:src="@drawable/logobora_foreground" />
+
+        <TextView
+            android:id="@+id/label_login"
+            style="@style/FormLabel"
+            android:layout_above="@id/login"
+            android:text="@string/email"/>
+
+        <EditText
+            android:id="@+id/login"
+            style="@style/FormEditText"
+            android:autofillHints=""
+            android:hint="@string/username"
+            android:inputType="text"
+            android:labelFor="@id/label_login"></EditText>
+
+        <Button
+            android:id="@+id/btnLembrarSenha"
+            style="@style/ButtonDefault"
+            android:layout_below="@id/login"
+            android:layout_marginTop="20dp"
+            android:onClick="irMain"
+            android:text="@string/lembrar_senha"></Button>
+    </RelativeLayout>
+</RelativeLayout>

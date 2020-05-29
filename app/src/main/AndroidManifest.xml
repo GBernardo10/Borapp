@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.br.bora.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.camera" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -11,13 +15,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EventosPreferencias" />
+        <activity android:name=".ScannerActivity"></activity>
+        <activity android:name=".EditarUsuarioActivity" />
+        <activity android:name=".ConfirmarParticipanteActivity" />
+        <activity android:name=".SalvarNovaSenha" />
+        <activity android:name=".EsqueciMinhaSenha" />
+        <activity android:name=".CadastroPreferenciasActivity" />
+        <activity android:name=".ConfiguracaoPreferenciaActivity" />
+        <activity android:name=".ConfiguracoesActivity" />
+        <activity android:name=".ConfirmarEventoActivity" />
+        <activity android:name=".EventosPreferenciasActivity" />
         <activity android:name=".DetalheEventoActivity" />
-        <activity android:name=".MeusRoles" />
+        <activity android:name=".MeusRolesActivity" />
         <activity android:name=".TabBarActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".CadastroPfActivity" />
-        <activity android:name=".CadastroActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,5 +37,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".EditarEventoActivity" />
+        <activity android:name=".CriarEventoActivity" />
     </application>
+
 </manifest>
