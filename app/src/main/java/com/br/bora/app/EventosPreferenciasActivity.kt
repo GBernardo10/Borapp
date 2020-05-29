@@ -17,8 +17,8 @@ class EventosPreferenciasActivity : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.activity_eventos_preferencias, container, false)
 
-        view.settingsIcon.setOnClickListener { view ->
-            startActivity(Intent(view.context, ConfiguracoesActivity::class.java))
+        view.settingsIcon.setOnClickListener {
+            startActivity(Intent(context, ConfiguracoesActivity::class.java))
         }
         return view;
     }
