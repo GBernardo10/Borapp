@@ -4,26 +4,26 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import kotlinx.android.synthetic.main.activity_configuracoes.*
 
 class ConfiguracoesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configuracoes)
-    }
 
-    fun irEditarPerfil(v: View) {
-        val telaEditarPerfil = Intent(this,EditarUsuarioActivity::class.java)
-        startActivity(telaEditarPerfil)
-    }
-
-    fun irConfiguracoesPreferenciais(v: View) {
-        val telaConfiguracoesPreferenciais = Intent(this,ConfiguracaoPreferenciaActivity::class.java)
-        startActivity(telaConfiguracoesPreferenciais)
-    }
-
-    fun logout(v: View) {
-        val telaLogin = Intent(this,MainActivity::class.java)
-        startActivity(telaLogin)
+        btEditarPerfil.setOnClickListener {
+            startActivity(Intent(this,EditarUsuarioActivity::class.java))
+        }
+        btEditarSenha.setOnClickListener {
+            startActivity(Intent(this,SalvarNovaSenha::class.java))
+        }
+        btPreferencias.setOnClickListener {
+            startActivity(Intent(this,ConfiguracaoPreferenciaActivity::class.java))
+        }
+        btSair.setOnClickListener {
+            //Limpar o preferences com o nome do usuário
+            startActivity(Intent(this,MainActivity::class.java))
+        }
     }
 }

@@ -147,7 +147,7 @@
                 android:layout_below="@id/etEmail"
                 android:layout_marginTop="20dp"
                 android:background="@color/cor_azul"
-                android:text="@string/login" />
+                android:text="@string/alterar" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

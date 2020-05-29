@@ -29,7 +29,6 @@
                 style="@style/ButtonDefaultRadio"
                 android:layout_below="@id/labelConfig"
                 android:layout_marginTop="20dp"
-                android:onClick="irEditarPerfil"
                 android:text="@string/configEditarPerfil" />
 
             <Button
@@ -37,7 +36,6 @@
                 style="@style/ButtonDefaultRadio"
                 android:layout_below="@id/btEditarPerfil"
                 android:layout_marginTop="20dp"
-                android:onClick="irEditarPerfil"
                 android:text="@string/editarSenha" />
 
             <Button
@@ -45,7 +43,6 @@
                 style="@style/ButtonDefaultRadio"
                 android:layout_below="@id/btEditarSenha"
                 android:layout_marginTop="20dp"
-                android:onClick="irConfiguracoesPreferenciais"
                 android:text="@string/configPreferencias" />
 
             <Button
@@ -61,7 +58,6 @@
                 android:layout_below="@+id/btNotificacoes"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"
-                android:onClick="logout"
                 android:text="@string/logout"
                 android:textSize="15dp" />
         </RelativeLayout>
