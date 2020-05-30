@@ -93,4 +93,6 @@
     <string name="cadastrar_evento">Cadastrar Evento</string>
     <string name="editar_evento">Editar Evento</string>
     <string name="celular">Celular</string>
+    <string name="permission_denied">Sem permissão</string>
+    <string name="dots">...</string>
 </resources>

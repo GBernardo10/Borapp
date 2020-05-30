@@ -23,21 +23,21 @@ class HomeActivity : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.activity_home, container, false)
 
-        view.add_role.setOnClickListener{view ->
-            startActivity(Intent(view.context,CriarEventoActivity::class.java))
+        view.add_role.setOnClickListener{
+            startActivity(Intent(context,CriarEventoActivity::class.java))
         }
-        view.my_role.setOnClickListener{view ->
-            startActivity(Intent(view.context,MeusRolesActivity::class.java))
+        view.my_role.setOnClickListener{
+            startActivity(Intent(context,MeusRolesActivity::class.java))
         }
-        view.settings.setOnClickListener{view ->
-            startActivity(Intent(view.context,CadastroPreferenciasActivity::class.java))
+        view.settings.setOnClickListener{
+            startActivity(Intent(context,CadastroPreferenciasActivity::class.java))
         }
-        view.confirm.setOnClickListener{view ->
-            startActivity(Intent(view.context,ConfirmarParticipanteActivity::class.java))
+        view.confirm.setOnClickListener{
+            startActivity(Intent(context,ScannerActivity::class.java))
         }
 
-        view.settingsIcon.setOnClickListener{view ->
-            startActivity(Intent(view.context,ConfiguracoesActivity::class.java))
+        view.settingsIcon.setOnClickListener{
+            startActivity(Intent(context,ConfiguracoesActivity::class.java))
         }
         return view
     }

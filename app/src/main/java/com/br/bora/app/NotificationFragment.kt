@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-/**
- * A simple [Fragment] subclass.
+/*
+    A simple [Fragment] subclass.
  */
 class NotificationFragment : Fragment() {
 

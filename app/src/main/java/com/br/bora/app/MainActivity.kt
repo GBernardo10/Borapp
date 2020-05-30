@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.EditText
 import com.br.bora.app.model.RequestUserLogin
 import com.br.bora.app.services.UserService
 import com.br.bora.app.services.config.RetrofitInitializer
