@@ -41,7 +41,7 @@ class EditarUsuarioActivity : AppCompatActivity() {
     }
     fun openCamera() {
         ImagePicker.with(this)
-            //.crop(16f, 9f)	//Crop image with 16:9 aspect ratio
+            .crop(16f, 9f)	//Crop image with 16:9 aspect ratio
             .maxResultSize(520,520)
             .start()
     }
