@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/cor_roxo"
     tools:context=".CadastroPfActivity">
+
     <ImageView
         android:id="@+id/logo"
         style="@style/Logo"
@@ -18,28 +19,30 @@
 
         <RelativeLayout style="@style/RelativeBody">
 
-            <ImageView
-                android:id="@+id/ivCirculo"
-                android:onClick="ImageSelect"
-                style="@style/PhotoView" />
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/ivFoto"
+                style="@style/PhotoView"
+                app:civ_border_color="@color/cor_azul"
+                app:civ_border_width="1dp" />
 
             <TextView
                 android:id="@+id/tvFoto"
                 style="@style/TitleImage"
-                android:layout_below="@+id/ivCirculo"
+                android:layout_below="@+id/ivFoto"
                 android:text="@string/inserir_foto_perfil" />
 
             <TextView
-                android:id="@+id/tvLabelLogin"
+                android:id="@+id/tvLabelEmail"
                 style="@style/FormLabel"
                 android:layout_below="@+id/tvFoto"
-                android:text="@string/login" />
+                android:text="@string/email" />
 
             <EditText
                 android:id="@+id/etEmail"
                 style="@style/FormEditText"
-                android:layout_below="@+id/tvLabelLogin"
-                android:hint="@string/email_ou_login" />
+                android:layout_below="@+id/tvLabelEmail"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress" />
 
             <TextView
                 android:id="@+id/tvLabelCelular"
@@ -54,16 +57,16 @@
                 android:hint="@string/seu_celular" />
 
             <TextView
-                android:id="@+id/tvLabelUsuario"
+                android:id="@+id/tvLabelLogin"
                 style="@style/FormLabel"
                 android:layout_below="@+id/etCelular"
-                android:text="@string/nome_usuario" />
+                android:text="@string/login" />
 
             <EditText
                 android:id="@+id/etLogin"
                 style="@style/FormEditText"
-                android:layout_below="@+id/tvLabelUsuario"
-                android:hint="@string/nome_usuario" />
+                android:layout_below="@+id/tvLabelLogin"
+                android:hint="@string/login" />
 
             <TextView
                 android:id="@+id/tvLabelSenha"
@@ -83,7 +86,8 @@
                 style="@style/ButtonDefault"
                 android:layout_below="@+id/etSenha"
                 android:layout_marginTop="20dp"
-                android:onClick="irMain"
+                android:layout_marginBottom="10dp"
+                android:onClick="cadastrarUsuario"
                 android:text="@string/cadastrar" />
         </RelativeLayout>
     </ScrollView>

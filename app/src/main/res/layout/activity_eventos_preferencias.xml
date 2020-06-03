@@ -25,7 +25,8 @@
         android:layout_height="match_parent"
         android:layout_below="@id/logo">
 
-        <RelativeLayout style="@style/RelativeBody">
+        <RelativeLayout style="@style/RelativeBody"
+            android:id="@+id/rlFragment">
 
             <EditText
                 android:id="@+id/searchEventos"
@@ -55,8 +56,17 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="#fff"
                 android:textSize="20dp"></TextView>
+            <LinearLayout
+                android:id="@+id/linerar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelRoles"
+                android:orientation="vertical">
 
-            <Button
+
+            </LinearLayout>
+
+           <!-- <Button
                 android:id="@+id/evento"
                 android:layout_width="390dp"
                 android:layout_height="90dp"
@@ -468,7 +478,7 @@
                 android:text="São Paulo"
                 android:textColor="#000"
                 android:textStyle="bold"
-                android:translationZ="2dp" />
+                android:translationZ="2dp" />-->
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

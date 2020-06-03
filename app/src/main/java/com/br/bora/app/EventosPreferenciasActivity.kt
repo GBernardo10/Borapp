@@ -22,4 +22,23 @@ class EventosPreferenciasActivity : Fragment() {
         }
         return view;
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        //activity!!.supportFragmentManager.beginTransaction().add(R.id.linerar , CardEvento()).commit();
+        val lista = listOf<String>("a","b","c","d")
+        val transacao = activity?.supportFragmentManager!!.beginTransaction()
+        lista.forEach {
+            val parametros = Bundle()
+            parametros.putString("texto", it)
+
+            val card = CardEvento()
+            card.arguments = parametros
+
+            transacao.add(R.id.linerar, card)
+        }
+
+        transacao.commit()
+
+    }
 }

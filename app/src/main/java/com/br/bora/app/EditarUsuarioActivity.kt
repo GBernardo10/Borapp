@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.github.dhaval2404.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.activity_editar_usuario.*
@@ -14,8 +15,6 @@ import kotlinx.android.synthetic.main.activity_editar_usuario.*
 class EditarUsuarioActivity : AppCompatActivity() {
 
     private val PERMISSION_CODE = 1000;
-    private val IMAGE_CAPTURE_CODE = 1001;
-    var imageProfile: Uri? = null
     var preferencias: SharedPreferences? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,13 +61,23 @@ class EditarUsuarioActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
-            //Image Uri will not be null for RESULT_OK
             val fileUri = data?.data
             ivFoto.setImageURI(fileUri);
         } else if (resultCode == ImagePicker.RESULT_ERROR) {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Operação Cancelada", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun alterarCadastro(v:View){
+
+    }
+
+    fun validaCampos() :Boolean{
+        /*if(etCelular.toString().isEmpty()){
+            etCelular.error = getString()
+        }*/
+        return true;
     }
 }

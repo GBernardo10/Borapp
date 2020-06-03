@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardEvento">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/evento"
+            android:layout_width="390dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/view_evento"
+            android:textAlignment="textStart"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ball"
+            android:translationZ="2dp" />
+
+        <TextView
+            android:id="@+id/diaEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Sábado ás 13h"
+            android:textColor="#2C1551"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:translationZ="@dimen/cardview_default_radius" />
+
+        <TextView
+            android:id="@+id/dataEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="10dp"
+            android:text="12/06"
+            android:textColor="#EF280E"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:translationZ="@dimen/cardview_default_radius" />
+
+        <TextView
+            android:id="@+id/nomeEvento"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Fute do Bolivinha"
+            android:textColor="#EF280E"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:translationZ="@dimen/cardview_default_radius" />
+
+        <ImageView
+            android:id="@+id/car"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@id/nomeEvento"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/car"
+            android:translationZ="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nomeEvento"
+            android:layout_marginTop="9dp"
+            android:layout_toRightOf="@id/car"
+            android:text="1h"
+            android:textColor="#757171"
+            android:textSize="20dp"
+            android:translationZ="2dp" />
+
+
+        <ImageView
+            android:id="@+id/bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nomeEvento"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="11dp"
+            android:layout_toRightOf="@id/car"
+            android:src="@drawable/bus"
+            android:translationZ="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nomeEvento"
+            android:layout_marginTop="9dp"
+            android:layout_toRightOf="@id/bus"
+            android:text="2h"
+            android:textColor="#757171"
+            android:textSize="20dp"
+            android:translationZ="2dp" />
+    </RelativeLayout>
+</FrameLayout>

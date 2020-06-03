@@ -18,9 +18,12 @@
         android:layout_below="@+id/logo">
 
         <RelativeLayout style="@style/RelativeBody">
-            <ImageView
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/ivFoto"
-                style="@style/PhotoView"/>
+                style="@style/PhotoView"
+                app:civ_border_color="@color/cor_azul"
+                app:civ_border_width="1dp" />
 
             <TextView
                 android:id="@+id/tvAlteraFoto"
@@ -30,10 +33,10 @@
 
             <TextView
                 android:id="@+id/tvQualificacao"
+                style="@style/TitleBodyText"
                 android:layout_below="@+id/tvAlteraFoto"
                 android:layout_marginTop="30dp"
-                android:text="@string/qualificacao_usuario"
-                style="@style/TitleBodyText"/>
+                android:text="@string/qualificacao_usuario" />
 
             <ImageView
                 android:id="@+id/ivEstrelaUm"
@@ -83,41 +86,24 @@
 
             <TextView
                 android:id="@+id/tvTituloUsuario"
+                style="@style/TitleBodyText"
                 android:layout_below="@+id/tvQualificacao"
                 android:layout_marginTop="30dp"
-                android:text="@string/nome_usuario"
-                style="@style/TitleBodyText"/>
+                android:text="@string/nome_usuario" />
 
             <TextView
                 android:id="@+id/tvUsuario"
+                style="@style/TextBodyText"
                 android:layout_below="@+id/tvQualificacao"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_toRightOf="@+id/tvTituloUsuario"
-                android:text="WilldoJotinha"
-                style="@style/TextBodyText"/>
-
-            <TextView
-                android:id="@+id/tvTituloCpf"
-                android:layout_below="@+id/tvTituloUsuario"
-                android:layout_marginTop="10dp"
-                android:text="@string/titulo_cpf"
-                style="@style/TitleBodyText"/>
-
-            <TextView
-                android:id="@+id/tvCpf"
-                android:layout_below="@+id/tvTituloUsuario"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/tvTituloUsuario"
-                android:text="000.000.000-00"
-                style="@style/TextBodyText"/>
+                android:layout_toRightOf="@+id/tvTituloUsuario" />
 
             <TextView
                 android:id="@+id/tvLabelCelular"
                 style="@style/FormLabel"
-                android:layout_below="@id/tvCpf"
-                android:text="@string/celular"/>
+                android:layout_below="@id/tvUsuario"
+                android:text="@string/celular" />
 
             <EditText
                 android:id="@+id/etCelular"
@@ -131,7 +117,7 @@
                 android:id="@+id/tvLabelEmail"
                 style="@style/FormLabel"
                 android:layout_below="@id/etCelular"
-                android:text="@string/email"/>
+                android:text="@string/email" />
 
             <EditText
                 android:id="@+id/etEmail"
@@ -140,12 +126,26 @@
                 android:hint="@string/email"
                 android:inputType="text" />
 
+            <TextView
+                android:id="@+id/tvLabelSenha"
+                style="@style/FormLabel"
+                android:layout_below="@id/etEmail"
+                android:text="@string/senha" />
+
+            <EditText
+                android:id="@+id/etSenha"
+                style="@style/FormEditText"
+                android:layout_below="@+id/tvLabelSenha"
+                android:hint="@string/senha"
+                android:inputType="text" />
+
             <Button
                 android:id="@+id/btAlterar"
                 style="@style/ButtonDefault"
-                android:layout_below="@id/etEmail"
+                android:layout_below="@id/etSenha"
                 android:layout_marginTop="20dp"
                 android:background="@color/cor_azul"
+                android:onClick="alterarCadastro"
                 android:text="@string/alterar" />
         </RelativeLayout>
     </ScrollView>

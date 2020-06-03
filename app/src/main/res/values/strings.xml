@@ -95,4 +95,8 @@
     <string name="celular">Celular</string>
     <string name="permission_denied">Sem permissão</string>
     <string name="dots">...</string>
+    <string name="emailError">Preencher o email</string>
+    <string name="loginError">Preencher o login</string>
+    <string name="senhaError">Preencher a senha</string>
+    <string name="celularError">Preencher o celular</string>
 </resources>
