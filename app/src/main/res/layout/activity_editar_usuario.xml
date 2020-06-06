@@ -141,7 +141,7 @@
 
             <Button
                 android:id="@+id/btAlterar"
-                style="@style/ButtonDefault"
+                style="@style/Button"
                 android:layout_below="@id/etSenha"
                 android:layout_marginTop="20dp"
                 android:background="@color/cor_azul"

@@ -46,7 +46,7 @@
                 android:hint="@string/social_favorito" />
 
             <Button
-                style="@style/ButtonDefault"
+                style="@style/Button"
                 android:layout_below="@+id/etPref3"
                 android:text="@string/cadastrar" />
         </RelativeLayout>

@@ -275,7 +275,7 @@
                 android:src="@drawable/ic_arrow_downward_black_24dp" />
 
             <Button
-                style="@style/ButtonDefault"
+                style="@style/Button"
                 android:layout_below="@+id/icon_ver_mais"
                 android:text="@string/editar_evento"
                 android:layout_marginBottom="20dp"/>

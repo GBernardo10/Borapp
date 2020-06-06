@@ -1,15 +1,19 @@
 package com.br.bora.app
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import com.br.bora.app.model.RequestUserLogin
+import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
+import com.br.bora.app.model.User
+import com.br.bora.app.request.AuthUser
+import com.br.bora.app.response.Token
+import com.br.bora.app.services.TokenDecode
 import com.br.bora.app.services.UserService
 import com.br.bora.app.services.config.RetrofitInitializer
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,42 +25,56 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnLogin.setOnClickListener {
-            irHome()
+            goHome()
+
 //            val loginInput = findViewById<EditText>(R.id.login).text.toString()
 //            val pwdInput = findViewById<EditText>(R.id.pass).text.toString()
-//            signin(loginInput,pwdInput)
+//            val auth = User.Auth(loginInput,pwdInput)
+//            sign(auth,it)
         }
     }
-    private fun signin(username:String,password:String){
+
+    private fun sign(auth: User.Auth, v: View) {
         val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
-        val signInInfo = RequestUserLogin(username,password)
-        retIn.auth(signInInfo).enqueue(object :Callback<ResponseBody>{
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                if(response.code() == 200){
-                    irHome()
+        val signInInfo = AuthUser(auth)
+
+        retIn.auth(signInInfo).enqueue(object : Callback<Token> {
+            override fun onResponse(call: Call<Token>, response: Response<Token>) {
+                when (response.code()) {
+//                    200 -> response.body()?.let { goHome(it) }
+                    204 -> Snackbar.make(v, R.string.auth_no_content, Snackbar.LENGTH_LONG).show()
+                    401 -> Snackbar.make(v, R.string.auth_no_unauthorized, Snackbar.LENGTH_LONG)
+                        .show()
+                    else -> Snackbar.make(v, response.message(), Snackbar.LENGTH_LONG).show()
                 }
             }
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+
+            override fun onFailure(call: Call<Token>, t: Throwable) {
                 Log.i("STATE", t.message.toString())
+                Snackbar.make(v, t.message.toString(), Snackbar.LENGTH_LONG).show()
             }
         })
     }
 
-/*
-	"username":"Gesuvs",
-	"password":"#futebol1996"
-
- */
-    fun irEsqueciSenha(v:View){
-        val telaEsqueciSenha = Intent(this,EsqueciMinhaSenha::class.java)
+    fun irEsqueciSenha(v: View) {
+        val telaEsqueciSenha = Intent(this, EsqueciMinhaSenha::class.java)
         startActivity(telaEsqueciSenha);
     }
-    fun irHome(){
-        val telaHome = Intent(this,TabBarActivity::class.java)
+    fun goHome() {
+        val telaHome = Intent(this, TabBarActivity::class.java)
         startActivity(telaHome)
     }
-    fun irCadastrar(v: View){
-        val telaCadastro = Intent(this,CadastroPfActivity::class.java)
+
+
+//    fun goHome(token:Token) {
+//        val decoded = TokenDecode().decodeToken(token)
+//        Log.d("token", decoded.toString())
+//        val telaHome = Intent(this, TabBarActivity::class.java)
+//        startActivity(telaHome)
+//    }
+
+    fun irCadastrar(v: View) {
+        val telaCadastro = Intent(this, CadastroPfActivity::class.java)
         startActivity(telaCadastro)
     }
 }

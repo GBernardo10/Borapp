@@ -30,7 +30,7 @@
 
         <Button
             android:id="@+id/btnLembrarSenha"
-            style="@style/ButtonDefault"
+            style="@style/Button"
             android:layout_below="@id/login"
             android:layout_marginTop="20dp"
             android:onClick="irMain"

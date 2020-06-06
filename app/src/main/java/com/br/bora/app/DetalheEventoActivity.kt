@@ -1,11 +1,9 @@
 package com.br.bora.app
 
 import android.graphics.BitmapFactory
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
-import androidx.annotation.RequiresApi
 import kotlinx.android.synthetic.main.activity_detalhe_evento.*
 
 class DetalheEventoActivity : AppCompatActivity() {

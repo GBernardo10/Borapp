@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#320236"
     tools:context=".CriarEventoActivity">
 
     <ImageView
@@ -272,7 +271,7 @@
                 android:src="@drawable/ic_arrow_downward_black_24dp" />
 
             <Button
-                style="@style/ButtonDefault"
+                style="@style/Button"
                 android:layout_width="match_parent"
                 android:layout_below="@+id/icon_ver_mais"
                 android:text="@string/cadastrar_evento"
