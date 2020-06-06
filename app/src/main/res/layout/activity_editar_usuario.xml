@@ -92,7 +92,7 @@
                 android:text="@string/nomeUsuario" />
 
             <TextView
-                android:id="@+id/editarUsuario_tvUsuario"
+                android:id="@+id/editarUsuario_tvNome"
                 style="@style/TextBodyText"
                 android:layout_below="@+id/editarUsuario_tvQualificacao"
                 android:layout_marginLeft="20dp"
@@ -102,14 +102,14 @@
             <TextView
                 android:id="@+id/editarUsuario_tvTituloLogin"
                 style="@style/TitleBodyText"
-                android:layout_below="@+id/editarUsuario_tvUsuario"
+                android:layout_below="@+id/editarUsuario_tvNome"
                 android:layout_marginTop="15dp"
                 android:text="@string/login" />
 
             <TextView
                 android:id="@+id/editarUsuario_tvLogin"
                 style="@style/TextBodyText"
-                android:layout_below="@+id/editarUsuario_tvUsuario"
+                android:layout_below="@+id/editarUsuario_tvNome"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_toRightOf="@+id/editarUsuario_tvTituloLogin"/>
@@ -127,7 +127,7 @@
                 android:layout_below="@+id/editarUsuario_tvLabelCelular"
                 android:background="@color/cor_branco"
                 android:hint="@string/celular"
-                android:inputType="text" />
+                android:inputType="number" />
 
             <TextView
                 android:id="@+id/editarUsuario_tvLabelEmail"
@@ -140,7 +140,7 @@
                 style="@style/FormEditText"
                 android:layout_below="@+id/editarUsuario_tvLabelEmail"
                 android:hint="@string/email"
-                android:inputType="text" />
+                android:inputType="textEmailAddress" />
 
             <TextView
                 android:id="@+id/editarUsuario_tvLabelSenha"
@@ -153,7 +153,7 @@
                 style="@style/FormEditText"
                 android:layout_below="@+id/editarUsuario_tvLabelSenha"
                 android:hint="@string/senha"
-                android:inputType="text" />
+                android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/editarUsuario_btAlterar"

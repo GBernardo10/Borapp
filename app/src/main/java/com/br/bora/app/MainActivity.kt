@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if(response.code() == 201){
                     irHome()
+                }else{
+                    main_messageError.text = getString(R.string.loginSenhaError)
                 }
             }
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -48,6 +50,19 @@ class MainActivity : AppCompatActivity() {
 	"password":"#futebol1996"
 
  */
+    fun validaCampos(): Boolean{
+        if(login.text.isEmpty()){
+            login.requestFocus()
+            login.error = getString(R.string.loginError)
+            return false;
+        }
+        if(pass.text.isEmpty()){
+            pass.requestFocus()
+            pass.error = getString(R.string.senhaError)
+        }
+        return true;
+    }
+
     fun irEsqueciSenha(v:View){
         val telaEsqueciSenha = Intent(this,EsqueciMinhaSenha::class.java)
         startActivity(telaEsqueciSenha);

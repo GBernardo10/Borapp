@@ -1,5 +1,6 @@
 package com.br.bora.app
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
@@ -7,6 +8,7 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.br.bora.app.model.User
@@ -15,15 +17,32 @@ import com.br.bora.app.services.config.RetrofitInitializer
 import com.github.dhaval2404.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.activity_cadastro_pf.*
 import kotlinx.android.synthetic.main.activity_editar_usuario.*
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class EditarUsuarioActivity : AppCompatActivity() {
 
     private val PERMISSION_CODE = 1000;
-    var preferencias: SharedPreferences? = null;
+    var preferencias:SharedPreferences? = null;
+    val token: String? = "";
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editar_usuario)
+
+        preferencias = getPreferences(Context.MODE_PRIVATE)
+        val tokenPreferences = preferencias?.getString("token", "")
+        val usenamePreferences = preferencias?.getString("username","")
+
+        getUser(usenamePreferences,tokenPreferences);
+
+
+        editarUsuario_btAlterar.setOnClickListener {
+
+
+        };
 
         cadastropf_ivFoto.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -77,12 +96,29 @@ class EditarUsuarioActivity : AppCompatActivity() {
 
     }
 
-//    fun getUser(username:String) :User {
-//        val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
-//        retIn.userByMail(username.toUpperCase())
-//
-//
-//    }
+    fun getUser(username:String?, token:String?) {
+        val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
+
+        retIn.userByMail(username).enqueue(object : Callback<User> {
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                if (response.code() == 201) {
+                    val user:User? = response.body();
+                    preencheCampos(user);
+                }
+            }
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
+    fun preencheCampos(user:User?){
+        editarUsuario_tvNome.text = user?.name;
+        editarUsuario_tvLogin.text = user?.username;
+        editarUsuario_etEmail.setText(user?.mail);
+        editarUsuario_etCelular.setText(user?.phone);
+        editarUsuario_etSenha.setText(user?.password)
+    }
 
     fun validaCampos(): Boolean {
         if (editarUsuario_etCelular.text.toString().isEmpty()) {

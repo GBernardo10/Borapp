@@ -17,6 +17,13 @@
             android:src="@drawable/logobora_foreground" />
 
         <TextView
+            android:id="@+id/main_messageError"
+            android:layout_marginTop="120dp"
+            android:layout_below="@+id/logo"
+            style="@style/MessageError" />
+
+
+        <TextView
             android:id="@+id/label_login"
             android:layout_above="@id/login"
             android:text="@string/login"

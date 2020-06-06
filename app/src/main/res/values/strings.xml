@@ -95,10 +95,11 @@
     <string name="celular">Celular</string>
     <string name="permission_denied">Sem permissão</string>
     <string name="dots">...</string>
-    <string name="emailError">Preencher o email</string>
-    <string name="loginError">Preencher o login</string>
-    <string name="senhaError">Preencher a senha</string>
-    <string name="celularError">Preencher o celular</string>
-    <string name="nomeError">Preencher o nome</string>
+    <string name="emailError">Por favor preencher o email</string>
+    <string name="loginError">Por favor preencher o login</string>
+    <string name="senhaError">Por favor preencher a senha</string>
+    <string name="celularError">Por favor preencher o celular</string>
+    <string name="nomeError">Por favor preencher o nome</string>
     <string name="nomeUsuario">Nome</string>
+    <string name="loginSenhaError">Login ou senha está incorreto</string>
 </resources>

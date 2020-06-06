@@ -1,5 +1,6 @@
 package com.br.bora.app.services
 
+import com.br.bora.app.model.User
 import com.br.bora.app.request.RequestUser
 import com.br.bora.app.request.RequestUserLogin
 import okhttp3.ResponseBody
@@ -20,5 +21,5 @@ interface UserService {
 
     @Headers
     @GET("users/{username}")
-    fun userByMail(username: String): Call<ResponseBody>
+    fun userByMail(username: String?): Call<User>
 }
