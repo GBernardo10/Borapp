@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import com.br.bora.app.model.RequestUserLogin
+import com.br.bora.app.request.RequestUserLogin
 import com.br.bora.app.services.UserService
 import com.br.bora.app.services.config.RetrofitInitializer
 import kotlinx.android.synthetic.main.activity_main.*
@@ -29,10 +29,11 @@ class MainActivity : AppCompatActivity() {
     }
     private fun signin(username:String,password:String){
         val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
-        val signInInfo = RequestUserLogin(username,password)
+        val signInInfo =
+            RequestUserLogin(username, password)
         retIn.auth(signInInfo).enqueue(object :Callback<ResponseBody>{
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                if(response.code() == 200){
+                if(response.code() == 201){
                     irHome()
                 }
             }

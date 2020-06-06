@@ -9,7 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.br.bora.app.model.User
+import com.br.bora.app.services.UserService
+import com.br.bora.app.services.config.RetrofitInitializer
 import com.github.dhaval2404.imagepicker.ImagePicker
+import kotlinx.android.synthetic.main.activity_cadastro_pf.*
 import kotlinx.android.synthetic.main.activity_editar_usuario.*
 
 class EditarUsuarioActivity : AppCompatActivity() {
@@ -21,8 +25,7 @@ class EditarUsuarioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editar_usuario)
 
-        ivFoto.setImageResource(R.drawable.logobora_foreground);
-        ivFoto.setOnClickListener {
+        cadastropf_ivFoto.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(android.Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_DENIED) {
@@ -62,7 +65,7 @@ class EditarUsuarioActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             val fileUri = data?.data
-            ivFoto.setImageURI(fileUri);
+            cadastropf_ivFoto.setImageURI(fileUri);
         } else if (resultCode == ImagePicker.RESULT_ERROR) {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
         } else {
@@ -74,10 +77,29 @@ class EditarUsuarioActivity : AppCompatActivity() {
 
     }
 
-    fun validaCampos() :Boolean{
-        /*if(etCelular.toString().isEmpty()){
-            etCelular.error = getString()
-        }*/
+//    fun getUser(username:String) :User {
+//        val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
+//        retIn.userByMail(username.toUpperCase())
+//
+//
+//    }
+
+    fun validaCampos(): Boolean {
+        if (editarUsuario_etCelular.text.toString().isEmpty()) {
+            editarUsuario_etCelular.requestFocus();
+            editarUsuario_etCelular.error = getString(R.string.celularError);
+            return false;
+        }
+        if (editarUsuario_etEmail.text.toString().isEmpty()) {
+            editarUsuario_etEmail.requestFocus();
+            editarUsuario_etEmail.error = getString(R.string.loginError);
+            return false;
+        }
+        if (editarUsuario_etSenha.text.toString().isEmpty()) {
+            editarUsuario_etSenha.requestFocus();
+            editarUsuario_etSenha.error = getString(R.string.senhaError);
+            return false;
+        }
         return true;
     }
 }

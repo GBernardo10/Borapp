@@ -99,4 +99,6 @@
     <string name="loginError">Preencher o login</string>
     <string name="senhaError">Preencher a senha</string>
     <string name="celularError">Preencher o celular</string>
+    <string name="nomeError">Preencher o nome</string>
+    <string name="nomeUsuario">Nome</string>
 </resources>

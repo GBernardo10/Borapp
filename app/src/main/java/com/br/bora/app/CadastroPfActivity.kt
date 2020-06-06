@@ -5,28 +5,40 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
-import android.view.View
-import android.widget.ImageView
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.br.bora.app.model.User
+import com.br.bora.app.request.RequestUser
+import com.br.bora.app.services.UserService
+import com.br.bora.app.services.config.RetrofitInitializer
 import com.github.dhaval2404.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.activity_cadastro_pf.*
-import kotlinx.android.synthetic.main.activity_editar_usuario.*
-import kotlinx.android.synthetic.main.activity_editar_usuario.etCelular
-import kotlinx.android.synthetic.main.activity_editar_usuario.etEmail
-import kotlinx.android.synthetic.main.activity_editar_usuario.ivFoto
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CadastroPfActivity : AppCompatActivity() {
 
     private val PERMISSION_CODE = 1000;
+    private val image_uri = "";
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_pf)
 
-        ivFoto.setImageResource(R.drawable.logobora_foreground);
-        ivFoto.setOnClickListener {
+        cadastropf_btCadastrar.setOnClickListener {
+            if (validaCampos()) {
+                cadastrarUsuario(
+                    cadastropf_etNome.text.toString(), "+55" + cadastropf_etCelular.text.toString()
+                    , cadastropf_etEmail.text.toString(), cadastropf_etSenha.text.toString()
+                    , cadastropf_etLogin.text.toString()
+                );
+
+            }
+        }
+        cadastropf_ivFoto.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(android.Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_DENIED
@@ -71,7 +83,7 @@ class CadastroPfActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             val fileUri = data?.data
-            ivFoto.setImageURI(fileUri);
+            cadastropf_ivFoto.setImageURI(fileUri);
         } else if (resultCode == ImagePicker.RESULT_ERROR) {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
         } else {
@@ -79,35 +91,61 @@ class CadastroPfActivity : AppCompatActivity() {
         }
     }
 
-    fun cadastrarUsuario(v: View) {
-        if (validaCampos()) {
-            startActivity(Intent(this, MainActivity::class.java));
-        } else {
+    fun cadastrarUsuario(
+        name: String,
+        phone: String,
+        mail: String,
+        password: String,
+        username: String
+    ) {
+        val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
+        val user = User(name, phone, mail, password, username)
 
-        }
+        val signInInfo = RequestUser(user);
+        retIn.user(signInInfo).enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.code() == 201) {
+                    irMain();
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                Log.i("STATE", t.message.toString())
+            }
+        })
+    }
+
+
+    fun irMain() {
+        startActivity(Intent(this, MainActivity::class.java));
     }
 
     fun validaCampos(): Boolean {
-        if (etEmail.text.toString().isEmpty()) {
-            etEmail.requestFocus();
-            etEmail.error = getString(R.string.emailError)
+        if (cadastropf_etEmail.text.toString().isEmpty()) {
+            cadastropf_etEmail.requestFocus();
+            cadastropf_etEmail.error = getString(R.string.emailError)
             return false;
         }
-        if (etCelular.text.toString().isEmpty()) {
-            etCelular.requestFocus();
-            etCelular.error = getString(R.string.celularError);
+        if (cadastropf_etCelular.text.toString().isEmpty()) {
+            cadastropf_etCelular.requestFocus();
+            cadastropf_etCelular.error = getString(R.string.celularError);
             return false;
         }
-        if (etLogin.text.toString().isEmpty()) {
-            etLogin.requestFocus();
-            etLogin.error = getString(R.string.loginError);
+        if (cadastropf_etLogin.text.toString().isEmpty()) {
+            cadastropf_etLogin.requestFocus();
+            cadastropf_etLogin.error = getString(R.string.loginError);
             return false;
         }
-       /* if (etSenha.text.toString().isEmpty()) {
-            etSenha.requestFocus();
-            etSenha.error = getString(R.string.senhaError);
+        if (cadastropf_etSenha.text.toString().isEmpty()) {
+            cadastropf_etSenha.requestFocus();
+            cadastropf_etSenha.error = getString(R.string.senhaError);
             return false;
-        }*/
+        }
+        if (cadastropf_etNome.text.toString().isEmpty()) {
+            cadastropf_etNome.requestFocus();
+            cadastropf_etNome.error = getString(R.string.nomeError);
+        }
         return true;
     }
 }
+

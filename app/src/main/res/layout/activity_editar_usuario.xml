@@ -20,132 +20,147 @@
         <RelativeLayout style="@style/RelativeBody">
 
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/ivFoto"
+                android:id="@+id/editarUsuario_ivFoto"
                 style="@style/PhotoView"
                 app:civ_border_color="@color/cor_azul"
                 app:civ_border_width="1dp" />
 
             <TextView
-                android:id="@+id/tvAlteraFoto"
+                android:id="@+id/editarUsuario_tvAlteraFoto"
                 style="@style/TitleImage"
-                android:layout_below="@+id/ivFoto"
+                android:layout_below="@+id/editarUsuario_ivFoto"
                 android:text="@string/altera_foto" />
 
             <TextView
-                android:id="@+id/tvQualificacao"
+                android:id="@+id/editarUsuario_tvQualificacao"
                 style="@style/TitleBodyText"
-                android:layout_below="@+id/tvAlteraFoto"
+                android:layout_below="@+id/editarUsuario_tvAlteraFoto"
                 android:layout_marginTop="30dp"
                 android:text="@string/qualificacao_usuario" />
 
             <ImageView
-                android:id="@+id/ivEstrelaUm"
+                android:id="@+id/editarUsuario_ivEstrelaUm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvAlteraFoto"
+                android:layout_below="@id/editarUsuario_tvAlteraFoto"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_toRightOf="@id/tvQualificacao"
+                android:layout_toRightOf="@id/editarUsuario_tvQualificacao"
                 android:background="@drawable/ic_star_yellow" />
 
             <ImageView
-                android:id="@+id/ivEstrelaDois"
+                android:id="@+id/editarUsuario_ivEstrelaDois"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvAlteraFoto"
+                android:layout_below="@id/editarUsuario_tvAlteraFoto"
                 android:layout_marginTop="20dp"
-                android:layout_toRightOf="@id/ivEstrelaUm"
+                android:layout_toRightOf="@id/editarUsuario_ivEstrelaUm"
                 android:background="@drawable/ic_star_yellow" />
 
             <ImageView
-                android:id="@+id/ivEstrelaTres"
+                android:id="@+id/editarUsuario_ivEstrelaTres"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvAlteraFoto"
+                android:layout_below="@id/editarUsuario_tvAlteraFoto"
                 android:layout_marginTop="20dp"
-                android:layout_toRightOf="@id/ivEstrelaDois"
+                android:layout_toRightOf="@id/editarUsuario_ivEstrelaDois"
                 android:background="@drawable/ic_star_yellow" />
 
             <ImageView
-                android:id="@+id/ivEstrelaQuatro"
+                android:id="@+id/editarUsuario_ivEstrelaQuatro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvAlteraFoto"
+                android:layout_below="@id/editarUsuario_tvAlteraFoto"
                 android:layout_marginTop="20dp"
-                android:layout_toRightOf="@id/ivEstrelaTres"
+                android:layout_toRightOf="@id/editarUsuario_ivEstrelaTres"
                 android:background="@drawable/ic_star_yellow" />
 
             <ImageView
-                android:id="@+id/ivEstrelaCinco"
+                android:id="@+id/editarUsuario_ivEstrelaCinco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvAlteraFoto"
+                android:layout_below="@id/editarUsuario_tvAlteraFoto"
                 android:layout_marginTop="20dp"
-                android:layout_toRightOf="@id/ivEstrelaQuatro"
+                android:layout_toRightOf="@id/editarUsuario_ivEstrelaQuatro"
                 android:background="@drawable/ic_star_black" />
 
             <TextView
-                android:id="@+id/tvTituloUsuario"
+                android:id="@+id/editarUsuario_tvTituloUsuario"
                 style="@style/TitleBodyText"
-                android:layout_below="@+id/tvQualificacao"
-                android:layout_marginTop="30dp"
-                android:text="@string/nome_usuario" />
+                android:layout_below="@+id/editarUsuario_tvQualificacao"
+                android:layout_marginTop="20dp"
+                android:text="@string/nomeUsuario" />
 
             <TextView
-                android:id="@+id/tvUsuario"
+                android:id="@+id/editarUsuario_tvUsuario"
                 style="@style/TextBodyText"
-                android:layout_below="@+id/tvQualificacao"
+                android:layout_below="@+id/editarUsuario_tvQualificacao"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_toRightOf="@+id/tvTituloUsuario" />
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/editarUsuario_tvTituloUsuario"/>
 
             <TextView
-                android:id="@+id/tvLabelCelular"
+                android:id="@+id/editarUsuario_tvTituloLogin"
+                style="@style/TitleBodyText"
+                android:layout_below="@+id/editarUsuario_tvUsuario"
+                android:layout_marginTop="15dp"
+                android:text="@string/login" />
+
+            <TextView
+                android:id="@+id/editarUsuario_tvLogin"
+                style="@style/TextBodyText"
+                android:layout_below="@+id/editarUsuario_tvUsuario"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/editarUsuario_tvTituloLogin"/>
+
+
+            <TextView
+                android:id="@+id/editarUsuario_tvLabelCelular"
                 style="@style/FormLabel"
-                android:layout_below="@id/tvUsuario"
+                android:layout_below="@id/editarUsuario_tvLogin"
                 android:text="@string/celular" />
 
             <EditText
-                android:id="@+id/etCelular"
+                android:id="@+id/editarUsuario_etCelular"
                 style="@style/FormEditText"
-                android:layout_below="@+id/tvLabelCelular"
+                android:layout_below="@+id/editarUsuario_tvLabelCelular"
                 android:background="@color/cor_branco"
                 android:hint="@string/celular"
                 android:inputType="text" />
 
             <TextView
-                android:id="@+id/tvLabelEmail"
+                android:id="@+id/editarUsuario_tvLabelEmail"
                 style="@style/FormLabel"
-                android:layout_below="@id/etCelular"
+                android:layout_below="@id/editarUsuario_etCelular"
                 android:text="@string/email" />
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/editarUsuario_etEmail"
                 style="@style/FormEditText"
-                android:layout_below="@+id/tvLabelEmail"
+                android:layout_below="@+id/editarUsuario_tvLabelEmail"
                 android:hint="@string/email"
                 android:inputType="text" />
 
             <TextView
-                android:id="@+id/tvLabelSenha"
+                android:id="@+id/editarUsuario_tvLabelSenha"
                 style="@style/FormLabel"
-                android:layout_below="@id/etEmail"
+                android:layout_below="@id/editarUsuario_etEmail"
                 android:text="@string/senha" />
 
             <EditText
-                android:id="@+id/etSenha"
+                android:id="@+id/editarUsuario_etSenha"
                 style="@style/FormEditText"
-                android:layout_below="@+id/tvLabelSenha"
+                android:layout_below="@+id/editarUsuario_tvLabelSenha"
                 android:hint="@string/senha"
                 android:inputType="text" />
 
             <Button
-                android:id="@+id/btAlterar"
+                android:id="@+id/editarUsuario_btAlterar"
                 style="@style/ButtonDefault"
-                android:layout_below="@id/etSenha"
+                android:layout_below="@id/editarUsuario_etSenha"
                 android:layout_marginTop="20dp"
                 android:background="@color/cor_azul"
-                android:onClick="alterarCadastro"
                 android:text="@string/alterar" />
         </RelativeLayout>
     </ScrollView>

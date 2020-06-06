@@ -107,6 +107,7 @@
         <item name="android:layout_width">125dp</item>
         <item name="android:layout_height">125dp</item>
         <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@mipmap/ic_person_camera</item>
         <item name="android:layout_centerHorizontal">true</item>
     </style>
 
