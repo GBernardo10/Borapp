@@ -102,4 +102,10 @@
     <string name="nomeError">Por favor preencher o nome</string>
     <string name="nomeUsuario">Nome</string>
     <string name="loginSenhaError">Login ou senha está incorreto</string>
+    <string name="endereco">Endereço</string>
+    <string name="senhaEventoPrivado">Senha para eventos privados</string>
+    <string name="hintSenhaEvento">Senha para evento privado</string>
+    <string name="campoObrigatorio">Campo Obrigatório</string>
+    <string name="bucarEndereco">Buscar Endereço</string>
+    <string name="preencherCep">Por favor, preencher o cep antes de pesquisar</string>
 </resources>

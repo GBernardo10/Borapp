@@ -111,6 +111,14 @@
         <item name="android:layout_centerHorizontal">true</item>
     </style>
 
+    <style name="PhotoEventoView">
+        <item name="android:layout_width">125dp</item>
+        <item name="android:layout_height">125dp</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@mipmap/ic_evento_photo_2</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
 
     <style name="PhotoView_old">
         <item name="android:layout_width">100dp</item>
@@ -148,7 +156,7 @@
     <style name="FormEvento">
         <item name="android:layout_width">match_parent</item>
         <item name="android:textColor">@color/cor_preto</item>
-        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:paddingStart">10dp</item>
         <item name="android:paddingEnd">20dp</item>
         <item name="android:layout_centerVertical">true</item>
@@ -163,6 +171,11 @@
         <item name="android:paddingEnd">20dp</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:background">@color/cor_branco</item>
+    </style>
+
+    <style name="ButtonBuscaEndereco" parent="ButtonDefault">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">40dp</item>
     </style>
 
     <style name="FormLabelEventoHalf" parent="FormLabel">

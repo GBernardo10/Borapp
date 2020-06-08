@@ -27,33 +27,7 @@ class CadastroPfActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_pf)
-
-        cadastropf_btCadastrar.setOnClickListener {
-            if (validaCampos()) {
-                cadastrarUsuario(
-                    cadastropf_etNome.text.toString(), "+55" + cadastropf_etCelular.text.toString()
-                    , cadastropf_etEmail.text.toString(), cadastropf_etSenha.text.toString()
-                    , cadastropf_etLogin.text.toString()
-                );
-
-            }
-        }
-        cadastropf_ivFoto.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkSelfPermission(android.Manifest.permission.CAMERA)
-                    == PackageManager.PERMISSION_DENIED
-                ) {
-                    val permission = arrayOf(
-                        android.Manifest.permission.CAMERA
-                    )
-                    requestPermissions(permission, PERMISSION_CODE);
-                } else {
-                    openCamera();
-                }
-            } else {
-                openCamera();
-            }
-        }
+        inicializaTela();
     }
 
     override fun onRequestPermissionsResult(
@@ -123,29 +97,57 @@ class CadastroPfActivity : AppCompatActivity() {
     fun validaCampos(): Boolean {
         if (cadastropf_etEmail.text.toString().isEmpty()) {
             cadastropf_etEmail.requestFocus();
-            cadastropf_etEmail.error = getString(R.string.emailError)
+            cadastropf_etEmail.error = getString(R.string.campoObrigatorio)
             return false;
         }
         if (cadastropf_etCelular.text.toString().isEmpty()) {
             cadastropf_etCelular.requestFocus();
-            cadastropf_etCelular.error = getString(R.string.celularError);
+            cadastropf_etCelular.error = getString(R.string.campoObrigatorio);
             return false;
         }
         if (cadastropf_etLogin.text.toString().isEmpty()) {
             cadastropf_etLogin.requestFocus();
-            cadastropf_etLogin.error = getString(R.string.loginError);
+            cadastropf_etLogin.error = getString(R.string.campoObrigatorio);
             return false;
         }
         if (cadastropf_etSenha.text.toString().isEmpty()) {
             cadastropf_etSenha.requestFocus();
-            cadastropf_etSenha.error = getString(R.string.senhaError);
+            cadastropf_etSenha.error = getString(R.string.campoObrigatorio);
             return false;
         }
         if (cadastropf_etNome.text.toString().isEmpty()) {
             cadastropf_etNome.requestFocus();
-            cadastropf_etNome.error = getString(R.string.nomeError);
+            cadastropf_etNome.error = getString(R.string.campoObrigatorio);
         }
         return true;
+    }
+
+    fun inicializaTela(){
+        cadastropf_btCadastrar.setOnClickListener {
+            if (validaCampos()) {
+                cadastrarUsuario(
+                    cadastropf_etNome.text.toString(), "+55" + cadastropf_etCelular.text.toString()
+                    , cadastropf_etEmail.text.toString(), cadastropf_etSenha.text.toString()
+                    , cadastropf_etLogin.text.toString()
+                );
+            }
+        }
+        cadastropf_ivFoto.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (checkSelfPermission(android.Manifest.permission.CAMERA)
+                    == PackageManager.PERMISSION_DENIED
+                ) {
+                    val permission = arrayOf(
+                        android.Manifest.permission.CAMERA
+                    )
+                    requestPermissions(permission, PERMISSION_CODE);
+                } else {
+                    openCamera();
+                }
+            } else {
+                openCamera();
+            }
+        }
     }
 }
 

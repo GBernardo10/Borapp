@@ -20,38 +20,40 @@
         <RelativeLayout style="@style/RelativeBody">
 
             <TextView
-                android:id="@+id/string_cadastre_seu_evento"
+                android:id="@+id/evento_tituloPagina"
                 style="@style/TitleActivity"
                 android:text="@string/cadastrar_evento" />
 
-            <ImageView
-                android:id="@+id/icon_upload_image"
-                style="@style/PhotoView"
-                android:layout_below="@+id/string_cadastre_seu_evento" />
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/evento_ivFoto"
+                style="@style/PhotoEventoView"
+                app:civ_border_color="@color/cor_azul"
+                app:civ_border_width="1dp"
+                android:layout_below="@+id/evento_tituloPagina" />
 
             <TextView
-                android:id="@+id/description_upload_image"
+                android:id="@+id/evento_tvTituloFoto"
                 style="@style/TitleImage"
-                android:layout_below="@id/icon_upload_image"
+                android:layout_below="@id/evento_ivFoto"
                 android:text="@string/insira_imagem" />
 
             <TextView
-                android:id="@+id/description_tipo_evento"
+                android:id="@+id/evento_tvLabelTipoEvento"
                 style="@style/FormLabel"
-                android:layout_below="@id/description_upload_image"
+                android:layout_below="@id/evento_tvTituloFoto"
                 android:text="@string/tipo_evento" />
 
             <Button
-                android:id="@+id/btnPublic"
-                style="@style/ButtonBlack"
-                android:layout_below="@id/description_tipo_evento"
+                android:id="@+id/evento_btnPublic"
+                style="@style/ButtonOrange"
+                android:layout_below="@id/evento_tvLabelTipoEvento"
                 android:text="@string/desciption_button_public"
                 android:textSize="15dp" />
 
             <Button
-                android:id="@+id/btnPrivate"
-                style="@style/ButtonOrange"
-                android:layout_below="@id/description_tipo_evento"
+                android:id="@+id/evento_btnPrivate"
+                style="@style/ButtonBlack"
+                android:layout_below="@id/evento_tvLabelTipoEvento"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="10dp"
                 android:text="@string/desciption_button_private"
@@ -59,114 +61,150 @@
 
 
             <TextView
-                android:id="@+id/string_nome_evento"
+                android:id="@+id/evento_tvLabelNomeEvento"
                 style="@style/FormLabel"
-                android:layout_below="@id/btnPrivate"
+                android:layout_below="@id/evento_btnPrivate"
                 android:text="Nome do evento" />
 
             <EditText
-                android:id="@+id/label_nome_evento"
+                android:id="@+id/evento_etNomeEvento"
                 style="@style/FormEvento"
-                android:layout_below="@+id/string_nome_evento"
-                android:hint="@string/info_evento_nome" />
+                android:layout_below="@+id/evento_tvLabelNomeEvento"
+                android:hint="@string/info_evento_nome"
+                android:inputType="text"/>
 
             <TextView
-                android:id="@+id/string_cep_evento"
+                android:id="@+id/evento_tvLabelCep"
                 style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/label_nome_evento"
+                android:layout_below="@+id/evento_etNomeEvento"
                 android:text="@string/info_evento_cep" />
 
             <EditText
-                android:id="@+id/label_cep_evento"
+                android:id="@+id/evento_etCep"
                 style="@style/FormEventoHalf"
-                android:layout_below="@+id/string_cep_evento"
-                android:hint="@string/info_evento_cep" />
+                android:layout_below="@+id/evento_tvLabelCep"
+                android:hint="@string/info_evento_cep"
+                android:inputType="numberDecimal"/>
+
+            <Button
+                android:id="@+id/evento_btBuscaEndereco"
+                style="@style/ButtonBuscaEndereco"
+                android:layout_below="@+id/evento_etNomeEvento"
+                android:layout_alignParentEnd="true"
+                android:textSize="16dp"
+                android:layout_marginTop="30dp"
+                android:hint="@string/bucarEndereco"
+                android:inputType="number"/>
 
             <TextView
-                android:id="@+id/string_numero_rua_evento"
+                android:id="@+id/evento_tvLabelNumero"
                 style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/label_nome_evento"
+                android:layout_below="@+id/evento_etCep"
                 android:layout_alignParentEnd="true"
-                android:text="@string/info_evento_numero_rua" />
+                android:text="@string/info_evento_numero_rua"
+                android:visibility="gone"/>
 
             <EditText
-                android:id="@+id/label_numero_rua_evento"
+                android:id="@+id/evento_etNumero"
                 style="@style/FormEventoHalf"
-                android:layout_below="@+id/string_numero_rua_evento"
+                android:layout_below="@+id/evento_tvLabelNumero"
                 android:layout_alignParentEnd="true"
-                android:hint="@string/info_evento_numero_rua" />
+                android:hint="@string/info_evento_numero_rua"
+                android:inputType="number"
+                android:visibility="gone"/>
 
             <TextView
-                android:id="@+id/string_data_evento"
+                android:id="@+id/evento_tvLabelEndereco"
                 style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/label_cep_evento"
+                android:layout_below="@+id/evento_etCep"
+                android:text="@string/endereco"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/evento_tvEndereco"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/evento_tvLabelEndereco"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/evento_tvLabelData"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/evento_tvEndereco"
                 android:text="@string/info_evento_data" />
 
             <EditText
-                android:id="@+id/label_data_evento"
+                android:id="@+id/evento_etData"
                 style="@style/FormEventoHalf"
-                android:layout_below="@+id/string_data_evento"
-                android:hint="Data" />
+                android:layout_below="@+id/evento_tvLabelData"
+                android:hint="Data"
+                android:inputType="date"/>
 
 
             <TextView
-                android:id="@+id/string_horario_evento"
+                android:id="@+id/evento_tvLabelHorario"
                 style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/label_numero_rua_evento"
+                android:layout_below="@+id/evento_etNumero"
                 android:layout_alignParentEnd="true"
                 android:text="@string/info_evento_horario" />
 
             <EditText
-                android:id="@+id/label_horario_evento"
+                android:id="@+id/evento_etHorario"
                 style="@style/FormEventoHalf"
-                android:layout_below="@+id/string_horario_evento"
+                android:layout_below="@+id/evento_tvLabelHorario"
                 android:layout_alignParentEnd="true"
-                android:hint="@string/info_evento_horario" />
+                android:hint="@string/info_evento_horario"
+                android:inputType="time"/>
 
             <TextView
-                android:id="@+id/string_valor_evento"
+                android:id="@+id/evento_tvLabelValor"
                 style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/label_data_evento"
-                android:text="@string/info_evento_valor" />
+                android:layout_below="@+id/evento_etData"
+                android:text="@string/info_evento_valor"
+                android:visibility="gone"/>
 
             <EditText
-                android:id="@+id/label_valor_evento"
+                android:id="@+id/evento_etValor"
                 style="@style/FormEventoHalf"
-                android:layout_below="@+id/string_valor_evento"
-                android:hint="@string/info_evento_valor" />
+                android:layout_below="@+id/evento_tvLabelValor"
+                android:hint="@string/info_evento_valor"
+                android:inputType="number"
+                android:visibility="gone"/>
 
             <TextView
-                android:id="@+id/tvEventoPago"
+                android:id="@+id/evento_tvLabelPago"
                 style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/label_horario_evento"
+                android:layout_below="@+id/evento_etHorario"
                 android:layout_alignParentEnd="true"
                 android:layout_toStartOf="@+id/checkbox_valor_evento"
                 android:text="Evento Gratuito" />
 
             <Switch
+                android:id="@+id/evento_swIsPago"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvEventoPago"
+                android:layout_below="@+id/evento_tvLabelPago"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="110dp"/>
+                android:layout_marginEnd="110dp"
+                android:layout_marginBottom="5dp"/>
 
             <TextView
-                android:id="@+id/string_adicionar_categoria"
+                android:id="@+id/evento_tvLabelCategoria"
                 style="@style/FormLabel"
-                android:layout_below="@+id/label_valor_evento"
+                android:layout_below="@+id/evento_swIsPago"
                 android:text="Adicionar Categoria" />
 
             <EditText
-                android:id="@+id/label_adicionar_categoria_evento"
+                android:id="@+id/evento_etCategoria"
                 style="@style/FormEvento"
-                android:layout_below="@+id/string_adicionar_categoria"
-                android:hint="Ex Futebol, Natação, Basquete" />
+                android:layout_below="@+id/evento_tvLabelCategoria"
+                android:hint="Ex Futebol, Natação, Basquete"
+                android:inputType="text"/>
 
             <TextView
                 android:id="@+id/string_categoria_adicionada"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/label_adicionar_categoria_evento"
+                android:layout_below="@+id/evento_etCategoria"
                 android:layout_marginTop="10dp"
                 android:background="#00BEFF"
                 android:gravity="center_horizontal"
@@ -179,7 +217,7 @@
                 android:id="@+id/string_categoria_adicionada2"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/label_adicionar_categoria_evento"
+                android:layout_below="@+id/evento_etCategoria"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/string_categoria_adicionada"
@@ -191,7 +229,7 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/string_quantidade_participante"
+                android:id="@+id/evento_tvLabelQuantidade"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/string_categoria_adicionada"
@@ -200,26 +238,42 @@
                 android:textColor="@color/cor_branco"
                 android:textSize="15sp" />
 
-            <EditText
-                android:id="@+id/label_qtd_participantes"
+            <TextView
+                android:id="@+id/evento_etQuantidade"
                 style="@style/FormEventoHalf"
                 android:layout_below="@+id/string_categoria_adicionada"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="15dp"
                 android:hint="1"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:inputType="numberDecimal"/>
 
             <TextView
-                android:id="@+id/string_adicionar_participantes"
+                android:id="@+id/evento_tvLabelSenha"
                 style="@style/FormLabel"
-                android:layout_below="@+id/string_quantidade_participante"
+                android:layout_below="@+id/evento_tvLabelQuantidade"
+                android:text="@string/senhaEventoPrivado"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/evento_etSenha"
+                style="@style/FormEvento"
+                android:layout_below="@+id/evento_tvLabelSenha"
+                android:hint="@string/hintSenhaEvento"
+                android:visibility="gone"
+                android:inputType="textPassword"/>
+
+            <TextView
+                android:id="@+id/evento_tvLabelParticipante"
+                style="@style/FormLabel"
+                android:layout_below="@+id/evento_etSenha"
                 android:text="Adicionar Participantes" />
 
 
             <EditText
                 android:id="@+id/label_adicionar_participantes"
                 style="@style/FormEvento"
-                android:layout_below="@+id/string_adicionar_participantes"
+                android:layout_below="@+id/evento_tvLabelParticipante"
                 android:hint="ex chileno123" />
 
             <ScrollView
@@ -272,6 +326,7 @@
                 android:src="@drawable/ic_arrow_downward_black_24dp" />
 
             <Button
+                android:id="@+id/evento_btCadastrar"
                 style="@style/ButtonDefault"
                 android:layout_width="match_parent"
                 android:layout_below="@+id/icon_ver_mais"

@@ -46,7 +46,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/editarUsuario_tvQualificacao"
-                android:background="@drawable/ic_star_yellow" />
+                android:background="@drawable/ic_star_black" />
 
             <ImageView
                 android:id="@+id/editarUsuario_ivEstrelaDois"
@@ -55,7 +55,7 @@
                 android:layout_below="@id/editarUsuario_tvAlteraFoto"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/editarUsuario_ivEstrelaUm"
-                android:background="@drawable/ic_star_yellow" />
+                android:background="@drawable/ic_star_black" />
 
             <ImageView
                 android:id="@+id/editarUsuario_ivEstrelaTres"
@@ -64,7 +64,7 @@
                 android:layout_below="@id/editarUsuario_tvAlteraFoto"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/editarUsuario_ivEstrelaDois"
-                android:background="@drawable/ic_star_yellow" />
+                android:background="@drawable/ic_star_black" />
 
             <ImageView
                 android:id="@+id/editarUsuario_ivEstrelaQuatro"
@@ -73,7 +73,7 @@
                 android:layout_below="@id/editarUsuario_tvAlteraFoto"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/editarUsuario_ivEstrelaTres"
-                android:background="@drawable/ic_star_yellow" />
+                android:background="@drawable/ic_star_black" />
 
             <ImageView
                 android:id="@+id/editarUsuario_ivEstrelaCinco"
@@ -160,6 +160,7 @@
                 style="@style/ButtonDefault"
                 android:layout_below="@id/editarUsuario_etSenha"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 android:background="@color/cor_azul"
                 android:text="@string/alterar" />
         </RelativeLayout>
