@@ -4,6 +4,8 @@ import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
+import androidx.annotation.RequiresApi
+import com.br.bora.app.model.Evento
 import kotlinx.android.synthetic.main.activity_detalhe_evento.*
 
 class DetalheEventoActivity : AppCompatActivity() {
@@ -12,8 +14,30 @@ class DetalheEventoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhe_evento)
 
-        val imageBytes = Base64.decode("iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAALESURBVO3BQY7cQAwEwSxC//9yeo88NTCQtPbQjIg/WGMUa5RijVKsUYo1SrFGKdYoxRqlWKMUa5RijVKsUYo1SrFGKdYoxRrl4qYk/CaVkyScqHwiCb9J5Y5ijVKsUYo1ysXDVJ6UhJMkdCpvUnlSEp5UrFGKNUqxRrl4WRI+ofIJlS4JJypPSsInVN5UrFGKNUqxRrn4zyWhU/lmxRqlWKMUa5SLL5eETqVLwv+kWKMUa5RijXLxMpU3qZyovEnlX1KsUYo1SrFGuXhYEn5TEjqVLgmdyh1J+JcVa5RijVKsUeIP/iNJOFH5ZsUapVijFGuUi5uS0Kl0SehUuiR0Kl0SOpUnqdyRhE7lJAmdypOKNUqxRinWKPEHNyThRKVLQqfyiSScqNyRhE7lJAknKr+pWKMUa5RijXJxk0qXhE8koVPpktCpdEk4SUKn0iWhU+mS0KmcqJwk4UTljmKNUqxRijXKxcNUuiR0Kl0STlS6JHQqd6icqHRJuEPlTcUapVijFGuUi5uScKLSJeETSbhD5SQJncqJykkSTlS6JHQqdxRrlGKNUqxR4g++WBI6lS4JJyonSehUPpGETuVNxRqlWKMUa5SLm5Lwm1Q6lS4Jf1MSOpUuCScqdxRrlGKNUqxRLh6m8qQkvCkJJypPUumS8KRijVKsUYo1ysXLkvAJlU8k4USlS0KncpKETuVE5W8q1ijFGqVYo1x8OZUuCScqdyShU+mS0Kl0SehUnlSsUYo1SrFGufhySehUuiR0Kl0SOpVO5SQJnUqXhE6lS0KnckexRinWKMUa5eJlKm9SuUPlJAmdSqfSJaFT6ZLQqTypWKMUa5RijXLxsCT8piScqJwkoVM5ScKTktCp3FGsUYo1SrFGiT9YYxRrlGKNUqxRijVKsUYp1ijFGqVYoxRrlGKNUqxRijVKsUYp1ijFGuUPFT0i4oNwFWIAAAAASUVORK5CYII=",Base64.DEFAULT)
-        val decodedImg = BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.size)
-        qr_code.setImageBitmap(decodedImg)
+        iniciaTela()
     }
+
+    fun iniciaTela(){
+        dEvento_btBora.setOnClickListener {
+
+        }
+    }
+
+    fun preencherCampos(evento:Evento){
+        dEvento_vTituloEvento.text = evento.name;
+        //dEvento_tvOrganizador.text =
+//        if(evento.isPago){
+//            dEvento_tvValor.text = evento.valor
+//        }
+        //dEvento_tvDiaSemana.text = evento.startDay.toString();
+        //dEvento_tvData.text = evento.startDay.toString();
+        //dEvento_tvDetalhe.text = evento.descricao;
+        //dEvento_tvCriacao.text = evento.dataCriacao;
+        //dEvento_tvCategoria.text = evento.categoria;
+        //dEvento_tvSaldo
+
+    }
+
+
+
 }

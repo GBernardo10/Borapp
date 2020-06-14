@@ -31,7 +31,7 @@
                 tools:text="Futebas do Bolivia" />
 
             <TextView
-                android:id="@+id/tvTituloOrganizador"
+                android:id="@+id/dEvento_tvTituloOrganizador"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/name_details_evento"
@@ -53,7 +53,7 @@
                 tools:text="Boliva123" />
 
             <ImageView
-                android:id="@+id/ivEstrelaUm"
+                android:id="@+id/dEvento_ivEstrelaUm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvTituloOrganizador"
@@ -63,7 +63,7 @@
                 android:contentDescription="TODO" />
 
             <ImageView
-                android:id="@+id/ivEstrelaDois"
+                android:id="@+id/dEvento_ivEstrelaDois"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvTituloOrganizador"
@@ -71,7 +71,7 @@
                 android:background="@drawable/ic_star_yellow" />
 
             <ImageView
-                android:id="@+id/ivEstrelaTres"
+                android:id="@+id/dEvento_ivEstrelaTres"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvTituloOrganizador"
@@ -79,7 +79,7 @@
                 android:background="@drawable/ic_star_yellow" />
 
             <ImageView
-                android:id="@+id/ivEstrelaQuatro"
+                android:id="@+id/dEvento_ivEstrelaQuatro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvTituloOrganizador"
@@ -87,7 +87,7 @@
                 android:background="@drawable/ic_star_yellow" />
 
             <ImageView
-                android:id="@+id/ivEstrelaCinco"
+                android:id="@+id/dEvento_ivEstrelaCinco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvTituloOrganizador"
@@ -96,19 +96,19 @@
                 android:contentDescription="TODO" />
 
             <TextView
-                android:id="@+id/tvEndereco"
+                android:id="@+id/dEvento_tvEndereco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ivCirculo"
+                android:layout_below="@id/dEvento_ivCirculo"
                 android:layout_marginTop="6dp"
                 tools:text="Rua Elite dos bravos, 53 - Vila Invernada - SP"
                 android:textAlignment="center"
-                android:textColor="@color/colorAccent"
-                android:textSize="15sp"
+                android:textColor="@color/cor_azul"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvValor"
+                android:id="@+id/dEvento_tvValor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvEndereco"
@@ -118,15 +118,15 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/ivCarro"
+                android:id="@+id/dEvento_ivCarro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvValor"
+                android:layout_below="@+id/dEvento_tvValor"
                 android:background="@drawable/ic_car_white"
                 android:contentDescription="TODO" />
 
             <TextView
-                android:id="@+id/tvTempoCarro"
+                android:id="@+id/dEvento_tvTempoCarro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvValor"
@@ -136,7 +136,7 @@
                 android:textSize="15sp" />
 
             <ImageView
-                android:id="@+id/ivOnibus"
+                android:id="@+id/dEvento_ivOnibus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvValor"
@@ -145,7 +145,7 @@
                 android:contentDescription="TODO" />
 
             <TextView
-                android:id="@+id/tvTempoOnibus"
+                android:id="@+id/dEvento_tvTempoOnibus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvValor"
@@ -155,7 +155,7 @@
                 android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/tvDiaSemana"
+                android:id="@+id/dEvento_tvDiaSemana"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvEndereco"
@@ -167,7 +167,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvData"
+                android:id="@+id/dEvento_tvData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvDiaSemana"
@@ -179,40 +179,53 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvTituloDetalhe"
+                android:id="@+id/dEvento_tvTituloDetalhe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvData"
+                android:layout_below="@+id/dEvento_tvData"
                 android:layout_marginTop="6dp"
                 tools:text="@string/detalhe_evento"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvDetalhe"
-                android:layout_width="match_parent"
+            <ScrollView
+                android:id="@+id/dEvento_svDetalhe"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvTituloDetalhe"
-                android:textColor="@android:color/white"
-                android:textSize="15sp"
-                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea" />
+                android:layout_below="@+id/dEvento_tvTituloDetalhe">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/dEvento_tvDetalhe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dEvento_tvTituloDetalhe"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
+                        android:textColor="@color/cor_branco"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+            </ScrollView>
 
             <TextView
-                android:id="@+id/tvCriacao"
+                android:id="@+id/dEvento_tvCriacao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvDetalhe"
+                android:layout_below="@id/dEvento_svDetalhe"
                 android:layout_marginTop="7dp"
                 android:textColor="@android:color/white"
                 android:textSize="15sp"
                 tools:text="Este evento foi criado em 01/03/2019" />
 
             <TextView
-                android:id="@+id/tvCategoria"
+                android:id="@+id/dEvento_tvCategoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvCriacao"
+                android:layout_below="@id/dEvento_tvCriacao"
                 android:layout_marginTop="2dp"
 
                 android:text="Esporte | Futebol | Futsal"
@@ -220,23 +233,19 @@
                 android:textSize="15sp" />
 
             <Button
-                android:id="@+id/btBora"
+                android:id="@+id/dEvento_btBora"
                 android:layout_width="150dp"
-                android:layout_height="45dp"
-                android:layout_below="@id/tvCategoria"
+                style="@style/ButtonDefault"
+                android:layout_below="@id/dEvento_tvCategoria"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:background="@color/colorAccent"
-                android:textAlignment="center"
-                android:textColor="@color/colorAccent"
-                android:textSize="20sp"
-                tools:text="@string/bora_detalhar" />
+                android:layout_marginTop="40dp"
+                android:text="@string/bora_detalhar" />
 
             <TextView
-                android:id="@+id/tvSaldo"
+                android:id="@+id/dEvento_tvSaldo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btBora"
+                android:layout_below="@+id/dEvento_btBora"
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
@@ -244,10 +253,10 @@
                 tools:text="* seu saldo R$ 14,00" />
 
             <TextView
-                android:id="@+id/tvParticipante"
+                android:id="@+id/dEvento_tvParticipante"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvSaldo"
+                android:layout_below="@+id/dEvento_tvSaldo"
                 android:layout_marginTop="20dp"
                 android:text="@string/participante"
                 android:textAlignment="center"
@@ -261,6 +270,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvParticipante"
                 android:contentDescription="TODO" />
+
+            <LinearLayout
+                android:id="@+id/dEVento_llParticipantes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dEvento_tvParticipante"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
 
         </RelativeLayout>
     </ScrollView>

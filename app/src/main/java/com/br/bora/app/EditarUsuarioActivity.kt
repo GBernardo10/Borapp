@@ -35,7 +35,8 @@ class EditarUsuarioActivity : AppCompatActivity() {
         preferencias = getPreferences(Context.MODE_PRIVATE)
         token = preferencias?.getString("token", "");
         val usenamePreferences = preferencias?.getString("username", "");
-        setQualificacoes(1.7)
+
+        //setQualificacoes(1.7)
         inicializaTela();
 
     }
@@ -75,7 +76,7 @@ class EditarUsuarioActivity : AppCompatActivity() {
         }
     }
 
-    fun alterarCadastro(
+    fun changeUser(
         name: String,
         phone: String,
         mail: String,
@@ -87,7 +88,7 @@ class EditarUsuarioActivity : AppCompatActivity() {
         val signInInfo = RequestUser(user);
         retIn.userEdit(signInInfo).enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                if (response.code() == 201) {
+                if (response.code() == 200) {
 
                 }
             }
@@ -170,7 +171,7 @@ class EditarUsuarioActivity : AppCompatActivity() {
     fun inicializaTela(){
         editarUsuario_btAlterar.setOnClickListener {
             if (validaCampos()) {
-                alterarCadastro(
+                changeUser(
                     editarUsuario_tvNome.text.toString()
                     , editarUsuario_etCelular.text.toString()
                     , editarUsuario_etEmail.text.toString()
