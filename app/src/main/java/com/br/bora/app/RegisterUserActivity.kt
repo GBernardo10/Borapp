@@ -9,21 +9,24 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.dhaval2404.imagepicker.ImagePicker
-import kotlinx.android.synthetic.main.activity_cadastro_pf.*
-import kotlinx.android.synthetic.main.activity_editar_usuario.etCelular
-import kotlinx.android.synthetic.main.activity_editar_usuario.etEmail
-import kotlinx.android.synthetic.main.activity_editar_usuario.ivFoto
+import kotlinx.android.synthetic.main.activity_register_user.*
+import kotlinx.android.synthetic.main.activity_register_user.action_bar
 
-class CadastroPfActivity : AppCompatActivity() {
+class RegisterUserActivity : AppCompatActivity() {
 
     private val PERMISSION_CODE = 1000;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro_pf)
+        setContentView(R.layout.activity_register_user)
+        setSupportActionBar(action_bar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        action_bar.title = getString(R.string.register)
+        action_bar.setTitleTextColor(resources.getColor(R.color.colorText))
 
-        ivFoto.setImageResource(R.drawable.logobora_foreground);
-        ivFoto.setOnClickListener {
+        upload_pic.setImageResource(R.drawable.ic_cloud_upload);
+        upload_pic.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(android.Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_DENIED
@@ -68,7 +71,7 @@ class CadastroPfActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             val fileUri = data?.data
-            ivFoto.setImageURI(fileUri);
+            upload_pic.setImageURI(fileUri);
         } else if (resultCode == ImagePicker.RESULT_ERROR) {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
         } else {
@@ -79,32 +82,25 @@ class CadastroPfActivity : AppCompatActivity() {
     fun cadastrarUsuario(v: View) {
         if (validaCampos()) {
             startActivity(Intent(this, AuthActivity::class.java));
-        } else {
-
         }
     }
 
     fun validaCampos(): Boolean {
-        if (etEmail.text.toString().isEmpty()) {
-            etEmail.requestFocus();
-            etEmail.error = getString(R.string.emailError)
+        if (mail_user.text.toString().isEmpty()) {
+            mail_user.requestFocus();
+            mail_user.error = getString(R.string.emailError)
             return false;
         }
-        if (etCelular.text.toString().isEmpty()) {
-            etCelular.requestFocus();
-            etCelular.error = getString(R.string.celularError);
+        if (phone_user.text.toString().isEmpty()) {
+            phone_user.requestFocus();
+            phone_user.error = getString(R.string.celularError);
             return false;
         }
-        if (etLogin.text.toString().isEmpty()) {
-            etLogin.requestFocus();
-            etLogin.error = getString(R.string.loginError);
+        if (username.text.toString().isEmpty()) {
+            username.requestFocus();
+            username.error = getString(R.string.loginError);
             return false;
         }
-       /* if (etSenha.text.toString().isEmpty()) {
-            etSenha.requestFocus();
-            etSenha.error = getString(R.string.senhaError);
-            return false;
-        }*/
         return true;
     }
 }
