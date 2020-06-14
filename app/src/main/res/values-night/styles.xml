@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+        <item name="editTextStyle">@style/EditText</item>
+        <item name="materialCardViewStyle">@style/MaterialCardView</item>
+        <item name="fontFamily">@font/firacode_regular</item>
+    </style>
+
+    <style name="BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemBackground">@color/colorPrimaryDark</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="elevation">1dp</item>
+        <item name="itemIconTint">@drawable/selector</item>
+        <item name="itemTextColor">@drawable/selector</item>
+    </style>
+
+    <style name="MaterialToolbar">
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="navigationIcon">@drawable/ic_close</item>
+        <item name="popupTheme">@style/Widget.AppCompat.PopupMenu</item>
+    </style>
+
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_height">55dp</item>
+        <item name="android:fontFamily">@font/firacode_regular</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/edit_text_states</item>
+        <item name="android:textColor">@color/colorEditText</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:maxLength">20</item>
+        <item name="android:textColorHint">@color/colorEditText</item>
+    </style>
+
+</resources>

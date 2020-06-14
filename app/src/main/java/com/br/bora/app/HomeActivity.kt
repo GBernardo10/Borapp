@@ -9,9 +9,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.app.ActionBar
 import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_home.view.*
+import kotlinx.android.synthetic.main.activity_tab_bar.*
+import kotlinx.android.synthetic.main.activity_tab_bar.view.*
+import kotlinx.android.synthetic.main.activity_tab_bar.view.action_bar
 import java.util.function.Predicate
 
 class HomeActivity : Fragment() {
@@ -22,7 +26,6 @@ class HomeActivity : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.activity_home, container, false)
-
         view.add_role.setOnClickListener{
             startActivity(Intent(context,CriarEventoActivity::class.java))
         }
@@ -40,5 +43,9 @@ class HomeActivity : Fragment() {
             startActivity(Intent(context,ConfiguracoesActivity::class.java))
         }
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }

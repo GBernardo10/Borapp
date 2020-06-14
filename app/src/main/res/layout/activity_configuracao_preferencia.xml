@@ -95,7 +95,7 @@
 
             <Button
                 android:id="@+id/btSalvar"
-                style="@style/ButtonDefault"
+                style="@style/Button"
                 android:layout_below="@id/card5"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"

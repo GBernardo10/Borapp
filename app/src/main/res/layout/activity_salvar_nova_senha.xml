@@ -55,7 +55,7 @@
 
         <Button
             android:id="@+id/btnLogin"
-            style="@style/ButtonDefault"
+            style="@style/Button"
             android:layout_below="@id/confirmNewpass"
             android:layout_marginTop="20dp"
             android:text="@string/salvar_senha"></Button>

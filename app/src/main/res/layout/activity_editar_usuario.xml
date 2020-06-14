@@ -156,9 +156,9 @@
                 android:inputType="textPassword" />
 
             <Button
-                android:id="@+id/editarUsuario_btAlterar"
-                style="@style/ButtonDefault"
-                android:layout_below="@id/editarUsuario_etSenha"
+                android:id="@+id/btAlterar"
+                style="@style/Button"
+                android:layout_below="@id/etSenha"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="@color/cor_azul"

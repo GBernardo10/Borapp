@@ -1,36 +1,107 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/colorBackground</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="android:textViewStyle">@style/TextView</item>
+        <item name="editTextStyle">@style/EditText</item>
+        <item name="materialCardViewStyle">@style/MaterialCardView</item>
+        <item name="fontFamily">@font/firacode_regular</item>
+        <item name="drawerArrowStyle">@style/WhiteDrawerIconStyle</item>
+    </style>
+
+    <style name="WhiteDrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_height">55dp</item>
+        <item name="android:fontFamily">@font/firacode_regular</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/edit_text_states</item>
+        <item name="android:textColor">@color/colorEditText</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:maxLength">20</item>
+        <item name="android:textColorHint">@color/colorEditText</item>
+    </style>
+
+    <style name="LogoCircle">
+        <item name="android:layout_width">@android:dimen/thumbnail_width</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:contentDescription">@string/icone_logo</item>
+    </style>
+
+
+    <style name="TextView">
+        <item name="android:fontFamily">@font/firacode_regular</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorTextBtn</item>
+        <item name="android:fontFamily">@font/firacode_regular</item>
+        <item name="android:backgroundTint">@color/colorAccent</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <style name="MaterialToolbar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="navigationIcon">@drawable/ic_close_light</item>
+        <item name="popupTheme">@style/Widget.AppCompat.PopupMenu</item>
+    </style>
+
+    <style name="AppBarLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MaterialCheckBox">
+        <item name="android:buttonTint">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="MaterialCardView" parent="Theme.MaterialComponents">
+        <item name="cardBackgroundColor">@android:color/white</item>
+        <item name="cardCornerRadius">15dp</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <style name="BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemBackground">@color/colorPrimary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="elevation">1dp</item>
+        <item name="itemIconTint">@drawable/selector</item>
+        <item name="itemTextColor">@drawable/selector</item>
     </style>
 
     <style name="FormEditText">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:textColor">@color/cor_preto</item>
+        <item name="android:textColor">@android:color/black</item>
         <item name="android:layout_height">45dp</item>
-        <item name="android:paddingStart">20dp</item>
-        <item name="android:paddingEnd">20dp</item>
-        <item name="android:layout_centerVertical">true</item>
-        <item name="android:background">@color/cor_branco</item>
+        <item name="android:background">@android:color/black</item>
     </style>
 
-    <style name="ButtonDefault">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:background">@color/cor_azul</item>
-        <item name="android:layout_below">@id/pass</item>
-        <item name="android:layout_marginTop">20dp</item>
-    </style>
 
     <style name="ButtonDefaultRadio">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/cor_branco</item>
+        <item name="android:textColor">@android:color/black</item>
         <item name="android:background">@drawable/btn_default</item>
     </style>
 
@@ -40,44 +111,27 @@
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginBottom">20dp</item>
-        <item name="android:textColor">@color/cor_azul</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="ButtonOrange">
         <item name="android:layout_width">150dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/cor_laranja</item>
+        <item name="android:background">@android:color/black</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/cor_branco</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="ButtonBlack">
         <item name="android:layout_width">150dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_below">@+id/border</item>
-        <item name="android:background">@color/cor_preto</item>
+        <item name="android:background">@android:color/black</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:textSize">15dp</item>
-        <item name="android:textColor">@color/cor_branco</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
-    <style name="TitleActivity">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/cor_branco</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginTop">10dp</item>
-    </style>
-
-    <style name="LogoCircle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">30dp</item>
-        <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:contentDescription">@string/icone_logo</item>
-    </style>
 
     <style name="Logo">
         <item name="android:layout_width">100dp</item>
@@ -88,10 +142,10 @@
     </style>
 
     <style name="RelativeBody">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_marginLeft">20dp</item>
-        <item name="android:layout_marginRight">20dp</item>
     </style>
 
     <style name="FormLabel">
@@ -100,48 +154,37 @@
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
-        <item name="android:textColor">@color/cor_branco</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="PhotoView">
         <item name="android:layout_width">125dp</item>
         <item name="android:layout_height">125dp</item>
-        <item name="android:scaleType">centerCrop</item>
-        <item name="android:src">@mipmap/ic_person_camera</item>
         <item name="android:layout_centerHorizontal">true</item>
     </style>
-
-    <style name="PhotoEventoView">
-        <item name="android:layout_width">125dp</item>
-        <item name="android:layout_height">125dp</item>
-        <item name="android:scaleType">centerCrop</item>
-        <item name="android:src">@mipmap/ic_evento_photo_2</item>
-        <item name="android:layout_centerHorizontal">true</item>
-    </style>
-
 
     <style name="PhotoView_old">
         <item name="android:layout_width">100dp</item>
         <item name="android:layout_height">100dp</item>
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:layout_marginTop">10dp</item>
-<!--        <item name="android:src">@drawable/view_circle</item>-->
+        <item name="android:src">@drawable/view_circle</item>
     </style>
 
     <style name="CardPreference">
         <item name="android:layout_width">175dp</item>
         <item name="android:layout_height">90dp</item>
         <item name="android:layout_marginTop">20dp</item>
-        <item name="android:background">@color/cor_azul</item>
+        <item name="android:background">@android:color/black</item>
         <item name="android:padding">0dp</item>
         <item name="android:scaleType">fitXY</item>
-        <item name="android:textColor">@color/cor_branco</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="TitleBodyText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/cor_azul</item>
+        <item name="android:textColor">@android:color/black</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -149,44 +192,40 @@
     <style name="TextBodyText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/cor_branco</item>
+        <item name="android:textColor">@android:color/black</item>
         <item name="android:textSize">18sp</item>
     </style>
 
     <style name="FormEvento">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:textColor">@color/cor_preto</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:paddingStart">10dp</item>
-        <item name="android:paddingEnd">20dp</item>
-        <item name="android:layout_centerVertical">true</item>
-        <item name="android:background">@color/cor_branco</item>
-    </style>
-
-    <style name="FormEventoHalf">
-        <item name="android:layout_width">150dp</item>
-        <item name="android:textColor">@color/cor_preto</item>
+        <item name="android:textColor">@android:color/black</item>
         <item name="android:layout_height">35dp</item>
         <item name="android:paddingStart">10dp</item>
         <item name="android:paddingEnd">20dp</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:background">@color/cor_branco</item>
+        <item name="android:background">@android:color/black</item>
     </style>
 
-    <style name="ButtonBuscaEndereco" parent="ButtonDefault">
+    <style name="FormEventoHalf">
         <item name="android:layout_width">150dp</item>
-        <item name="android:layout_height">40dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@android:color/black</item>
     </style>
 
-    <style name="FormLabelEventoHalf" parent="FormLabel">
+    <style name="FormInputHalf">
         <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="ErrorETMessage">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
-        <item name="android:textColor">@color/cor_laranja</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="MessageError">

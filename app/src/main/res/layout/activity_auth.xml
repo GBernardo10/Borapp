@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AuthActivity">
+
+    <RelativeLayout
+        style="@style/RelativeBody"
+        >
+        <ImageView
+            android:id="@+id/logo"
+            style="@style/LogoCircle"
+            android:contentDescription="@string/logo_bora"
+            android:src="@drawable/ic_logo" />
+
+        <TextView
+            android:id="@+id/main_messageError"
+            android:layout_marginTop="120dp"
+            android:layout_below="@+id/logo"
+            style="@style/MessageError" />
+
+
+        <TextView
+            style="@style/TextView"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/logo"
+            android:id="@+id/label_login"
+            android:text="@string/login" />
+
+        <EditText
+            style="@style/EditText"
+            android:drawableEnd="@drawable/ic_person_light"
+            android:id="@+id/login"
+            android:layout_below="@+id/label_login"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:labelFor="@id/label_login"
+            android:layout_marginTop="5dp"
+            android:autofillHints="" />
+
+        <TextView
+            style="@style/TextView"
+            android:layout_marginTop="5dp"
+            android:id="@+id/label_pass"
+            android:layout_below="@+id/login"
+            android:text="@string/senha" />
+
+        <EditText
+            style="@style/EditText"
+            android:id="@+id/pass"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/label_pass"
+            android:autofillHints=""
+            android:hint="@string/senha"
+            android:drawableEnd="@drawable/ic_vpn_key_light"
+            android:inputType="textPassword"
+            android:labelFor="@id/label_pass" />
+
+        <Button
+            style="@style/Button"
+            android:layout_below="@+id/pass"
+            android:id="@+id/btnLogin"
+            android:text="@string/login" />
+
+        <TextView
+            android:id="@+id/forgotPassword"
+            android:layout_below="@id/btnLogin"
+            style="@style/TextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:onClick="irEsqueciSenha"
+            android:text="@string/forgot_password"
+            />
+
+        <TextView
+            android:layout_below="@id/forgotPassword"
+            android:layout_centerHorizontal="true"
+            style="@style/TextView"
+            android:onClick="irCadastrar"
+            android:text="@string/register"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

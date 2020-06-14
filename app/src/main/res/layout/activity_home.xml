@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#320236"
     tools:context=".HomeActivity">
 
     <ScrollView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -24,16 +24,11 @@
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/settings" />
 
-            <ImageView
-                android:id="@+id/logo"
-                style="@style/LogoCircle"
-                android:src="@drawable/logobora_foreground" />
 
             <TextView
                 android:id="@+id/welcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/logo"
                 android:text="Seja bem vindo, usuario"
                 android:textColor="@color/cor_branco" />
 

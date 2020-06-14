@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="tab_bar">#fff</color>
-    <color name="cor_branco">#FFF</color>
-    <color name="cor_azul">#00BEFF</color>
-    <color name="cor_azul_claro">#6BCCED</color>
-    <color name="cor_verde">#03D871</color>
-    <color name="cor_roxo">#320236</color>
-    <color name="cor_preto">#000000</color>
-    <color name="cor_laranja">#FF7A00</color>
-    <color name="c_white">#fff</color>
-    <color name="cor_vermelha">#FF0202</color>
+    <color name="colorPrimary">#320236</color>
+    <color name="colorPrimaryDark">#ffc482</color>
+    <color name="colorAccent">#62b6cb</color>
+    <color name="colorBackground">@color/colorPrimary</color>
+    <color name="colorCardBackground">@android:color/white</color>
+    <color name="colorEditTextBackground">@android:color/white</color>
+    <color name="colorEditText">#1e191d</color>
+    <color name="colorText">@android:color/white</color>
+    <color name="colorTextBtn">@android:color/white</color>
+    <color name="colorItemMenuTabBarActive">@color/colorPrimaryDark</color>
+    <color name="ic_logo_launcher_background">#1e191d</color>
+    <color name="colorNavigationBackground">@android:color/white</color>
+
+
 </resources>
 
