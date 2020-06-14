@@ -2,49 +2,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RelativeBody"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
 
-    <RelativeLayout style="@style/RelativeBody">
+    <TextView
+        android:id="@+id/title_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/configuracoes" />
 
-        <TextView
-            android:id="@+id/labelConfig"
-            style="@style/TitleActivity"
-            android:text="@string/configuracoes" />
+    <Button
+        android:id="@+id/btn_edit_password_settings"
+        style="@style/Button"
+        android:layout_below="@id/title_settings"
+        android:text="@string/editarSenha" />
 
-        <Button
-            android:id="@+id/btEditarSenha"
-            style="@style/ButtonDefaultRadio"
-            android:layout_below="@id/labelConfig"
-            android:layout_marginTop="20dp"
-            android:text="@string/editarSenha" />
+    <Button
+        android:id="@+id/btPreferencias"
+        style="@style/Button"
+        android:layout_below="@id/btn_edit_password_settings"
+        android:layout_marginTop="20dp"
+        android:text="@string/configPreferencias" />
 
-        <Button
-            android:id="@+id/btPreferencias"
-            style="@style/ButtonDefaultRadio"
-            android:layout_below="@id/btEditarSenha"
-            android:layout_marginTop="20dp"
-            android:text="@string/configPreferencias" />
+    <TextView
+        android:id="@+id/label_switch_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btPreferencias"
+        android:text="@string/switch_theme" />
 
-        <TextView
-            android:id="@+id/label_switch_theme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btPreferencias"
-            android:text="@string/switch_theme" />
-
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:layout_alignBaseline="@id/label_switch_theme"
-            android:layout_marginStart="100dp"
-            android:id="@+id/switch_theme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btPreferencias"
-             />
-
-
-    </RelativeLayout>
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btPreferencias"
+        android:layout_alignBaseline="@id/label_switch_theme"
+        android:layout_marginStart="100dp" />
 
 </RelativeLayout>

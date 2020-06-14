@@ -2,63 +2,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RelativeBody"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#320236"
     tools:context=".SalvarNovaSenha">
 
-    <RelativeLayout
-        android:id="@+id/rl_login"
-        style="@style/RelativeBody">
+    <TextView
+        android:id="@+id/label_new_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nova_senha" />
 
-        <ImageView
-            android:id="@+id/logo"
-            style="@style/LogoCircle"
-            android:src="@drawable/logobora_foreground"></ImageView>
+    <EditText
+        android:id="@+id/new_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label_new_password"
+        android:autofillHints=""
+        android:hint="@string/nova_senha"
+        android:inputType="textPassword" />
 
-        <TextView
-            android:id="@+id/label_login"
-            style="@style/FormLabel"
-            android:layout_above="@id/login"
-            android:text="@string/nova_senha"/>
+    <TextView
+        android:id="@+id/label_confirm_new_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_password"
+        android:text="@string/confirm_new_password" />
 
-        <EditText
-            android:id="@+id/login"
-            style="@style/FormEditText"
-            android:autofillHints=""
-            android:hint="@string/nova_senha"
-            android:inputType="text"
-            android:labelFor="@id/label_login"></EditText>
+    <EditText
+        android:id="@+id/confirmNewpass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label_confirm_new_password"
+        android:autofillHints=""
+        android:hint="@string/confirm_new_password"
+        android:inputType="textPassword" />
 
-
-        <TextView
-            android:id="@+id/label_pass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/confirmNewpass"
-            android:layout_marginBottom="-40dp"
-            android:text="@string/confirmar_nova_senha"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textColor="#fff">
-
-        </TextView>
-
-        <EditText
-            android:id="@+id/confirmNewpass"
-            style="@style/FormEditText"
-            android:layout_below="@id/login"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:hint="@string/confirmar_nova_senha"
-            android:inputType="text"
-            android:labelFor="@id/label_pass"></EditText>
-
-        <Button
-            android:id="@+id/btnLogin"
-            style="@style/Button"
-            android:layout_below="@id/confirmNewpass"
-            android:layout_marginTop="20dp"
-            android:text="@string/salvar_senha"></Button>
-
-    </RelativeLayout>
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/Button"
+        android:layout_below="@id/confirmNewpass"
+        android:text="@string/salvar_senha" />
 </RelativeLayout>
