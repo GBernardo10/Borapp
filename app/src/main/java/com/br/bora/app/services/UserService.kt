@@ -4,6 +4,7 @@ import com.br.bora.app.model.User
 import com.br.bora.app.request.RequestUser
 import com.br.bora.app.request.RequestUserLogin
 
+import com.br.bora.app.model.User
 import com.br.bora.app.request.AuthUser
 import com.br.bora.app.response.Token
 import okhttp3.ResponseBody
@@ -27,5 +28,5 @@ interface UserService {
     @GET("users/{username}")
     fun userByMail(username: String?): Call<User>
     @POST("users/auth")
-    fun auth(@Body request:AuthUser):Call<Token>
+    fun auth(@Body request:User.Auth):Call<Token>
 }
