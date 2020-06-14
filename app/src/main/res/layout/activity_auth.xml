@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".AuthActivity">
 
     <RelativeLayout
         style="@style/RelativeBody"
         >
         <ImageView
-
             android:id="@+id/logo"
             style="@style/LogoCircle"
             android:contentDescription="@string/logo_bora"
@@ -25,7 +24,7 @@
 
         <EditText
             style="@style/EditText"
-            android:drawableEnd="@drawable/ic_person"
+            android:drawableEnd="@drawable/ic_person_light"
             android:id="@+id/login"
             android:layout_below="@+id/label_login"
             android:hint="@string/username"
@@ -48,7 +47,7 @@
             android:layout_below="@id/label_pass"
             android:autofillHints=""
             android:hint="@string/senha"
-            android:drawableEnd="@drawable/ic_key"
+            android:drawableEnd="@drawable/ic_vpn_key_light"
             android:inputType="textPassword"
             android:labelFor="@id/label_pass" />
 

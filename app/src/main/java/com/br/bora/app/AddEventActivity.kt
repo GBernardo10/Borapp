@@ -1,12 +1,14 @@
 package com.br.bora.app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
-class ConfirmarEventoActivity : AppCompatActivity() {
+class CriarEventoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_confirmar_evento)
+        setContentView(R.layout.activity_criar_evento)
     }
 }

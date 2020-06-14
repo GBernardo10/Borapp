@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_card_evento.*
 
-/**
- * A simple [Fragment] subclass.
- */
 class CardEvento : Fragment() {
 
     override fun onCreateView(
@@ -22,8 +19,7 @@ class CardEvento : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val texto = arguments?.getString("texto");
-        nomeEvento.text = texto;
+
     }
 
 }

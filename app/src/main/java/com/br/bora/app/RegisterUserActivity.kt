@@ -5,14 +5,11 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.View
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.dhaval2404.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.activity_cadastro_pf.*
-import kotlinx.android.synthetic.main.activity_editar_usuario.*
 import kotlinx.android.synthetic.main.activity_editar_usuario.etCelular
 import kotlinx.android.synthetic.main.activity_editar_usuario.etEmail
 import kotlinx.android.synthetic.main.activity_editar_usuario.ivFoto
@@ -81,7 +78,7 @@ class CadastroPfActivity : AppCompatActivity() {
 
     fun cadastrarUsuario(v: View) {
         if (validaCampos()) {
-            startActivity(Intent(this, MainActivity::class.java));
+            startActivity(Intent(this, AuthActivity::class.java));
         } else {
 
         }

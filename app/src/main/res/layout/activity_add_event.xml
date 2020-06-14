@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CriarEventoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout style="@style/RelativeBody">
+
+            <TextView
+                android:id="@+id/string_cadastre_seu_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_event"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/icon_upload_image"
+                style="@style/PhotoView"
+                android:layout_below="@+id/string_cadastre_seu_evento"
+                android:background="@drawable/ic_cloud_upload"
+                android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/description_upload_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/icon_upload_image"
+                android:layout_centerHorizontal="true"
+                android:text="@string/insira_imagem" />
+
+            <TextView
+                android:id="@+id/label_nome_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description_upload_image"
+                android:text="@string/title_event" />
+
+            <EditText
+                android:id="@+id/title_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_nome_evento"
+                android:autofillHints=""
+                android:hint="@string/info_evento_nome"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/label_zipcode_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_event"
+                android:text="@string/info_event_zipcode" />
+
+            <EditText
+                android:id="@+id/cep_event"
+                style="@style/FormInputHalf"
+                android:layout_below="@+id/label_zipcode_event"
+                android:autofillHints=""
+                android:hint="@string/info_event_zipcode"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/label_number_street_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_event"
+                android:layout_alignStart="@id/number_street_event"
+                android:layout_alignParentEnd="true"
+                android:text="@string/info_event_number_street" />
+
+            <EditText
+                android:id="@+id/number_street_event"
+                style="@style/FormInputHalf"
+                android:layout_below="@id/label_number_street_event"
+                android:layout_alignParentEnd="true"
+                android:autofillHints=""
+                android:hint="@string/info_event_number_street"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/label_date_start_event"
+                style="@style/FormInputHalf"
+                android:layout_below="@+id/cep_event"
+                android:text="@string/info_event_date_start" />
+
+            <EditText
+                android:id="@+id/date_event_start"
+                style="@style/FormInputHalf"
+                android:layout_below="@+id/label_date_start_event"
+                android:autofillHints=""
+                android:hint="@string/format_date"
+                android:inputType="date" />
+
+            <TextView
+                android:id="@+id/label_schedule_start_event"
+                style="@style/FormInputHalf"
+                android:layout_below="@+id/number_street_event"
+                android:layout_alignParentEnd="true"
+                android:text="@string/info_event_schedule_start" />
+
+            <EditText
+                android:id="@+id/schedule_start_event"
+                style="@style/FormInputHalf"
+                android:layout_below="@+id/label_schedule_start_event"
+                android:layout_alignParentEnd="true"
+                android:autofillHints=""
+                android:hint="@string/format_schedule"
+                android:inputType="time" />
+
+            <TextView
+                android:id="@+id/label_date_end_event"
+                style="@style/FormInputHalf"
+                android:layout_below="@+id/date_event_start"
+                android:text="@string/info_event_date_end" />
+
+            <EditText
+                android:id="@+id/date_event_end"
+                style="@style/FormInputHalf"
+                android:layout_below="@+id/label_date_end_event"
+                android:autofillHints=""
+                android:hint="@string/format_date"
+                android:inputType="date" />
+
+            <TextView
+                android:id="@+id/label_schedule_end_event"
+                style="@style/FormInputHalf"
+                android:layout_below="@+id/schedule_start_event"
+                android:layout_alignParentEnd="true"
+                android:text="@string/info_event_schedule_start" />
+
+            <EditText
+                android:id="@+id/schedule_end_event"
+                style="@style/FormInputHalf"
+                android:layout_below="@+id/label_schedule_end_event"
+                android:layout_alignParentEnd="true"
+                android:autofillHints=""
+                android:hint="@string/format_schedule"
+                android:inputType="time" />
+
+            <TextView
+                android:id="@+id/description_tipo_evento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date_event_end"
+                android:text="@string/tipo_evento" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/type_public"
+                style="@style/MaterialCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description_tipo_evento"
+                android:checked="true"
+                android:text="@string/event_public" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/type_private"
+                style="@style/MaterialCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description_tipo_evento"
+                android:layout_alignParentEnd="true"
+                android:text="@string/event_private" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/event_isFree"
+                style="@style/MaterialCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/type_public"
+                android:layout_alignBottom="@id/price_event"
+                android:checked="true"
+                android:text="@string/event_free" />
+
+            <EditText
+                android:id="@+id/price_event"
+                style="@style/FormInputHalf"
+                android:layout_below="@id/type_private"
+                android:layout_alignParentEnd="true"
+                android:autofillHints=""
+                android:hint="@string/info_evento_valor"
+                android:inputType="numberDecimal"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/label_add_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/event_isFree"
+                android:text="@string/add_category" />
+
+            <Spinner
+                android:id="@+id/add_category"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/label_add_category"
+                android:background="#fff"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/label_add_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_category"
+                android:text="@string/add_guest" />
+
+            <Spinner
+                android:id="@+id/add_guest"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/label_add_guest"
+                android:background="#fff"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                style="@style/Button"
+                android:layout_width="match_parent"
+                android:layout_below="@id/add_guest"
+                android:text="@string/add_event" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

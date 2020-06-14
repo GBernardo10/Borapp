@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Bora</string>
+
+    <string name="API_KEY_MAPS" templateMergeStrategy="preserve" translatable="false">
+        <!--AIzaSyAVvGg1bheMsVeUhbCuHdqVgQ9YcI-NyvQ--></string>
+
     <string name="username">E-mail ou Apelido</string>
     <string name="login">Login</string>
     <string name="icone_logo">logo</string>
@@ -14,25 +18,25 @@
     <string name="my_account">Minha conta</string>
     <string name="add_role">BORA CRIAR UM ROLÊ?</string>
     <string name="my_role">MEUS ROLÊS</string>
-    <string name="settings">MINHAS PREFERÊNCIAS</string>
+    <string name="settings">Configurações</string>
     <string name="confirm_event">CONFIRMAR EVENTO</string>
     <string name="notification">Notificações</string>
     <string name="search">Pesquisar</string>
-    <string name="home">Home</string>
+    <string name="my_profile">Meu Perfil</string>
     <string name="roles">ROLÊS</string>
     <string name="preferencias">Baseado em suas preferencias, temos:</string>
     <string name="encontreSeuRole">Encontre seu rolê...</string>
     <string name="naoEncontrou">Não encontrou?</string>
     <string name="rolesCriados">Meus rolês criados (1)</string>
     <string name="rolesParticipo">Rolês que participo (1)</string>
-    <string name="seu_celular">Seu celular</string>
+    <string name="phone_user_format">(DD) 9 9999–9999</string>
     <string name="CNPJ">Digite seu CNPJ</string>
     <string name="nome_da_empresa">Nome da empresa</string>
     <string name="digite_cpf">Digite seu cpf</string>
     <string name="nome_usuario">Nome de usuário</string>
     <string name="email_ou_login">E-mail ou login</string>
     <string name="cadastrar">Cadastrar</string>
-    <string name="inserir_foto_perfil">Insira sua foto de perfil</string>
+    <string name="upload_user_pic">Insira sua foto de perfil</string>
     <string name="pessoa_fisica">Pessoa Física</string>
     <string name="pessoa_juridica">Pessoa Juridica</string>
     <string name="click_cadastrar">Clique para cadastrar</string>
@@ -79,18 +83,18 @@
     <string name="desciption_button_private">PRIVADO</string>
     <string name="info_evento_nome">Insira o nome do evento</string>
     <string name="info_hint_evento1">nome do seu evento</string>
-    <string name="info_evento_cep">Cep</string>
-    <string name="info_evento_numero_rua">Nº da rua</string>
+    <string name="info_event_zipcode">Cep</string>
+    <string name="info_event_number_street">Nº da rua</string>
     <string name="info_hint_evento3">Numero</string>
-    <string name="info_evento_data">Data</string>
-    <string name="info_evento_horario">Horario</string>
+    <string name="info_event_date_start">Data de inicio</string>
+    <string name="info_event_schedule_start">Horario de inicio</string>
     <string name="info_evento_valor">Valor em R$</string>
     <string name="editar_um_evento">Editando evento...</string>
-    <string name="lembrar_senha">Lembrar minha senha</string>
+    <string name="resend_password">Recuperar senha</string>
     <string name="nova_senha">Nova Senha</string>
-    <string name="confirmar_nova_senha">Confirmar nova senha</string>
+    <string name="confirm_new_password">Confirmar nova senha</string>
     <string name="salvar_senha">Salvar senha</string>
-    <string name="cadastrar_evento">Cadastrar Evento</string>
+    <string name="add_event">Criar Evento</string>
     <string name="editar_evento">Editar Evento</string>
     <string name="celular">Celular</string>
     <string name="permission_denied">Sem permissão</string>
@@ -102,4 +106,27 @@
     <string name="auth_no_content">Usuario não encontrado</string>
     <string name="auth_no_unauthorized">Não consegui te autorizar, é essa senha mesmo ?</string>
     <string name="logo_bora">logo bora</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_event">Titulo do evento</string>
+    <string name="event_public">Evento Publico</string>
+    <string name="event_private">Evento Privado</string>
+    <string name="format_date">dd/mm/yyyy</string>
+    <string name="format_schedule">hh:mm</string>
+    <string name="info_event_date_end">Data de termino</string>
+    <string name="event_free">Evento Gratuito</string>
+    <string name="add_category">Adicionar Categoria</string>
+    <string name="add_guest">Adicionar participante</string>
+    <string name="welcome">Seja bem vindo</string>
+    <string name="switch_theme">Tema Escuro</string>
+    <string name="controls">Preferencias</string>
+    <string name="title_activity_teste_loko">TesteLoko</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
 </resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffc482</color>
+    <color name="colorPrimaryDark">#1e191d</color>
+    <color name="colorAccent">#62b6cb</color>
+    <color name="colorBackground">#1e191d</color>
+    <color name="colorCardBackground">#31282e</color>
+    <color name="colorItemMenuTabBarActive">@color/colorPrimary</color>
+    <color name="colorEditTextBackground">#31282e</color>
+    <color name="colorEditText">#bcbabc</color>
+    <color name="colorText">#bcbabc</color>
+    <color name="colorNavigationBackground">@color/colorBackground</color>
+
+
+</resources>
