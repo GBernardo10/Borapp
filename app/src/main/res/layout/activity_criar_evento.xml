@@ -27,9 +27,9 @@
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/evento_ivFoto"
                 style="@style/PhotoEventoView"
+                android:layout_below="@+id/evento_tituloPagina"
                 app:civ_border_color="@color/cor_azul"
-                app:civ_border_width="1dp"
-                android:layout_below="@+id/evento_tituloPagina" />
+                app:civ_border_width="1dp" />
 
             <TextView
                 android:id="@+id/evento_tvTituloFoto"
@@ -71,7 +71,7 @@
                 style="@style/FormEvento"
                 android:layout_below="@+id/evento_tvLabelNomeEvento"
                 android:hint="@string/info_evento_nome"
-                android:inputType="text"/>
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/evento_tvLabelCep"
@@ -79,22 +79,23 @@
                 android:layout_below="@+id/evento_etNomeEvento"
                 android:text="@string/info_evento_cep" />
 
-            <EditText
+            <com.santalu.maskedittext.MaskEditText
                 android:id="@+id/evento_etCep"
                 style="@style/FormEventoHalf"
                 android:layout_below="@+id/evento_tvLabelCep"
                 android:hint="@string/info_evento_cep"
-                android:inputType="numberDecimal"/>
+                android:inputType="numberDecimal"
+                app:met_mask="#####-###" />
 
             <Button
                 android:id="@+id/evento_btBuscaEndereco"
                 style="@style/ButtonBuscaEndereco"
                 android:layout_below="@+id/evento_etNomeEvento"
                 android:layout_alignParentEnd="true"
-                android:textSize="16dp"
                 android:layout_marginTop="30dp"
                 android:hint="@string/bucarEndereco"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/evento_tvLabelNumero"
@@ -102,7 +103,7 @@
                 android:layout_below="@+id/evento_etCep"
                 android:layout_alignParentEnd="true"
                 android:text="@string/info_evento_numero_rua"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <EditText
                 android:id="@+id/evento_etNumero"
@@ -111,56 +112,107 @@
                 android:layout_alignParentEnd="true"
                 android:hint="@string/info_evento_numero_rua"
                 android:inputType="number"
-                android:visibility="gone"/>
+                android:visibility="gone" />
+
+            <ScrollView
+                android:id="@+id/evento_scEndereco"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_below="@+id/evento_etCep">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/evento_tvLabelEndereco"
+                        style="@style/FormLabelEventoHalf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/evento_etCep"
+                        android:text="@string/endereco"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/evento_tvEndereco"
+                        style="@style/FormLabelEventoHalf"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/evento_tvLabelEndereco"
+                        android:layout_marginTop="0dp"
+                        android:text=""
+                        android:visibility="gone" />
+                </LinearLayout>
+            </ScrollView>
 
             <TextView
-                android:id="@+id/evento_tvLabelEndereco"
+                android:id="@+id/evento_tvLabelDataInicio"
                 style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/evento_etCep"
-                android:text="@string/endereco"
-                android:visibility="gone"/>
+                android:layout_below="@+id/evento_scEndereco"
+                android:text="@string/dataInicio" />
 
-            <TextView
-                android:id="@+id/evento_tvEndereco"
-                style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/evento_tvLabelEndereco"
-                android:visibility="gone"/>
-
-            <TextView
-                android:id="@+id/evento_tvLabelData"
-                style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/evento_tvEndereco"
-                android:text="@string/info_evento_data" />
-
-            <EditText
-                android:id="@+id/evento_etData"
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/evento_etDataInicio"
                 style="@style/FormEventoHalf"
-                android:layout_below="@+id/evento_tvLabelData"
+                android:layout_below="@+id/evento_tvLabelDataInicio"
                 android:hint="Data"
-                android:inputType="date"/>
-
+                android:inputType="date"
+                app:met_mask="##/##/####" />
 
             <TextView
-                android:id="@+id/evento_tvLabelHorario"
+                android:id="@+id/evento_tvLabelHorarioInicio"
                 style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/evento_etNumero"
                 android:layout_alignParentEnd="true"
-                android:text="@string/info_evento_horario" />
+                android:text="@string/horaInicio" />
 
-            <EditText
-                android:id="@+id/evento_etHorario"
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/evento_etHorarioInicio"
                 style="@style/FormEventoHalf"
-                android:layout_below="@+id/evento_tvLabelHorario"
+                android:layout_below="@+id/evento_tvLabelHorarioInicio"
                 android:layout_alignParentEnd="true"
                 android:hint="@string/info_evento_horario"
-                android:inputType="time"/>
+                android:inputType="time"
+                app:met_mask="##:##" />
+
+            <TextView
+                android:id="@+id/evento_tvLabelDataTermino"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/evento_etDataInicio"
+                android:text="@string/dataTermino" />
+
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/evento_etDataTermino"
+                style="@style/FormEventoHalf"
+                android:layout_below="@+id/evento_tvLabelDataTermino"
+                android:hint="Data"
+                android:inputType="date"
+                app:met_mask="##/##/####" />
+
+            <TextView
+                android:id="@+id/evento_tvLabelHorarioTermino"
+                style="@style/FormLabelEventoHalf"
+                android:layout_below="@+id/evento_etHorarioInicio"
+                android:layout_alignParentEnd="true"
+                android:text="@string/horaInicio" />
+
+            <com.santalu.maskedittext.MaskEditText
+                android:id="@+id/evento_etHorarioTermino"
+                style="@style/FormEventoHalf"
+                android:layout_below="@+id/evento_tvLabelHorarioTermino"
+                android:layout_alignParentEnd="true"
+                android:hint="@string/horaTermino"
+                android:inputType="time"
+                app:met_mask="##:##" />
+
 
             <TextView
                 android:id="@+id/evento_tvLabelValor"
                 style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/evento_etData"
+                android:layout_below="@+id/evento_etDataTermino"
                 android:text="@string/info_evento_valor"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <EditText
                 android:id="@+id/evento_etValor"
@@ -168,12 +220,12 @@
                 android:layout_below="@+id/evento_tvLabelValor"
                 android:hint="@string/info_evento_valor"
                 android:inputType="number"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/evento_tvLabelPago"
                 style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/evento_etHorario"
+                android:layout_below="@+id/evento_etHorarioTermino"
                 android:layout_alignParentEnd="true"
                 android:layout_toStartOf="@+id/checkbox_valor_evento"
                 android:text="Evento Gratuito" />
@@ -185,7 +237,7 @@
                 android:layout_below="@+id/evento_tvLabelPago"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="110dp"
-                android:layout_marginBottom="5dp"/>
+                android:layout_marginBottom="5dp" />
 
             <TextView
                 android:id="@+id/evento_tvLabelCategoria"
@@ -198,7 +250,7 @@
                 style="@style/FormEvento"
                 android:layout_below="@+id/evento_tvLabelCategoria"
                 android:hint="Ex Futebol, Natação, Basquete"
-                android:inputType="text"/>
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/string_categoria_adicionada"
@@ -245,23 +297,24 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="15dp"
                 android:hint="1"
-                android:textSize="20dp"
-                android:inputType="numberDecimal"/>
+                android:inputType="numberDecimal"
+                android:maxLength="4"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/evento_tvLabelSenha"
                 style="@style/FormLabel"
                 android:layout_below="@+id/evento_tvLabelQuantidade"
                 android:text="@string/senhaEventoPrivado"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <EditText
                 android:id="@+id/evento_etSenha"
                 style="@style/FormEvento"
                 android:layout_below="@+id/evento_tvLabelSenha"
                 android:hint="@string/hintSenhaEvento"
-                android:visibility="gone"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/evento_tvLabelParticipante"
@@ -330,8 +383,8 @@
                 style="@style/ButtonDefault"
                 android:layout_width="match_parent"
                 android:layout_below="@+id/icon_ver_mais"
-                android:text="@string/cadastrar_evento"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"
+                android:text="@string/cadastrar_evento" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

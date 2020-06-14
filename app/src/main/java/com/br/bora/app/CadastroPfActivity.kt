@@ -48,7 +48,7 @@ class CadastroPfActivity : AppCompatActivity() {
 
     fun openCamera() {
         ImagePicker.with(this)
-            .crop(16f, 9f)    //Crop image with 16:9 aspect ratio
+            //.crop(16f, 9f)    //Crop image with 16:9 aspect ratio
             .maxResultSize(520, 520)
             .start()
     }
@@ -72,9 +72,9 @@ class CadastroPfActivity : AppCompatActivity() {
         password: String,
         username: String
     ) {
+        val phoneReplace = phone.replace("-","").replace("(","").replace(")","");
         val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
-        val user = User(name, phone, mail, password, username)
-
+        val user = User(name,phoneReplace, mail, password, username)
         val signInInfo = RequestUser(user);
         retIn.user(signInInfo).enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {

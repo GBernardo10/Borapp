@@ -20,7 +20,7 @@ interface UserService {
     @PUT("users")
     fun userEdit(@Body request: RequestUser):Call<ResponseBody>
 
-    @Headers
+    @Headers("Content-Type:application/json")
     @GET("users/{username}")
-    fun userByMail(username: String?): Call<User>
+    fun userByMail(@Path("username")username: String?): Call<User>
 }

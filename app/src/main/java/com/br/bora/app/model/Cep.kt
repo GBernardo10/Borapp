@@ -5,6 +5,6 @@ class Cep (
     val logradouro:String,
     val complemento:String,
     val bairro:String,
-    val cidade:String,
+    val localidade:String,
     val estado:String
 )

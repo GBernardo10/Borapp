@@ -63,12 +63,13 @@
                 android:layout_below="@+id/cadastropf_etEmail"
                 android:text="@string/celular"/>
 
-            <EditText
+            <com.santalu.maskedittext.MaskEditText
                 android:id="@+id/cadastropf_etCelular"
                 style="@style/FormEditText"
                 android:layout_below="@+id/cadastropf_tvLabelCelular"
                 android:hint="@string/seu_celular"
-                android:inputType="number" />
+                android:inputType="number"
+                app:met_mask="(##)#####-####"/>
 
             <TextView
                 android:id="@+id/cadastropf_tvLabelLogin"

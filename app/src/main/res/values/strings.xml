@@ -108,4 +108,10 @@
     <string name="campoObrigatorio">Campo Obrigatório</string>
     <string name="bucarEndereco">Buscar Endereço</string>
     <string name="preencherCep">Por favor, preencher o cep antes de pesquisar</string>
+    <string name="enderecoNaoEncontra">Endereço não localizado. Tente novamente</string>
+    <string name="dataInicio">Data Início</string>
+    <string name="horaInicio">Horário Início</string>
+    <string name="dataTermino">Data Termino</string>
+    <string name="horaTermino">Horário Termino</string>
+    <string name="preenchecep">Por favor preencher os 8 digitos do CEP</string>
 </resources>
