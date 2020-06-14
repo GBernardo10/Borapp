@@ -3,76 +3,111 @@ package com.br.bora.app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import com.br.bora.app.request.RequestUserLogin
-import com.br.bora.app.services.UserService
-import com.br.bora.app.services.config.RetrofitInitializer
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import com.br.bora.app.utils.LoadFragment
+import com.br.bora.app.utils.SaveData
+import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.android.synthetic.main.activity_drawer_layout.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    private lateinit var saveData: SaveData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_drawer_layout)
+        val fragment = LoadFragment(R.id.main_frame, supportFragmentManager)
 
-        btnLogin.setOnClickListener {
-            irHome()
-//            val loginInput = findViewById<EditText>(R.id.login).text.toString()
-//            val pwdInput = findViewById<EditText>(R.id.pass).text.toString()
-//            signin(loginInput,pwdInput)
+        val toolbar: MaterialToolbar = findViewById(R.id.action_bar)
+        setSupportActionBar(toolbar)
+        val drawerToggle = ActionBarDrawerToggle(
+            this,
+            drawer_layout,
+            action_bar,
+            (R.string.open),
+            (R.string.close)
+        )
+        drawerToggle.isDrawerIndicatorEnabled = true
+        drawer_layout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
+
+        action_bar.setNavigationIcon(R.drawable.ic_settings)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setHomeButtonEnabled(true)
+        nav_view.setNavigationItemSelectedListener(this)
+
+        fragment.loadFragment(HomeActivity())
+
+        add_role.setOnClickListener {
+            startActivity(Intent(this, AddEventActivity::class.java))
         }
-    }
-    private fun signin(username:String,password:String){
-        val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
-        val signInInfo =
-            RequestUserLogin(username, password)
-        retIn.auth(signInInfo).enqueue(object :Callback<ResponseBody>{
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                if(response.code() == 201){
-                    irHome()
-                }else{
-                    main_messageError.text = getString(R.string.loginSenhaError)
+
+        main_nav.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_home -> {
+                    fragment.loadFragment(HomeActivity())
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.nav_search -> {
+                    fragment.loadFragment(EventSearch())
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.nav_notification -> {
+                    fragment.loadFragment(NotificationFragment())
+                    return@setOnNavigationItemSelectedListener true
+                }
+                else -> {
+                    return@setOnNavigationItemSelectedListener false
                 }
             }
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                Log.i("STATE", t.message.toString())
+        }
+
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.d_profile -> {
+                Toast.makeText(this, "TESTE", Toast.LENGTH_SHORT).show()
             }
-        })
-    }
-
-/*
-	"username":"Gesuvs",
-	"password":"#futebol1996"
-
- */
-    fun validaCampos(): Boolean{
-        if(login.text.isEmpty()){
-            login.requestFocus()
-            login.error = getString(R.string.loginError)
-            return false;
+            R.id.d_settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+            }
         }
-        if(pass.text.isEmpty()){
-            pass.requestFocus()
-            pass.error = getString(R.string.senhaError)
-        }
-        return true;
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
+
     }
 
-    fun irEsqueciSenha(v:View){
-        val telaEsqueciSenha = Intent(this,EsqueciMinhaSenha::class.java)
-        startActivity(telaEsqueciSenha);
-    }
-    fun irHome(){
-        val telaHome = Intent(this,TabBarActivity::class.java)
-        startActivity(telaHome)
-    }
-    fun irCadastrar(v: View){
-        val telaCadastro = Intent(this,CadastroPfActivity::class.java)
-        startActivity(telaCadastro)
+    override fun onBackPressed() {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START))
+            drawer_layout.closeDrawer(GravityCompat.START)
+        else {
+            super.onBackPressed()
+        }
+
     }
 }
+
+/* saveData = SaveData(this)
+        if (saveData.loadDarkModeState() == true)
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        else
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
+        if (saveData.loadDarkModeState() == true)
+            switch_theme.isChecked = true*/
+
+
+/* switch_theme.setOnCheckedChangeListener { _, isChecked ->
+     if (isChecked) {
+         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+         saveData.setDarkModeState(true)
+     } else {
+         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+         saveData.setDarkModeState(false)
+     }
+ }*/
