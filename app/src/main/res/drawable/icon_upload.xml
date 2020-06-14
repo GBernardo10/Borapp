@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_cloud_upload">
+        <color android:color="@color/colorPrimaryDark"/>
+        <selector />
+        <shape android:shape="rectangle">
+            <stroke android:width="100dp" android:color="@color/colorAccent" />
+        </shape>
+        <shape>
+            <solid android:color="@color/colorPrimaryDark" />
+        </shape>
+    </item>
+
+</selector>
