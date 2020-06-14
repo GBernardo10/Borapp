@@ -20,8 +20,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:contentDescription="@string/logo_bora"
-                android:src="@drawable/ic_logo" />
+                android:contentDescription="@string/logo_bora" />
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -38,8 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="60dp"
-        app:srcCompat="@drawable/ic_add_24dp" />
+        android:layout_marginBottom="60dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         style="@style/BottomNavigationView"

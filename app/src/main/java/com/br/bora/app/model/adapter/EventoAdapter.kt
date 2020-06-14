@@ -5,12 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.br.bora.app.R
-import com.br.bora.app.model.Evento
+import com.br.bora.app.model.Event
 import kotlinx.android.synthetic.main.fragment_card_evento.view.*
 
 class EventoAdapter(
-    private val eventos: MutableList<Evento>,
-    private val onItemClickListener: ((evento: Evento) -> Unit)
+    private val events: MutableList<Event.FindAll>,
+    private val onItemClickListener: ((event: Event.FindAll) -> Unit)
 ) :
     RecyclerView.Adapter<EventoAdapter.EventoViewHolder>() {
 
@@ -20,22 +20,22 @@ class EventoAdapter(
         return EventoViewHolder(view, onItemClickListener)
     }
 
-    override fun getItemCount(): Int = eventos.size
+    override fun getItemCount(): Int = events.size
 
     override fun onBindViewHolder(holder: EventoViewHolder, position: Int) {
-        holder.bind(eventos[position])
+        holder.bind(events[position])
     }
 
     inner class EventoViewHolder(
         itemView: View,
-        private val onItemClickListener: ((evento: Evento) -> Unit)
+        private val onItemClickListener: ((event: Event.FindAll) -> Unit)
     ) : RecyclerView.ViewHolder(itemView) {
-        fun bind(evento: Evento) {
-            with(evento) {
+        fun bind(event: Event.FindAll) {
+            with(event) {
                 itemView.card_title.text = name
             }
             itemView.setOnClickListener {
-                onItemClickListener.invoke(evento)
+                onItemClickListener.invoke(event)
             }
         }
     }

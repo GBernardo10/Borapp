@@ -3,14 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/cor_roxo"
-    tools:context=".CadastroPfActivity">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/logo"
         style="@style/Logo"
-        android:src="@drawable/bora_branco" />
+        />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,14 +20,12 @@
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/cadastropf_ivFoto"
                 style="@style/PhotoView"
-                app:civ_border_color="@color/cor_azul"
                 app:civ_border_width="1dp" />
 
             <TextView
                 android:id="@+id/cadastropf_tvFoto"
                 style="@style/TitleImage"
-                android:layout_below="@+id/cadastropf_ivFoto"
-                android:text="@string/inserir_foto_perfil" />
+                android:layout_below="@+id/cadastropf_ivFoto" />
 
             <TextView
                 android:id="@+id/cadastropf_tvLabelNome"
@@ -67,7 +63,6 @@
                 android:id="@+id/cadastropf_etCelular"
                 style="@style/FormEditText"
                 android:layout_below="@+id/cadastropf_tvLabelCelular"
-                android:hint="@string/seu_celular"
                 android:inputType="number"
                 app:met_mask="(##)#####-####"/>
 
@@ -98,7 +93,7 @@
 
             <Button
                 android:id="@+id/cadastropf_btCadastrar"
-                style="@style/ButtonDefault"
+                style="@style/Button"
                 android:layout_below="@+id/cadastropf_etSenha"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"

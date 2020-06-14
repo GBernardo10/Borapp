@@ -11,23 +11,19 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.br.bora.app.model.Cep
-import com.br.bora.app.model.Evento
+import com.br.bora.app.model.Event
 import com.br.bora.app.request.RequestEvento
 import com.br.bora.app.services.CepService
-import com.br.bora.app.services.EventoService
 import com.br.bora.app.services.config.RetrofitInitializer
 import com.github.dhaval2404.imagepicker.ImagePicker
-import kotlinx.android.synthetic.main.activity_criar_evento.*
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import androidx.core.view.get
 import kotlinx.android.synthetic.main.activity_add_event.*
-
-class AddEventActivity : AppCompatActivity() {
+import kotlinx.android.synthetic.main.activity_criar_evento.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
+class AddEventActivity : AppCompatActivity() {
 
 
     private val PERMISSION_CODE = 1000;
@@ -39,10 +35,17 @@ import retrofit2.Response
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_criar_evento)
+        setContentView(R.layout.activity_add_event)
+        setSupportActionBar(action_bar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        action_bar.title = getString(R.string.add_event)
+        action_bar.setTitleTextColor(resources.getColor(R.color.colorText))
+
+
         //evento_etCep.setText("02042010");
-        val idEvento = intent.extras?.getInt("idEvento",0)
-        if(idEvento != 0){
+        val idEvento = intent.extras?.getInt("idEvento", 0)
+        if (idEvento != 0) {
             getEvento(idEvento);
             isAlterar = true;
         }
@@ -63,8 +66,8 @@ import retrofit2.Response
         }
     }
 
-    fun preencheCamposEvento(evento: Evento?) {
-        evento_etNomeEvento.setText(evento?.name)
+    fun preencheCamposEvento(event: Event?) {
+//        evento_etNomeEvento.setText(event?.name)
         //evento_etCep.setText(evento.cep)
         //evento_etNumero.setText(evento.number);
         //evento_etQuantidade.setText(evento.quantity)
@@ -73,11 +76,11 @@ import retrofit2.Response
         //evento_etHorario.setText(evento.startDay.toString().substring(11, 15))
 
 
-        isPublic = evento!!.isPublic;
-        if (evento!!.isPublic)
-            evento_btnPublic.callOnClick()
-        else
-            evento_btnPrivate.callOnClick()
+//        isPublic = event!!.isPublic;
+//        if (event!!.isPublic)
+//            evento_btnPublic.callOnClick()
+//        else
+//            evento_btnPrivate.callOnClick()
     }
 
     fun openCamera() {
@@ -120,15 +123,15 @@ import retrofit2.Response
             visibleValor(componente)
         }
         evento_btnPublic.setOnClickListener {
-            evento_btnPublic.setBackgroundColor(getColor(R.color.cor_laranja))
-            evento_btnPrivate.setBackgroundColor(getColor(R.color.cor_preto))
+            evento_btnPublic.setBackgroundColor(getColor(R.color.colorAccent))
+            evento_btnPrivate.setBackgroundColor(getColor(R.color.colorPrimary))
             evento_etSenha.visibility = (View.GONE)
             evento_tvLabelSenha.visibility = (View.GONE)
             isPublic = true
         }
         evento_btnPrivate.setOnClickListener {
-            evento_btnPublic.setBackgroundColor(getColor(R.color.cor_preto))
-            evento_btnPrivate.setBackgroundColor(getColor(R.color.cor_laranja))
+            evento_btnPublic.setBackgroundColor(getColor(R.color.colorAccent))
+            evento_btnPrivate.setBackgroundColor(getColor(R.color.colorPrimary))
             evento_etSenha.visibility = (View.VISIBLE)
             evento_tvLabelSenha.visibility = (View.VISIBLE)
             isPublic = false
@@ -225,35 +228,34 @@ import retrofit2.Response
     }
 
     fun buscaEndereco(cep: String) {
-        val retIn = RetrofitInitializer.getRetrofitInstance().create(CepService::class.java)
-        retIn.getEndereco(cep.replace("-", "")).enqueue(object : Callback<Cep> {
-            override fun onResponse(call: Call<Cep>, response: Response<Cep>) {
-                if (response.code() == 200) {
-                    if (response.body()?.logradouro != null) {
-                        evento_tvEndereco.text =
-                            response.body()?.logradouro + " - " + response.body()?.bairro + " - " + response.body()?.localidade
-                        evento_tvLabelEndereco.visibility = (View.VISIBLE);
-                        evento_tvEndereco.visibility = (View.VISIBLE);
-                        evento_tvLabelNumero.visibility = (View.VISIBLE);
-                        evento_etNumero.visibility = (View.VISIBLE);
-                    } else {
-                        evento_etCep.requestFocus();
-                        evento_etCep.error = getString(R.string.enderecoNaoEncontra);
-                    }
-
-                }
-            }
-
-            override fun onFailure(call: Call<Cep>, t: Throwable) {
-                Log.i("STATE", t.message.toString())
-            }
-        })
+//        val retIn = RetrofitInitializer.eventService getRetrofitInstance().create(CepService::class.java)
+//        retIn.getEndereco(cep.replace("-", "")).enqueue(object : Callback<Cep> {
+//            override fun onResponse(call: Call<Cep>, response: Response<Cep>) {
+//                if (response.code() == 200) {
+//                    if (response.body()?.logradouro != null) {
+//                        evento_tvEndereco.text =
+//                            response.body()?.logradouro + " - " + response.body()?.bairro + " - " + response.body()?.localidade
+//                        evento_tvLabelEndereco.visibility = (View.VISIBLE);
+//                        evento_tvEndereco.visibility = (View.VISIBLE);
+//                        evento_tvLabelNumero.visibility = (View.VISIBLE);
+//                        evento_etNumero.visibility = (View.VISIBLE);
+//                    } else {
+//                        evento_etCep.requestFocus();
+//                        evento_etCep.error = getString(R.string.enderecoNaoEncontra);
+//                    }
+//
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<Cep>, t: Throwable) {
+//                Log.i("STATE", t.message.toString())
+//            }
+//        })
     }
 
-    fun cadastrarEvento(evento: Evento) {
-        val retIn = RetrofitInitializer.getRetrofitInstance().create(EventoService::class.java)
-        val signInInfo = RequestEvento(evento);
-        retIn.cadastraEvento(signInInfo).enqueue(object : Callback<ResponseBody> {
+    fun cadastrarEvento(event: Event.Create) {
+        val retIn = RetrofitInitializer.eventService.createEvent(event)
+        retIn.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.code() == 201) {
 
@@ -267,10 +269,10 @@ import retrofit2.Response
 
     }
 
-    fun alterarEvento(evento: Evento) {
-        val retIn = RetrofitInitializer.getRetrofitInstance().create(EventoService::class.java)
-        val signInInfo = RequestEvento(evento);
-        retIn.changeEvento(signInInfo).enqueue(object : Callback<ResponseBody> {
+    fun alterarEvento(event: Event) {
+        val retIn = RetrofitInitializer.eventService.changeEvento(event)
+
+        retIn.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.code() == 200) {
 
@@ -283,28 +285,20 @@ import retrofit2.Response
         })
     }
 
-    fun getEvento(idEvento: Int?){
-        val retIn = RetrofitInitializer.getRetrofitInstance().create(EventoService::class.java)
-        retIn.getEvento(idEvento).enqueue(object : Callback<Evento?> {
-            override fun onResponse(call: Call<Evento?>, response: Response<Evento?>) {
+    fun getEvento(idEvento: Int?) {
+        val retIn = RetrofitInitializer.eventService.getEvent(idEvento)
+
+        retIn.enqueue(object : Callback<Event?> {
+            override fun onResponse(call: Call<Event?>, response: Response<Event?>) {
                 if (response.code() == 200) {
                     preencheCamposEvento(response.body());
                 }
             }
-            override fun onFailure(call: Call<Evento?>, t: Throwable) {
+
+            override fun onFailure(call: Call<Event?>, t: Throwable) {
                 Log.i("STATE", t.message.toString())
             }
         })
-    }
-
-
-        setContentView(R.layout.activity_add_event)
-        setSupportActionBar(action_bar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        action_bar.title = getString(R.string.add_event)
-        action_bar.setTitleTextColor(resources.getColor(R.color.colorText))
-
     }
 
 }

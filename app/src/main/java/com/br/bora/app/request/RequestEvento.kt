@@ -1,6 +1,6 @@
 package com.br.bora.app.request
-import com.br.bora.app.model.Evento
+import com.br.bora.app.model.Event
 
 data class RequestEvento (
-    val evento: Evento
+    val event: Event
 )

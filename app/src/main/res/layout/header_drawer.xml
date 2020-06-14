@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="180dp"
-    android:background="@drawable/headerdrawer"
     android:padding="10dp">
 
     <com.google.android.material.card.MaterialCardView
@@ -19,8 +18,7 @@
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:contentDescription="TODO"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_logo_launcher_foreground" />
+            android:scaleType="centerCrop" />
     </com.google.android.material.card.MaterialCardView>
 
     <TextView

@@ -29,28 +29,6 @@ class DetalheEventoActivity : AppCompatActivity() {
         }
     }
 
-    fun iniciaTela(){
-        dEvento_btBora.setOnClickListener {
-
-        }
-    }
-
-    fun preencherCampos(evento:Evento){
-        dEvento_vTituloEvento.text = evento.name;
-        //dEvento_tvOrganizador.text =
-//        if(evento.isPago){
-//            dEvento_tvValor.text = evento.valor
-//        }
-        //dEvento_tvDiaSemana.text = evento.startDay.toString();
-        //dEvento_tvData.text = evento.startDay.toString();
-        //dEvento_tvDetalhe.text = evento.descricao;
-        //dEvento_tvCriacao.text = evento.dataCriacao;
-        //dEvento_tvCategoria.text = evento.categoria;
-        //dEvento_tvSaldo
-
-    }
-
-
 
 }
 

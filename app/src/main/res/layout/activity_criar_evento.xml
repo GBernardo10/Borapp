@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#320236"
-    tools:context=".CriarEventoActivity">
+    tools:context=".AddEventActivity">
 
     <ImageView
         android:id="@+id/logo"
@@ -18,14 +18,11 @@
 
         <RelativeLayout style="@style/RelativeBody">
 
-            <TextView
-                android:id="@+id/evento_tituloPagina" />
+            <TextView android:id="@+id/evento_tituloPagina" />
 
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/evento_ivFoto"
-                style="@style/PhotoEventoView"
                 android:layout_below="@+id/evento_tituloPagina"
-                app:civ_border_color="@color/cor_azul"
                 app:civ_border_width="1dp" />
 
             <TextView
@@ -72,21 +69,17 @@
 
             <TextView
                 android:id="@+id/evento_tvLabelCep"
-                style="@style/FormLabelEventoHalf"
-                android:layout_below="@+id/evento_etNomeEvento"
-                android:text="@string/info_evento_cep" />
+                android:layout_below="@+id/evento_etNomeEvento" />
 
             <com.santalu.maskedittext.MaskEditText
                 android:id="@+id/evento_etCep"
                 style="@style/FormEventoHalf"
                 android:layout_below="@+id/evento_tvLabelCep"
-                android:hint="@string/info_evento_cep"
                 android:inputType="numberDecimal"
                 app:met_mask="#####-###" />
 
             <Button
                 android:id="@+id/evento_btBuscaEndereco"
-                style="@style/ButtonBuscaEndereco"
                 android:layout_below="@+id/evento_etNomeEvento"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="30dp"
@@ -96,10 +89,8 @@
 
             <TextView
                 android:id="@+id/evento_tvLabelNumero"
-                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/evento_etCep"
                 android:layout_alignParentEnd="true"
-                android:text="@string/info_evento_numero_rua"
                 android:visibility="gone" />
 
             <EditText
@@ -107,7 +98,6 @@
                 style="@style/FormEventoHalf"
                 android:layout_below="@+id/evento_tvLabelNumero"
                 android:layout_alignParentEnd="true"
-                android:hint="@string/info_evento_numero_rua"
                 android:inputType="number"
                 android:visibility="gone" />
 
@@ -124,7 +114,6 @@
 
                     <TextView
                         android:id="@+id/evento_tvLabelEndereco"
-                        style="@style/FormLabelEventoHalf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/evento_etCep"
@@ -133,7 +122,6 @@
 
                     <TextView
                         android:id="@+id/evento_tvEndereco"
-                        style="@style/FormLabelEventoHalf"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/evento_tvLabelEndereco"
@@ -145,7 +133,6 @@
 
             <TextView
                 android:id="@+id/evento_tvLabelDataInicio"
-                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/evento_scEndereco"
                 android:text="@string/dataInicio" />
 
@@ -159,7 +146,6 @@
 
             <TextView
                 android:id="@+id/evento_tvLabelHorarioInicio"
-                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/evento_etNumero"
                 android:layout_alignParentEnd="true"
                 android:text="@string/horaInicio" />
@@ -169,13 +155,11 @@
                 style="@style/FormEventoHalf"
                 android:layout_below="@+id/evento_tvLabelHorarioInicio"
                 android:layout_alignParentEnd="true"
-                android:hint="@string/info_evento_horario"
                 android:inputType="time"
                 app:met_mask="##:##" />
 
             <TextView
                 android:id="@+id/evento_tvLabelDataTermino"
-                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/evento_etDataInicio"
                 android:text="@string/dataTermino" />
 
@@ -189,7 +173,6 @@
 
             <TextView
                 android:id="@+id/evento_tvLabelHorarioTermino"
-                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/evento_etHorarioInicio"
                 android:layout_alignParentEnd="true"
                 android:text="@string/horaInicio" />
@@ -206,7 +189,6 @@
 
             <TextView
                 android:id="@+id/evento_tvLabelValor"
-                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/evento_etDataTermino"
                 android:text="@string/info_evento_valor"
                 android:visibility="gone" />
@@ -221,7 +203,6 @@
 
             <TextView
                 android:id="@+id/evento_tvLabelPago"
-                style="@style/FormLabelEventoHalf"
                 android:layout_below="@+id/evento_etHorarioTermino"
                 android:layout_alignParentEnd="true"
                 android:layout_toStartOf="@+id/checkbox_valor_evento"
@@ -284,7 +265,6 @@
                 android:layout_below="@+id/string_categoria_adicionada"
                 android:layout_marginTop="15dp"
                 android:text="Defina a quantidade de Participantes"
-                android:textColor="@color/cor_branco"
                 android:textSize="15sp" />
 
             <TextView
@@ -365,7 +345,7 @@
                 android:layout_below="@+id/scroll2"
                 android:gravity="center_horizontal"
                 android:text="Ver Mais"
-                android:textColor="#FFFF"></TextView>
+                android:textColor="#FFFF" />
 
             <ImageView
                 android:id="@+id/icon_ver_mais"
@@ -373,15 +353,14 @@
                 android:layout_height="20dp"
                 android:layout_below="@+id/string_ver_mais_usuarios"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_arrow_downward_black_24dp" />
+                />
 
             <Button
                 android:id="@+id/evento_btCadastrar"
-                style="@style/ButtonDefault"
+                style="@style/Button"
                 android:layout_width="match_parent"
                 android:layout_below="@+id/icon_ver_mais"
-                android:layout_marginBottom="20dp"
-                android:text="@string/cadastrar_evento" />
+                android:layout_marginBottom="20dp" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

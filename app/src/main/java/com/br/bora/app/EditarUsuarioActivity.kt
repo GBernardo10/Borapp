@@ -39,7 +39,7 @@ class EditarUsuarioActivity : AppCompatActivity() {
         //setQualificacoes(1.7)
         inicializaTela();
 
-        upload_pic.setImageResource(R.drawable.logobora_foreground);
+        /*upload_pic.setImageResource(R.drawable.logobora_foreground);*/
         upload_pic.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(android.Manifest.permission.CAMERA)
@@ -99,7 +99,7 @@ class EditarUsuarioActivity : AppCompatActivity() {
         password: String,
         username: String
     ) {
-        val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java);
+        /*val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java);
         val user = User(name, phone, mail, password, username);
         val signInInfo = RequestUser(user);
         retIn.userEdit(signInInfo).enqueue(object : Callback<ResponseBody> {
@@ -112,11 +112,11 @@ class EditarUsuarioActivity : AppCompatActivity() {
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 Log.i("STATE", t.message.toString())
             }
-        })
+        })*/
     }
 
     fun getUser(username: String?) {
-        val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
+       /* val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
         retIn.userByMail(username).enqueue(object : Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.code() == 201) {
@@ -128,19 +128,19 @@ class EditarUsuarioActivity : AppCompatActivity() {
             override fun onFailure(call: Call<User>, t: Throwable) {
                 TODO("Not yet implemented")
             }
-        })
+        })*/
     }
 
     fun preencherCampos(user: User?) {
-        editarUsuario_tvNome.text = user?.name;
+        /*editarUsuario_tvNome.text = user?.name;
         editarUsuario_tvLogin.text = user?.username;
         editarUsuario_etEmail.setText(user?.mail);
         editarUsuario_etCelular.setText(user?.phone);
-        editarUsuario_etSenha.setText(user?.password)
+        editarUsuario_etSenha.setText(user?.password)*/
     }
 
     fun validaCampos(): Boolean {
-        if (editarUsuario_etCelular.text.toString().isEmpty()) {
+       /* if (editarUsuario_etCelular.text.toString().isEmpty()) {
             editarUsuario_etCelular.requestFocus();
             editarUsuario_etCelular.error = getString(R.string.celularError);
             return false;
@@ -154,38 +154,13 @@ class EditarUsuarioActivity : AppCompatActivity() {
             editarUsuario_etSenha.requestFocus();
             editarUsuario_etSenha.error = getString(R.string.senhaError);
             return false;
-        }
+        }*/
         return true;
     }
 
-    fun setQualificacoes(valor: Double){
-        if(valor < 0.5)
-            editarUsuario_ivEstrelaUm.background = getDrawable(R.drawable.ic_star_half_yellow)
-        else if(valor > 0.5 && valor < 1)
-            editarUsuario_ivEstrelaUm.background = getDrawable(R.drawable.ic_star_yellow)
-        if(valor < 1.5)
-            editarUsuario_ivEstrelaDois.background = getDrawable(R.drawable.ic_star_half_yellow)
-        else
-            editarUsuario_ivEstrelaDois.background = getDrawable(R.drawable.ic_star_yellow)
-
-        if(valor < 2.5)
-            editarUsuario_ivEstrelaTres.background = getDrawable(R.drawable.ic_star_half_yellow)
-        else
-            editarUsuario_ivEstrelaTres.background = getDrawable(R.drawable.ic_star_yellow)
-
-        if(valor < 3.5)
-            editarUsuario_ivEstrelaQuatro.background = getDrawable(R.drawable.ic_star_half_yellow)
-        else
-            editarUsuario_ivEstrelaQuatro.background = getDrawable(R.drawable.ic_star_yellow)
-
-        if(valor < 4.5)
-            editarUsuario_ivEstrelaCinco.background = getDrawable(R.drawable.ic_star_half_yellow)
-        else
-            editarUsuario_ivEstrelaCinco.background = getDrawable(R.drawable.ic_star_yellow)
-    }
 
     fun inicializaTela(){
-        editarUsuario_btAlterar.setOnClickListener {
+     /*   editarUsuario_btAlterar.setOnClickListener {
             if (validaCampos()) {
                 changeUser(
                     editarUsuario_tvNome.text.toString()
@@ -211,6 +186,6 @@ class EditarUsuarioActivity : AppCompatActivity() {
             } else {
                 openCamera();
             }
-        }
+        }*/
     }
 }

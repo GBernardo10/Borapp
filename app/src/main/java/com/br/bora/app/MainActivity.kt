@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
 
-        action_bar.setNavigationIcon(R.drawable.ic_settings)
+        action_bar.setNavigationIcon(R.drawable.teste_loko)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setHomeButtonEnabled(true)
         nav_view.setNavigationItemSelectedListener(this)

@@ -1,11 +1,10 @@
-gpackage com.br.bora.app
+package com.br.bora.app
 
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.br.bora.app.model.User
@@ -18,9 +17,6 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlinx.android.synthetic.main.activity_editar_usuario.etCelular
-import kotlinx.android.synthetic.main.activity_editar_usuario.etEmail
-import kotlinx.android.synthetic.main.activity_editar_usuario.ivFoto
 import kotlinx.android.synthetic.main.activity_register_user.*
 import kotlinx.android.synthetic.main.activity_register_user.action_bar
 
@@ -40,7 +36,7 @@ class RegisterUserActivity : AppCompatActivity() {
         action_bar.title = getString(R.string.register)
         action_bar.setTitleTextColor(resources.getColor(R.color.colorText))
 
-        upload_pic.setImageResource(R.drawable.ic_cloud_upload);
+        /*upload_pic.setImageResource(R.drawable.ic_cloud_upload);*/
         upload_pic.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(android.Manifest.permission.CAMERA)
@@ -101,8 +97,9 @@ class RegisterUserActivity : AppCompatActivity() {
         password: String,
         username: String
     ) {
+        /*
         val phoneReplace = phone.replace("-","").replace("(","").replace(")","");
-        val retIn = RetrofitInitializer.getRetrofitInstance().create(UserService::class.java)
+        val retIn = RetrofitInitializer.userService.user()
         val user = User(name,phoneReplace, mail, password, username)
         val signInInfo = RequestUser(user);
         retIn.user(signInInfo).enqueue(object : Callback<ResponseBody> {
@@ -115,7 +112,7 @@ class RegisterUserActivity : AppCompatActivity() {
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 Log.i("STATE", t.message.toString())
             }
-        })
+        })*/
     }
 
 

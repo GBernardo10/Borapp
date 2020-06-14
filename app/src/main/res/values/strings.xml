@@ -74,7 +74,6 @@
     <string name="logout">Sair</string>
     <string name="yes">SIM</string>
     <string name="no">NÃO</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cadastre_um_evento">Cadastre seu evento</string>
     <string name="insira_imagem">Insira uma imagem</string>
@@ -112,7 +111,6 @@
     <string name="campoObrigatorio">Campo Obrigatório</string>
     <string name="bucarEndereco">Buscar Endereço</string>
     <string name="preencherCep">Por favor, preencher o cep antes de pesquisar</string>
-<<<<<<< HEAD
     <string name="auth_no_content">Usuario não encontrado</string>
     <string name="auth_no_unauthorized">Não consegui te autorizar, é essa senha mesmo ?</string>
     <string name="logo_bora">logo bora</string>
@@ -139,12 +137,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="menu_home">Home</string>
-=======
     <string name="enderecoNaoEncontra">Endereço não localizado. Tente novamente</string>
     <string name="dataInicio">Data Início</string>
     <string name="horaInicio">Horário Início</string>
     <string name="dataTermino">Data Termino</string>
     <string name="horaTermino">Horário Termino</string>
     <string name="preenchecep">Por favor preencher os 8 digitos do CEP</string>
->>>>>>> 9aca343801c8d563476dd04be766c83393938cac
 </resources>
