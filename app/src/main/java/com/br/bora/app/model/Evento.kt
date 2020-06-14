@@ -11,3 +11,4 @@ class Evento (
     val password:String,
     val isPublic:Boolean
 )
+data class Evento(val owner: String, val name: String, val rating: Int, val isPrivate: Boolean)
