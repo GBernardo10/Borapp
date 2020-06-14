@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/ic_cloud_upload">
+    <item android:drawable="@drawable/ic_cloud_uploadd">
         <color android:color="@color/colorPrimaryDark"/>
         <selector />
         <shape android:shape="rectangle">

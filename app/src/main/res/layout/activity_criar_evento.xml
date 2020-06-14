@@ -9,8 +9,7 @@
 
     <ImageView
         android:id="@+id/logo"
-        style="@style/Logo"
-        android:src="@drawable/bora_branco" />
+        style="@style/Logo" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,9 +19,7 @@
         <RelativeLayout style="@style/RelativeBody">
 
             <TextView
-                android:id="@+id/evento_tituloPagina"
-                style="@style/TitleActivity"
-                android:text="@string/cadastrar_evento" />
+                android:id="@+id/evento_tituloPagina" />
 
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/evento_ivFoto"

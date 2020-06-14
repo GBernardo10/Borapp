@@ -13,7 +13,7 @@
             android:id="@+id/logo"
             style="@style/LogoCircle"
             android:contentDescription="@string/logo_bora"
-            android:src="@drawable/ic_logo" />
+             />
 
         <TextView
             android:id="@+id/main_messageError"
@@ -31,7 +31,6 @@
 
         <EditText
             style="@style/EditText"
-            android:drawableEnd="@drawable/ic_person_light"
             android:id="@+id/login"
             android:layout_below="@+id/label_login"
             android:hint="@string/username"
