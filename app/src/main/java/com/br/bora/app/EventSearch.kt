@@ -14,9 +14,7 @@ import com.br.bora.app.model.viewmodel.EventoViewModel
 import kotlinx.android.synthetic.main.fragment_search_eventos.*
 import okhttp3.ResponseBody
 
-class EventosSearch : Fragment() {
-
-
+class EventSearch : Fragment() {
     private lateinit var viewModel: EventoViewModel
 
     override fun onCreateView(
@@ -44,7 +42,7 @@ class EventosSearch : Fragment() {
                     layoutManager =
                         StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
                     adapter = EventoAdapter(evento as MutableList<Evento>) {
-                        this@EventosSearch.startActivity(
+                        this@EventSearch.startActivity(
                             DetalheEventoActivity.getStartIntent(
                                 context,
                                 it.owner,
@@ -58,7 +56,4 @@ class EventosSearch : Fragment() {
         viewModel.getEventos()
     }
 
-    private fun showRepos(it: List<ResponseBody>) {
-
-    }
 }
