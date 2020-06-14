@@ -1,4 +1,4 @@
-package com.br.bora.app
+gpackage com.br.bora.app
 
 import android.app.Activity
 import android.content.Intent

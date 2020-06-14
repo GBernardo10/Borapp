@@ -39,6 +39,22 @@ class EditarUsuarioActivity : AppCompatActivity() {
         //setQualificacoes(1.7)
         inicializaTela();
 
+        upload_pic.setImageResource(R.drawable.logobora_foreground);
+        upload_pic.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (checkSelfPermission(android.Manifest.permission.CAMERA)
+                    == PackageManager.PERMISSION_DENIED) {
+                    val permission = arrayOf(
+                        android.Manifest.permission.CAMERA
+                    )
+                    requestPermissions(permission, PERMISSION_CODE);
+                } else {
+                    openCamera();
+                }
+            } else {
+                openCamera();
+            }
+        }
     }
 
     fun openCamera() {
@@ -68,7 +84,7 @@ class EditarUsuarioActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             val fileUri = data?.data
-            editarUsuario_ivFoto.setImageURI(fileUri);
+            upload_pic.setImageURI(fileUri);
         } else if (resultCode == ImagePicker.RESULT_ERROR) {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
         } else {
