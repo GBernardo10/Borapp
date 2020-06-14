@@ -1,81 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <ScrollView
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_home_event"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:id="@+id/rl_home"
-            style="@style/RelativeBody">
-
-            <ImageView
-                android:id="@+id/settingsIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_settings"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="10dp"
-                android:contentDescription="@string/settings" />
-
-
-            <TextView
-                android:id="@+id/welcome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Seja bem vindo, usuario"
-                android:textColor="@color/cor_branco" />
-
-            <View
-                android:id="@+id/wallet"
-                android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:layout_below="@id/welcome"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/white_shape_border"></View>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="180dp"
-                android:text="@string/my_account"
-                android:textColor="@color/cor_branco" />
-
-            <Button
-                android:id="@+id/add_role"
-                style="@style/ButtonDefaultRadio"
-                android:layout_below="@id/wallet"
-                android:layout_marginTop="20dp"
-                android:text="@string/add_role" />
-
-            <Button
-                android:id="@+id/my_role"
-                style="@style/ButtonDefaultRadio"
-                android:layout_below="@id/add_role"
-                android:layout_marginTop="20dp"
-                android:text="@string/my_role" />
-
-            <Button
-                android:id="@+id/settings"
-                style="@style/ButtonDefaultRadio"
-                android:layout_below="@id/my_role"
-                android:layout_marginTop="20dp"
-                android:text="@string/settings" />
-
-            <Button
-                android:id="@+id/confirm"
-                style="@style/ButtonDefaultRadio"
-                android:layout_below="@id/settings"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="100dp"
-                android:text="@string/confirm_event" />
-        </RelativeLayout>
-    </ScrollView>
-</RelativeLayout>
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        tools:listitem="@layout/fragment_card_evento" />
+</FrameLayout>

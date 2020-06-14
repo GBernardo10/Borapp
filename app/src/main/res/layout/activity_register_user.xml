@@ -4,86 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroPfActivity">
+    tools:context=".RegisterUserActivity">
 
-    <ImageView
-        android:id="@+id/logo"
-        style="@style/Logo"
-        android:src="@drawable/bora_branco" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/action_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/action_bar"
+            style="@style/MaterialToolbar"
+            app:layout_scrollFlags="scroll">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/logo">
+        android:layout_below="@id/action_bar_layout">
 
         <RelativeLayout style="@style/RelativeBody">
 
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/ivFoto"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/upload_pic"
                 style="@style/PhotoView"
                 app:civ_border_color="@android:color/holo_blue_light"
                 app:civ_border_width="1dp" />
 
             <TextView
-                android:id="@+id/tvFoto"
-                style="@style/TitleImage"
-                android:layout_below="@+id/ivFoto"
-                android:text="@string/inserir_foto_perfil" />
+                android:id="@+id/label_upload_user_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upload_pic"
+                android:layout_centerHorizontal="true"
+                android:text="@string/upload_user_pic" />
 
             <TextView
-                android:id="@+id/tvLabelEmail"
-                style="@style/FormLabel"
-                android:layout_below="@+id/tvFoto"
+                android:id="@+id/label_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_upload_user_pic"
                 android:text="@string/email" />
 
             <EditText
-                android:id="@+id/etEmail"
-                style="@style/FormEditText"
-                android:layout_below="@+id/tvLabelEmail"
+                android:id="@+id/mail_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_mail"
+                android:autofillHints=""
                 android:hint="@string/email"
                 android:inputType="textEmailAddress" />
 
             <TextView
-                android:id="@+id/tvLabelCelular"
-                style="@style/FormLabel"
-                android:layout_below="@+id/etEmail"
+                android:id="@+id/label_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mail_user"
                 android:text="@string/celular" />
 
             <EditText
-                android:id="@+id/etCelular"
-                style="@style/FormEditText"
-                android:layout_below="@+id/tvLabelCelular"
-                android:hint="@string/seu_celular" />
+                android:id="@+id/phone_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_phone"
+                android:autofillHints=""
+                android:hint="@string/phone_user_format"
+                android:inputType="phone" />
 
             <TextView
-                android:id="@+id/tvLabelLogin"
-                style="@style/FormLabel"
-                android:layout_below="@+id/etCelular"
+                android:id="@+id/label_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phone_user"
                 android:text="@string/login" />
 
             <EditText
-                android:id="@+id/etLogin"
-                style="@style/FormEditText"
-                android:layout_below="@+id/tvLabelLogin"
-                android:hint="@string/login" />
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_username"
+                android:autofillHints=""
+                android:hint="@string/login"
+                android:inputType="text" />
 
             <TextView
-                android:id="@+id/tvLabelSenha"
-                style="@style/FormLabel"
-                android:layout_below="@+id/etLogin"
+                android:id="@+id/label_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/username"
                 android:text="@string/senha" />
 
             <EditText
-                android:id="@+id/etSenha"
-                style="@style/FormEditText"
-                android:layout_below="@+id/tvLabelSenha"
+                android:id="@+id/password_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_password"
+                android:autofillHints=""
                 android:hint="@string/senha"
                 android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/btCadastrar"
                 style="@style/Button"
-                android:layout_below="@+id/etSenha"
+                android:layout_below="@+id/password_user"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:onClick="cadastrarUsuario"

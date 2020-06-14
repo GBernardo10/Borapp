@@ -4,26 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CriarEventoActivity">
+    tools:context=".AddEventActivity">
 
-    <ScrollView
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/action_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout style="@style/RelativeBody">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/action_bar"
+            style="@style/MaterialToolbar"
+            app:layout_scrollFlags="scroll">
 
-            <TextView
-                android:id="@+id/string_cadastre_seu_evento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/add_event"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_bar_layout"
+        android:foregroundGravity="bottom">
+
+        <RelativeLayout style="@style/RelativeBody">
 
             <ImageView
                 android:id="@+id/icon_upload_image"
                 style="@style/PhotoView"
-                android:layout_below="@+id/string_cadastre_seu_evento"
                 android:background="@drawable/ic_cloud_upload"
                 android:contentDescription="TODO" />
 

@@ -2,106 +2,91 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RelativeBody"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cor_roxo"
     tools:context=".ConfirmarParticipanteActivity">
 
+    <TextView
+        android:id="@+id/tvTituloConfParticipantes"
+        style="@style/TextView"
+        android:text="@string/confirmarParticipante" />
+
+    <TextView
+        android:id="@+id/tvTituloIdentificador"
+        style="@style/TitleBodyText"
+        android:layout_below="@+id/tvTituloConfParticipantes"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/identificador" />
+
+    <TextView
+        android:id="@+id/tvIdentificador"
+        style="@style/TextBodyText"
+        android:layout_below="@id/tvTituloConfParticipantes"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@+id/tvTituloIdentificador"
+        android:text="0002" />
+
+    <TextView
+        android:id="@+id/name_details_evento"
+        style="@style/TitleBodyText"
+        android:layout_below="@+id/tvTituloIdentificador"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="10sp"
+        android:text="@string/evento" />
+
+    <TextView
+        android:id="@+id/tvEvento"
+        style="@style/TextBodyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvIdentificador"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10sp"
+        android:layout_toRightOf="@+id/name_details_evento"
+        android:text="Futebas do chileno" />
+
+    <TextView
+        android:id="@+id/tvTituloLocal"
+        style="@style/TitleBodyText"
+        android:layout_below="@+id/name_details_evento"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/local" />
+
+    <TextView
+        android:id="@+id/tvLocal"
+        style="@style/TextBodyText"
+        android:layout_below="@+id/tvEvento"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="10sp"
+        android:layout_toRightOf="@id/tvTituloLocal"
+        android:text="Tivit filial Brás" />
+
+    <TextView
+        android:id="@+id/tvTituloHorario"
+        style="@style/TitleBodyText"
+        android:layout_below="@+id/tvTituloLocal"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="10sp"
+        android:text="@string/horario" />
+
+    <TextView
+        android:id="@+id/tvHorario"
+        style="@style/TextBodyText"
+        android:layout_below="@+id/tvLocal"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="10sp"
+        android:layout_toRightOf="@+id/tvTituloHorario"
+        android:text="18:40" />
+
     <ImageView
-        android:id="@+id/logo"
-        style="@style/Logo"
-        android:src="@drawable/bora_branco" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/logo">
-
-        <RelativeLayout style="@style/RelativeBody">
-
-            <TextView
-                android:id="@+id/tvTituloConfParticipantes"
-                style="@style/TitleActivity"
-                android:text="@string/confirmarParticipante" />
-
-            <TextView
-                android:id="@+id/tvTituloIdentificador"
-                android:layout_below="@+id/tvTituloConfParticipantes"
-                android:layout_marginLeft="43dp"
-                android:layout_marginTop="40dp"
-                android:text="@string/identificador"
-                style="@style/TitleBodyText" />
-
-            <TextView
-                android:id="@+id/tvIdentificador"
-                android:layout_below="@id/tvTituloConfParticipantes"
-                android:layout_marginLeft="32dp"
-                android:layout_marginTop="40dp"
-                android:layout_toRightOf="@+id/tvTituloIdentificador"
-                android:text="0002"
-                style="@style/TextBodyText" />
-
-            <TextView
-                android:id="@+id/tvTituloEvento"
-                android:layout_below="@+id/tvTituloIdentificador"
-                android:layout_marginLeft="43dp"
-                android:layout_marginTop="10sp"
-                android:text="@string/evento"
-                style="@style/TitleBodyText"/>
-
-            <TextView
-                android:id="@+id/tvEvento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvIdentificador"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10sp"
-                android:layout_toRightOf="@+id/tvTituloEvento"
-                android:text="Futebas do chileno"
-                style="@style/TextBodyText"/>
-
-            <TextView
-                android:id="@+id/tvTituloLocal"
-                android:layout_below="@+id/tvTituloEvento"
-                android:layout_marginLeft="43dp"
-                android:text="@string/local"
-                android:layout_marginTop="10dp"
-                style="@style/TitleBodyText"/>
-
-            <TextView
-                android:id="@+id/tvLocal"
-                android:layout_below="@+id/tvEvento"
-                android:layout_marginLeft="90dp"
-                android:layout_marginTop="10sp"
-                android:layout_toRightOf="@id/tvTituloLocal"
-                android:text="Tivit filial Brás"
-                style="@style/TextBodyText"/>
-
-            <TextView
-                android:id="@+id/tvTituloHorario"
-                android:layout_below="@+id/tvTituloLocal"
-                android:layout_marginLeft="43dp"
-                android:layout_marginTop="10sp"
-                android:text="@string/horario"
-                style="@style/TitleBodyText"/>
-
-            <TextView
-                android:id="@+id/tvHorario"
-                android:layout_below="@+id/tvLocal"
-                android:layout_marginLeft="72dp"
-                android:layout_marginTop="10sp"
-                android:layout_toRightOf="@+id/tvTituloHorario"
-                android:text="18:40"
-                style="@style/TextBodyText"/>
-
-            <ImageView
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_below="@+id/tvTituloHorario"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/view_qrcode" />
-
-        </RelativeLayout>
-    </ScrollView>
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/tvTituloHorario"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/view_qrcode" />
 </RelativeLayout>

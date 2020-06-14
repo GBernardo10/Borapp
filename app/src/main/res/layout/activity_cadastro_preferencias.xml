@@ -4,13 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cor_roxo"
     tools:context=".CadastroPreferenciasActivity">
-
-    <ImageView
-        android:id="@+id/logo"
-        style="@style/Logo"
-        android:src="@drawable/bora_branco" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,7 +15,7 @@
 
             <TextView
                 android:id="@+id/cadastro"
-                style="@style/TitleActivity"
+                style="@style/TextView"
                 android:text="@string/cadastre_preferencia" />
 
             <EditText
