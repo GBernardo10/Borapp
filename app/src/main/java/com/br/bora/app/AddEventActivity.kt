@@ -15,8 +15,13 @@ import com.br.bora.app.model.Evento
 import com.github.dhaval2404.imagepicker.ImagePicker
 import kotlinx.android.synthetic.main.activity_cadastro_pf.*
 import kotlinx.android.synthetic.main.activity_criar_evento.*
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.core.view.get
+import kotlinx.android.synthetic.main.activity_add_event.*
 
-class CriarEventoActivity : AppCompatActivity() {
+class AddEventActivity : AppCompatActivity() {
+
 
     private val PERMISSION_CODE = 1000;
     var isPublic = true;
@@ -189,5 +194,14 @@ class CriarEventoActivity : AppCompatActivity() {
         return true;
     }
 
+
+        setContentView(R.layout.activity_add_event)
+        setSupportActionBar(action_bar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        action_bar.title = getString(R.string.add_event)
+        action_bar.setTitleTextColor(resources.getColor(R.color.colorText))
+
+    }
 
 }
