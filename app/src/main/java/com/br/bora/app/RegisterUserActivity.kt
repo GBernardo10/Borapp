@@ -21,8 +21,10 @@ import retrofit2.Response
 import kotlinx.android.synthetic.main.activity_editar_usuario.etCelular
 import kotlinx.android.synthetic.main.activity_editar_usuario.etEmail
 import kotlinx.android.synthetic.main.activity_editar_usuario.ivFoto
+import kotlinx.android.synthetic.main.activity_register_user.*
+import kotlinx.android.synthetic.main.activity_register_user.action_bar
 
-class CadastroPfActivity : AppCompatActivity() {
+class RegisterUserActivity : AppCompatActivity() {
 
     private val PERMISSION_CODE = 1000;
     private val image_uri = "";
@@ -31,6 +33,30 @@ class CadastroPfActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro_pf)
         inicializaTela();
+        setContentView(R.layout.activity_register_user)
+        setSupportActionBar(action_bar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        action_bar.title = getString(R.string.register)
+        action_bar.setTitleTextColor(resources.getColor(R.color.colorText))
+
+        upload_pic.setImageResource(R.drawable.ic_cloud_upload);
+        upload_pic.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (checkSelfPermission(android.Manifest.permission.CAMERA)
+                    == PackageManager.PERMISSION_DENIED
+                ) {
+                    val permission = arrayOf(
+                        android.Manifest.permission.CAMERA
+                    )
+                    requestPermissions(permission, PERMISSION_CODE);
+                } else {
+                    openCamera();
+                }
+            } else {
+                openCamera();
+            }
+        }
     }
 
     override fun onRequestPermissionsResult(
@@ -60,7 +86,7 @@ class CadastroPfActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             val fileUri = data?.data
-            cadastropf_ivFoto.setImageURI(fileUri);
+            upload_pic.setImageURI(fileUri);
         } else if (resultCode == ImagePicker.RESULT_ERROR) {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
         } else {
