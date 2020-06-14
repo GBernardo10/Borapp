@@ -1,4 +1,3 @@
 package com.br.bora.app.model
 
-class Evento {
-}
+data class Evento(val owner: String, val name: String, val rating: Int, val isPrivate: Boolean)
