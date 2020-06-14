@@ -1,51 +1,65 @@
 package com.br.bora.app
 
-import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.appcompat.app.ActionBar
-import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.activity_home.view.*
-import kotlinx.android.synthetic.main.activity_tab_bar.*
-import kotlinx.android.synthetic.main.activity_tab_bar.view.*
-import kotlinx.android.synthetic.main.activity_tab_bar.view.action_bar
-import java.util.function.Predicate
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.br.bora.app.model.Evento
+import com.br.bora.app.model.adapter.EventoAdapter
+import com.br.bora.app.model.viewmodel.EventoViewModel
+import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : Fragment() {
-    @Override
+
+    private lateinit var viewModel: EventoViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.activity_home, container, false)
-        view.add_role.setOnClickListener{
-            startActivity(Intent(context,CriarEventoActivity::class.java))
+        /*view.add_role.setOnClickListener {
+            startActivity(Intent(context, AddEventActivity::class.java))
         }
-        view.my_role.setOnClickListener{
-            startActivity(Intent(context,MeusRolesActivity::class.java))
+        view.my_role.setOnClickListener {
+            startActivity(Intent(context, MeusRolesActivity::class.java))
         }
-        view.settings.setOnClickListener{
-            startActivity(Intent(context,CadastroPreferenciasActivity::class.java))
+        view.settings.setOnClickListener {
+            startActivity(Intent(context, CadastroPreferenciasActivity::class.java))
         }
-        view.confirm.setOnClickListener{
-            startActivity(Intent(context,ScannerActivity::class.java))
-        }
-
-        view.settingsIcon.setOnClickListener{
-            startActivity(Intent(context,ConfiguracoesActivity::class.java))
-        }
-        return view
+        view.confirm.setOnClickListener {
+            startActivity(Intent(context, ScannerActivity::class.java))
+        }*/
+        return inflater.inflate(R.layout.activity_home, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProviders.of(this).get(EventoViewModel::class.java)
+        viewModel.eventosLiveData.observe(viewLifecycleOwner, Observer {
+            it?.let { event ->
+                with(rcv_home_event) {
+                    layoutManager =
+                        StaggeredGridLayoutManager(
+                            2,
+                            StaggeredGridLayoutManager.VERTICAL
+                        )
+                    adapter = EventoAdapter(event as MutableList<Evento>) {
+                        this@HomeActivity.startActivity(
+                            DetalheEventoActivity.getStartIntent(
+                                context,
+                                it.owner,
+                                it.name
+                            )
+                        )
+                    }
+                }
+            }
+        })
+        viewModel.getEventos()
     }
 }
