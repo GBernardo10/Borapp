@@ -19,7 +19,7 @@ class LayoutLoginTest  {
     private lateinit var stringToBetyped: String
 
     @get:Rule
-    var activityRule: ActivityTestRule<MainActivity> = ActivityTestRule(MainActivity::class.java)
+    var activityRule: ActivityTestRule<AuthActivity> = ActivityTestRule(AuthActivity::class.java)
 
     @Before
     fun initValidString() {

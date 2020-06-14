@@ -13,7 +13,7 @@ class EsqueciMinhaSenha : AppCompatActivity() {
     }
 
     fun irMain(v: View){
-        val telaMain = Intent(this,MainActivity::class.java)
+        val telaMain = Intent(this,AuthActivity::class.java)
         startActivity(telaMain);
     }
 }
