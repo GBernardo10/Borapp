@@ -219,7 +219,6 @@
                 android:layout_below="@id/label_add_guest"
                 android:background="#fff"
                 android:spinnerMode="dropdown" />
-
             <Button
                 style="@style/Button"
                 android:layout_width="match_parent"

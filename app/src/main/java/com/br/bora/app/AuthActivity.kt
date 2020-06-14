@@ -10,18 +10,19 @@ import com.br.bora.app.response.Token
 import com.br.bora.app.services.TokenDecode
 import com.br.bora.app.services.config.RetrofitInitializer
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_auth.*
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 
-class MainActivity : AppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_auth)
 
 
 
