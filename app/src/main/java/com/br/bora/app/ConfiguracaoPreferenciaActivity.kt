@@ -3,14 +3,10 @@ package com.br.bora.app
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.drawable.GradientDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import androidx.core.view.setPadding
 import kotlinx.android.synthetic.main.activity_configuracao_preferencia.*
-import kotlinx.android.synthetic.main.activity_confirmar_evento.view.*
 
 class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
 
@@ -56,7 +52,7 @@ class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
     var iogaSelected = false;
     var showsSelected = false;
 
-    fun onChangeFutebol(v: View) {
+    fun onChangeFutebol(view: View) {
         val editor = preferencias?.edit()
         if (futebolSelected == false) {
             this.futebolSelected = true
@@ -141,7 +137,7 @@ class ConfiguracaoPreferenciaActivity : AppCompatActivity() {
     }
 
     fun irConfiguracao(v: View) {
-        val telaConfiguracoes = Intent(this, ConfiguracoesActivity::class.java);
+        val telaConfiguracoes = Intent(this, SettingsActivity::class.java);
         startActivity(telaConfiguracoes);
     }
 
