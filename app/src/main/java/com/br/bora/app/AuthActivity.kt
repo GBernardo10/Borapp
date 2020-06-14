@@ -11,7 +11,6 @@ import com.br.bora.app.services.TokenDecode
 import com.br.bora.app.services.config.RetrofitInitializer
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_auth.*
-import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,7 +45,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun restartApplication() {
-        startActivity(Intent(applicationContext, MainActivity::class.java))
+        startActivity(Intent(applicationContext, AuthActivity::class.java))
         finish()
     }
 
@@ -80,17 +79,17 @@ class AuthActivity : AppCompatActivity() {
     fun goHome(token: Token) {
         val decoded = TokenDecode().decodeToken(token)
         Log.d("token", decoded.toString())
-        val telaHome = Intent(this, TabBarActivity::class.java)
+        val telaHome = Intent(this, MainActivity::class.java)
         startActivity(telaHome)
     }
 
     fun Home() {
-        val telaHome = Intent(this, TesteDrawer::class.java)
+        val telaHome = Intent(this, MainActivity::class.java)
         startActivity(telaHome)
     }
 
     fun irCadastrar(v: View) {
-        val telaCadastro = Intent(this, CadastroPfActivity::class.java)
+        val telaCadastro = Intent(this, RegisterUserActivity::class.java)
         startActivity(telaCadastro)
     }
 }
