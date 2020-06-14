@@ -112,10 +112,6 @@
     <string name="campoObrigatorio">Campo Obrigatório</string>
     <string name="bucarEndereco">Buscar Endereço</string>
     <string name="preencherCep">Por favor, preencher o cep antes de pesquisar</string>
-    <string name="emailError">Preencher o email</string>
-    <string name="loginError">Preencher o login</string>
-    <string name="senhaError">Preencher a senha</string>
-    <string name="celularError">Preencher o celular</string>
     <string name="auth_no_content">Usuario não encontrado</string>
     <string name="auth_no_unauthorized">Não consegui te autorizar, é essa senha mesmo ?</string>
     <string name="logo_bora">logo bora</string>
