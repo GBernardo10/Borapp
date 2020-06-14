@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.br.bora.app">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-feature android:name="android.hardware.camera.any" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.hardware.camera.autofocus" />
 
@@ -16,6 +21,25 @@
         android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="true">
+        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/API_KEY_MAPS" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ScannerActivity" />
         <activity android:name=".EditarUsuarioActivity" />
         <activity android:name=".ConfirmarParticipanteActivity" />
@@ -23,22 +47,13 @@
         <activity android:name=".EsqueciMinhaSenha" />
         <activity android:name=".CadastroPreferenciasActivity" />
         <activity android:name=".ConfiguracaoPreferenciaActivity" />
-        <activity android:name=".ConfiguracoesActivity" />
-        <activity android:name=".ConfirmarEventoActivity" />
-        <activity android:name=".EventosPreferenciasActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".EventSearch" />
         <activity android:name=".DetalheEventoActivity" />
-        <activity android:name=".MeusRolesActivity" />
-        <activity android:name=".TabBarActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".CadastroPfActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".EditarEventoActivity" />
-        <activity android:name=".CriarEventoActivity" />
+        <activity android:name=".RegisterUserActivity" android:parentActivityName=".AuthActivity" />
+        <activity android:name=".AddEventActivity" android:parentActivityName=".MainActivity" />
+        <activity android:name=".AuthActivity" />
     </application>
+
 </manifest>
