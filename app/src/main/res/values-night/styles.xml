@@ -18,15 +18,15 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="elevation">1dp</item>
-        <item name="itemIconTint">@drawable/selectorr</item>
-        <item name="itemTextColor">@drawable/selectorr</item>
+        <item name="itemIconTint">@drawable/selector</item>
+        <item name="itemTextColor">@drawable/selector</item>
     </style>
 
     <style name="MaterialToolbar">
         <item name="android:background">@color/colorPrimaryDark</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
-        <!--<item name="navigationIcon">@drawable/ic_close</item>-->
+        <item name="navigationIcon">@drawable/ic_close</item>
         <item name="popupTheme">@style/Widget.AppCompat.PopupMenu</item>
     </style>
 
@@ -34,10 +34,10 @@
         <item name="android:layout_height">55dp</item>
         <item name="android:fontFamily">@font/firacode_regular</item>
         <item name="android:layout_width">match_parent</item>
-        <!--<item name="android:background">@drawable/edit_text_states</item>-->
+        <item name="android:background">@drawable/edit_text_states</item>
         <item name="android:textColor">@color/colorEditText</item>
         <item name="android:maxLines">1</item>
-        <item name="android:maxLength">20</item>
+        <item name="android:maxLength">50</item>
         <item name="android:textColorHint">@color/colorEditText</item>
     </style>
 

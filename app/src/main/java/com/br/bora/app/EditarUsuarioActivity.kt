@@ -8,19 +8,10 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import com.br.bora.app.model.User
-import com.br.bora.app.request.RequestUser
-import com.br.bora.app.services.UserService
-import com.br.bora.app.services.config.RetrofitInitializer
 import com.github.dhaval2404.imagepicker.ImagePicker
-import kotlinx.android.synthetic.main.activity_cadastro_pf.*
 import kotlinx.android.synthetic.main.activity_editar_usuario.*
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class EditarUsuarioActivity : AppCompatActivity() {
 

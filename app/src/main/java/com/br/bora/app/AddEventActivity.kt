@@ -4,20 +4,21 @@ import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.br.bora.app.model.Cep
+import androidx.core.view.isVisible
 import com.br.bora.app.model.Event
-import com.br.bora.app.request.RequestEvento
-import com.br.bora.app.services.CepService
+import com.br.bora.app.model.viewmodel.EventoViewModel
+import com.br.bora.app.request.CreateEvent
 import com.br.bora.app.services.config.RetrofitInitializer
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.android.material.checkbox.MaterialCheckBox
+import com.google.android.material.radiobutton.MaterialRadioButton
 import kotlinx.android.synthetic.main.activity_add_event.*
-import kotlinx.android.synthetic.main.activity_criar_evento.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -42,28 +43,77 @@ class AddEventActivity : AppCompatActivity() {
         action_bar.title = getString(R.string.add_event)
         action_bar.setTitleTextColor(resources.getColor(R.color.colorText))
 
+        type_private.setOnClickListener {
+            type_public.isChecked = false
+            type_private.isChecked = true
+            label_password_event.isVisible = true
+            password_event.isVisible = true
+        }
+
+        type_public.setOnClickListener {
+            type_private.isChecked = false
+            type_public.isChecked = true
+            label_password_event.isVisible = false
+            password_event.isVisible = false
+        }
+
+        event_isFree.setOnCheckedChangeListener { _, isChecked ->
+            price_event.isVisible = !isChecked
+        }
+
+        btn_create_event.setOnClickListener {
+            val titleInput = findViewById<EditText>(R.id.title_event).text.toString()
+            val cepInput = findViewById<EditText>(R.id.cep_event).text.toString()
+            val numberStreetInput = findViewById<EditText>(R.id.number_street_event).text.toString()
+            val dateStartInput = findViewById<EditText>(R.id.date_event_start).text.toString()
+            val scheduleStartInput =
+                findViewById<EditText>(R.id.schedule_start_event).text.toString()
+            val dateEndInput = findViewById<EditText>(R.id.date_event_end).text.toString()
+            val scheduleEndInput = findViewById<EditText>(R.id.schedule_end_event).text.toString()
+            val typePublicInput = findViewById<MaterialRadioButton>(R.id.type_public).isChecked
+            val typePrivateInput = findViewById<MaterialRadioButton>(R.id.type_private).isChecked
+            val passwordInput = findViewById<EditText>(R.id.password_event).text.toString()
+            val isFreeInput = findViewById<MaterialCheckBox>(R.id.event_isFree).text.toString()
+            val priceInput = findViewById<EditText>(R.id.price_event).text.toString()
+            val event = CreateEvent(
+                Event.Create(
+                    titleInput,
+                    "gesuvs",
+                    dateStartInput,
+                    dateEndInput,
+                    0.0,
+                    null,
+                    passwordInput,
+                    typePrivateInput
+                )
+            )
+            createEvent(event, it)
+        }
+
 
         //evento_etCep.setText("02042010");
-        val idEvento = intent.extras?.getInt("idEvento", 0)
-        if (idEvento != 0) {
-            getEvento(idEvento);
-            isAlterar = true;
-        }
-
-        inializaTela();
-
+        /* val idEvento = intent.extras?.getInt("idEvento", 0)
+         if (idEvento != 0) {
+             getEvento(idEvento);
+             isAlterar = true;
+         }*/
     }
 
+    private fun createEvent(event: CreateEvent, v: View) {
+        EventoViewModel().createEvent(event, v)
+    }
+
+
     fun visibleValor(v: View) {
-        if (evento_swIsPago.isChecked) {
-            evento_tvLabelValor.visibility = View.VISIBLE;
-            evento_etValor.visibility = View.VISIBLE;
-            isPago = true;
-        } else {
-            evento_tvLabelValor.visibility = View.GONE;
-            evento_etValor.visibility = View.GONE;
-            isPago = true;
-        }
+        /*  if (evento_swIsPago.isChecked) {
+              evento_tvLabelValor.visibility = View.VISIBLE;
+              evento_etValor.visibility = View.VISIBLE;
+              isPago = true;
+          } else {
+              evento_tvLabelValor.visibility = View.GONE;
+              evento_etValor.visibility = View.GONE;
+              isPago = true;
+          }*/
     }
 
     fun preencheCamposEvento(event: Event?) {
@@ -94,7 +144,7 @@ class AddEventActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             val fileUri = data?.data
-            evento_ivFoto.setImageURI(fileUri);
+            icon_upload_image.setImageURI(fileUri);
         } else if (resultCode == ImagePicker.RESULT_ERROR) {
             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
         } else {
@@ -119,6 +169,7 @@ class AddEventActivity : AppCompatActivity() {
     }
 
     fun inializaTela() {
+        /*
         evento_swIsPago.setOnCheckedChangeListener { componente, ligado ->
             visibleValor(componente)
         }
@@ -136,7 +187,7 @@ class AddEventActivity : AppCompatActivity() {
             evento_tvLabelSenha.visibility = (View.VISIBLE)
             isPublic = false
         }
-        evento_ivFoto.setOnClickListener {
+        icon_upload_image.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(android.Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_DENIED
@@ -171,61 +222,66 @@ class AddEventActivity : AppCompatActivity() {
                 evento_etCep.error = getString(R.string.preencherCep);
             }
         }
+    }*/
     }
 
     fun validacoes(): Boolean {
-        if (evento_etNomeEvento.text.isEmpty()) {
-            evento_etNomeEvento.requestFocus();
-            evento_etNomeEvento.error = getString(R.string.campoObrigatorio);
-            return false;
-        }
-        if (evento_etCep.text!!.isEmpty()) {
-            evento_etCep.requestFocus();
-            evento_etCep.error = getString(R.string.campoObrigatorio);
-            return false;
-        }
-        if (evento_etCep.text!!.length < 8) {
-            evento_etCep.requestFocus();
-            evento_etCep.error = getString(R.string.preenchecep);
-            return false;
-        }
-        if (evento_etNumero.text.isEmpty()) {
-            evento_etNumero.requestFocus();
-            evento_etNumero.error = getString(R.string.campoObrigatorio);
-            return false;
-        }
-        if (evento_etDataInicio.text.toString().isEmpty()) {
-            evento_etDataInicio.requestFocus();
-            evento_etDataInicio.error = getString(R.string.campoObrigatorio);
-            return false;
-        }
-        if (evento_etHorarioTermino.text.toString().isEmpty()) {
-            evento_etHorarioTermino.requestFocus();
-            evento_etHorarioTermino.error = getString(R.string.campoObrigatorio);
-            return false;
-        }
-        if (evento_etDataTermino.text.toString().isEmpty()) {
-            evento_etDataTermino.requestFocus();
-            evento_etDataTermino.error = getString(R.string.campoObrigatorio);
-            return false;
-        }
-        if (evento_etHorarioInicio.text.toString().isEmpty()) {
-            evento_etHorarioInicio.requestFocus();
-            evento_etHorarioInicio.error = getString(R.string.campoObrigatorio);
-            return false;
-        }
-        if (isPago) {
-            evento_etValor.requestFocus();
-            evento_etValor.error = getString(R.string.campoObrigatorio);
-            return false;
-        }
-        if (!isPublic) {
-            evento_etSenha.requestFocus();
-            evento_etSenha.error = getString(R.string.campoObrigatorio);
-            return false;
-        }
+        /*
+    if (evento_etNomeEvento.text.isEmpty()) {
+        evento_etNomeEvento.requestFocus();
+        evento_etNomeEvento.error = getString(R.string.campoObrigatorio);
+        return false;
+    }
+    if (evento_etCep.text!!.isEmpty()) {
+        evento_etCep.requestFocus();
+        evento_etCep.error = getString(R.string.campoObrigatorio);
+        return false;
+    }
+    if (evento_etCep.text!!.length < 8) {
+        evento_etCep.requestFocus();
+        evento_etCep.error = getString(R.string.preenchecep);
+        return false;
+    }
+    if (evento_etNumero.text.isEmpty()) {
+        evento_etNumero.requestFocus();
+        evento_etNumero.error = getString(R.string.campoObrigatorio);
+        return false;
+    }
+    if (evento_etDataInicio.text.toString().isEmpty()) {
+        evento_etDataInicio.requestFocus();
+        evento_etDataInicio.error = getString(R.string.campoObrigatorio);
+        return false;
+    }
+    if (evento_etHorarioTermino.text.toString().isEmpty()) {
+        evento_etHorarioTermino.requestFocus();
+        evento_etHorarioTermino.error = getString(R.string.campoObrigatorio);
+        return false;
+    }
+    if (evento_etDataTermino.text.toString().isEmpty()) {
+        evento_etDataTermino.requestFocus();
+        evento_etDataTermino.error = getString(R.string.campoObrigatorio);
+        return false;
+    }
+    if (evento_etHorarioInicio.text.toString().isEmpty()) {
+        evento_etHorarioInicio.requestFocus();
+        evento_etHorarioInicio.error = getString(R.string.campoObrigatorio);
+        return false;
+    }
+    if (isPago) {
+        evento_etValor.requestFocus();
+        evento_etValor.error = getString(R.string.campoObrigatorio);
+        return false;
+    }
+    if (!isPublic) {
+        evento_etSenha.requestFocus();
+        evento_etSenha.error = getString(R.string.campoObrigatorio);
+        return false;
+    }
+    */
+
         return true;
     }
+
 
     fun buscaEndereco(cep: String) {
 //        val retIn = RetrofitInitializer.eventService getRetrofitInstance().create(CepService::class.java)
@@ -253,27 +309,14 @@ class AddEventActivity : AppCompatActivity() {
 //        })
     }
 
-    fun cadastrarEvento(event: Event.Create) {
-        val retIn = RetrofitInitializer.eventService.createEvent(event)
-        retIn.enqueue(object : Callback<ResponseBody> {
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                if (response.code() == 201) {
-
-                }
-            }
-
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                Log.i("STATE", t.message.toString())
-            }
-        })
-
-    }
-
     fun alterarEvento(event: Event) {
         val retIn = RetrofitInitializer.eventService.changeEvento(event)
 
         retIn.enqueue(object : Callback<ResponseBody> {
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+            override fun onResponse(
+                call: Call<ResponseBody>,
+                response: Response<ResponseBody>
+            ) {
                 if (response.code() == 200) {
 
                 }

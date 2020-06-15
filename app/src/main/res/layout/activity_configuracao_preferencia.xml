@@ -34,6 +34,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerHorizontal="true"
                 android:onClick="onChangeFutebol"
+                android:src="@drawable/eventos_futebol"
                 android:text="@string/eventosFutebol" />
 
             <ImageView
@@ -44,6 +45,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_toRightOf="@+id/card1"
                 android:onClick="onChangeRpg"
+                android:src="@drawable/eventos_rpg"
                 android:text="@string/eventosRpg" />
 
             <ImageView
@@ -51,7 +53,7 @@
                 style="@style/CardPreference"
                 android:layout_below="@id/card1"
                 android:onClick="onChangeFestas"
-                android:src="@drawable/eventos_festass"
+                android:src="@drawable/eventos_festas"
                 android:text="@string/eventosFestas" />
 
             <ImageView
@@ -62,7 +64,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_toRightOf="@+id/card1"
                 android:onClick="onChangeBares"
-                android:src="@drawable/eventos_baress"
+                android:src="@drawable/eventos_bares"
                 android:text="@string/eventosBares" />
 
             <ImageView
@@ -70,6 +72,7 @@
                 style="@style/CardPreference"
                 android:layout_below="@id/card3"
                 android:onClick="onChangeIoga"
+                android:src="@drawable/eventos_yoga"
                 android:text="@string/eventosYoga" />
 
             <ImageView
@@ -80,6 +83,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_toRightOf="@+id/card1"
                 android:onClick="onChangeShows"
+                android:src="@drawable/eventos_show"
                 android:text="@string/eventosShows" />
 
             <Button
@@ -88,6 +92,7 @@
                 android:layout_below="@id/card5"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"
+                android:background="@drawable/btn_default"
                 android:text="@string/save"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />

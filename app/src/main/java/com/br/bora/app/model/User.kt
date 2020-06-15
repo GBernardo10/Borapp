@@ -3,6 +3,7 @@ package com.br.bora.app.model
 import com.google.gson.Gson
 
 class User {
+
     data class Create(
         val name: String?,
         val mail: String?,
@@ -10,6 +11,7 @@ class User {
         var username: String?,
         var password: String?
     )
+
 
     data class Auth(
         var username: String?,

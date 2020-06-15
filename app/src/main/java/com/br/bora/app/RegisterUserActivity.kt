@@ -5,20 +5,16 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.br.bora.app.model.User
-import com.br.bora.app.request.RequestUser
-import com.br.bora.app.services.UserService
-import com.br.bora.app.services.config.RetrofitInitializer
+import com.br.bora.app.model.viewmodel.UserViewModel
+import com.br.bora.app.request.CreateUser
 import com.github.dhaval2404.imagepicker.ImagePicker
-import kotlinx.android.synthetic.main.activity_cadastro_pf.*
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.santalu.maskedittext.MaskEditText
 import kotlinx.android.synthetic.main.activity_register_user.*
-import kotlinx.android.synthetic.main.activity_register_user.action_bar
 
 class RegisterUserActivity : AppCompatActivity() {
 
@@ -27,8 +23,6 @@ class RegisterUserActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro_pf)
-        inicializaTela();
         setContentView(R.layout.activity_register_user)
         setSupportActionBar(action_bar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -36,7 +30,7 @@ class RegisterUserActivity : AppCompatActivity() {
         action_bar.title = getString(R.string.register)
         action_bar.setTitleTextColor(resources.getColor(R.color.colorText))
 
-        /*upload_pic.setImageResource(R.drawable.ic_cloud_upload);*/
+        upload_pic.setImageResource(R.drawable.ic_cloud_upload);
         upload_pic.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(android.Manifest.permission.CAMERA)
@@ -53,6 +47,20 @@ class RegisterUserActivity : AppCompatActivity() {
                 openCamera();
             }
         }
+
+        btn_register_user.setOnClickListener {
+            val nameInput = findViewById<EditText>(R.id.name_user).text.toString()
+            val mailInput = findViewById<EditText>(R.id.mail_user).text.toString()
+            val phoneInput = findViewById<MaskEditText>(R.id.phone_user).rawText.toString()
+            val usernameInput = findViewById<EditText>(R.id.username).text.toString()
+            val passwordInput = findViewById<EditText>(R.id.password_user).text.toString()
+            val user = CreateUser(User.Create(nameInput, mailInput, phoneInput, usernameInput, passwordInput))
+            createUser(user)
+        }
+    }
+
+    private fun createUser(user: CreateUser) {
+        return UserViewModel().createUser(user)
     }
 
     override fun onRequestPermissionsResult(
@@ -121,44 +129,44 @@ class RegisterUserActivity : AppCompatActivity() {
     }
 
     fun validaCampos(): Boolean {
-        if (cadastropf_etEmail.text.toString().isEmpty()) {
-            cadastropf_etEmail.requestFocus();
-            cadastropf_etEmail.error = getString(R.string.campoObrigatorio)
+        if (mail_user.text.toString().isEmpty()) {
+            mail_user.requestFocus();
+            mail_user.error = getString(R.string.campoObrigatorio)
             return false;
         }
-        if (cadastropf_etCelular.text.toString().isEmpty()) {
-            cadastropf_etCelular.requestFocus();
-            cadastropf_etCelular.error = getString(R.string.campoObrigatorio);
+        if (phone_user.text.toString().isEmpty()) {
+            phone_user.requestFocus();
+            phone_user.error = getString(R.string.campoObrigatorio);
             return false;
         }
-        if (cadastropf_etLogin.text.toString().isEmpty()) {
-            cadastropf_etLogin.requestFocus();
-            cadastropf_etLogin.error = getString(R.string.campoObrigatorio);
+        if (username.text.toString().isEmpty()) {
+            username.requestFocus();
+            username.error = getString(R.string.campoObrigatorio);
             return false;
         }
-        if (cadastropf_etSenha.text.toString().isEmpty()) {
-            cadastropf_etSenha.requestFocus();
-            cadastropf_etSenha.error = getString(R.string.campoObrigatorio);
+        if (password_user.text.toString().isEmpty()) {
+            password_user.requestFocus();
+            password_user.error = getString(R.string.campoObrigatorio);
             return false;
         }
-        if (cadastropf_etNome.text.toString().isEmpty()) {
-            cadastropf_etNome.requestFocus();
-            cadastropf_etNome.error = getString(R.string.campoObrigatorio);
+        if (username.text.toString().isEmpty()) {
+            username.requestFocus();
+            username.error = getString(R.string.campoObrigatorio);
         }
         return true;
     }
 
-    fun inicializaTela(){
-        cadastropf_btCadastrar.setOnClickListener {
+    fun inicializaTela() {
+        btn_register_user.setOnClickListener {
             if (validaCampos()) {
                 cadastrarUsuario(
-                    cadastropf_etNome.text.toString(), "+55" + cadastropf_etCelular.text.toString()
-                    , cadastropf_etEmail.text.toString(), cadastropf_etSenha.text.toString()
-                    , cadastropf_etLogin.text.toString()
+                    username.text.toString(), "+55" + phone_user.text.toString()
+                    , mail_user.text.toString(), password_user.text.toString()
+                    , username.text.toString()
                 );
             }
         }
-        cadastropf_ivFoto.setOnClickListener {
+        upload_pic.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(android.Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_DENIED

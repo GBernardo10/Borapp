@@ -29,7 +29,7 @@
     <string name="naoEncontrou">Não encontrou?</string>
     <string name="rolesCriados">Meus rolês criados (1)</string>
     <string name="rolesParticipo">Rolês que participo (1)</string>
-    <string name="phone_user_format">(DD) 9 9999–9999</string>
+    <string name="phone_user_format">+55(DD) 9 9999–9999</string>
     <string name="CNPJ">Digite seu CNPJ</string>
     <string name="nome_da_empresa">Nome da empresa</string>
     <string name="digite_cpf">Digite seu cpf</string>
@@ -143,4 +143,5 @@
     <string name="dataTermino">Data Termino</string>
     <string name="horaTermino">Horário Termino</string>
     <string name="preenchecep">Por favor preencher os 8 digitos do CEP</string>
+    <string name="password_event">Senha do evento</string>
 </resources>

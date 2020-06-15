@@ -14,7 +14,9 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/action_bar"
             style="@style/MaterialToolbar"
-            app:layout_scrollFlags="scroll"></com.google.android.material.appbar.MaterialToolbar>
+            app:layout_scrollFlags="scroll">
+
+        </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
@@ -28,7 +30,7 @@
             <ImageView
                 android:id="@+id/icon_upload_image"
                 style="@style/PhotoView"
-                android:background="@drawable/ic_cloud_uploadd"
+                android:background="@drawable/ic_cloud_upload"
                 android:contentDescription="TODO" />
 
             <TextView
@@ -62,13 +64,14 @@
                 android:layout_below="@+id/title_event"
                 android:text="@string/info_event_zipcode" />
 
-            <EditText
+            <com.santalu.maskedittext.MaskEditText
                 android:id="@+id/cep_event"
                 style="@style/FormInputHalf"
                 android:layout_below="@+id/label_zipcode_event"
                 android:autofillHints=""
                 android:hint="@string/info_event_zipcode"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                app:met_mask="#####-###" />
 
             <TextView
                 android:id="@+id/label_number_street_event"
@@ -94,13 +97,14 @@
                 android:layout_below="@+id/cep_event"
                 android:text="@string/info_event_date_start" />
 
-            <EditText
+            <com.santalu.maskedittext.MaskEditText
                 android:id="@+id/date_event_start"
                 style="@style/FormInputHalf"
                 android:layout_below="@+id/label_date_start_event"
                 android:autofillHints=""
                 android:hint="@string/format_date"
-                android:inputType="date" />
+                android:inputType="date"
+                app:met_mask="##/##/####" />
 
             <TextView
                 android:id="@+id/label_schedule_start_event"
@@ -109,14 +113,15 @@
                 android:layout_alignParentEnd="true"
                 android:text="@string/info_event_schedule_start" />
 
-            <EditText
+            <com.santalu.maskedittext.MaskEditText
                 android:id="@+id/schedule_start_event"
                 style="@style/FormInputHalf"
                 android:layout_below="@+id/label_schedule_start_event"
                 android:layout_alignParentEnd="true"
                 android:autofillHints=""
                 android:hint="@string/format_schedule"
-                android:inputType="time" />
+                android:inputType="time"
+                app:met_mask="##:##" />
 
             <TextView
                 android:id="@+id/label_date_end_event"
@@ -124,13 +129,14 @@
                 android:layout_below="@+id/date_event_start"
                 android:text="@string/info_event_date_end" />
 
-            <EditText
+            <com.santalu.maskedittext.MaskEditText
                 android:id="@+id/date_event_end"
                 style="@style/FormInputHalf"
                 android:layout_below="@+id/label_date_end_event"
                 android:autofillHints=""
                 android:hint="@string/format_date"
-                android:inputType="date" />
+                android:inputType="date"
+                app:met_mask="##/##/####" />
 
             <TextView
                 android:id="@+id/label_schedule_end_event"
@@ -139,14 +145,15 @@
                 android:layout_alignParentEnd="true"
                 android:text="@string/info_event_schedule_start" />
 
-            <EditText
+            <com.santalu.maskedittext.MaskEditText
                 android:id="@+id/schedule_end_event"
                 style="@style/FormInputHalf"
                 android:layout_below="@+id/label_schedule_end_event"
                 android:layout_alignParentEnd="true"
                 android:autofillHints=""
                 android:hint="@string/format_schedule"
-                android:inputType="time" />
+                android:inputType="time"
+                app:met_mask="##:##" />
 
             <TextView
                 android:id="@+id/description_tipo_evento"
@@ -173,26 +180,50 @@
                 android:layout_alignParentEnd="true"
                 android:text="@string/event_private" />
 
+            <TextView
+                android:id="@+id/label_password_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/type_public"
+                android:text="@string/password_event"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <EditText
+                android:id="@+id/password_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_password_event"
+                android:autofillHints=""
+                android:hint="@string/password_event"
+                android:inputType="textPassword"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/event_isFree"
                 style="@style/MaterialCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/type_public"
-                android:layout_alignBottom="@id/price_event"
+                android:layout_below="@id/password_event"
+                android:layout_alignBaseline="@id/price_event"
                 android:checked="true"
                 android:text="@string/event_free" />
 
-            <EditText
+            <com.santalu.maskedittext.MaskEditText
                 android:id="@+id/price_event"
                 style="@style/FormInputHalf"
-                android:layout_below="@id/type_private"
+                android:layout_below="@id/password_event"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_alignEnd="@id/event_isFree"
                 android:autofillHints=""
                 android:hint="@string/info_evento_valor"
                 android:inputType="numberDecimal"
-                android:visibility="invisible"
+                android:visibility="gone"
+                app:met_mask="R$"
                 tools:visibility="visible" />
+
 
             <TextView
                 android:id="@+id/label_add_category"
@@ -225,11 +256,11 @@
                 android:spinnerMode="dropdown" />
 
             <Button
+                android:id="@+id/btn_create_event"
                 style="@style/Button"
                 android:layout_width="match_parent"
                 android:layout_below="@id/add_guest"
                 android:text="@string/add_event" />
-
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
