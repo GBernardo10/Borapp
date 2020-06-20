@@ -12,6 +12,7 @@
         <item name="materialCardViewStyle">@style/MaterialCardView</item>
         <item name="fontFamily">@font/firacode_regular</item>
         <item name="drawerArrowStyle">@style/WhiteDrawerIconStyle</item>
+        <item name="android:timePickerStyle">@style/SpinnerTimePicker</item>
     </style>
 
     <style name="WhiteDrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
@@ -96,7 +97,9 @@
         <item name="android:background">@android:color/black</item>
     </style>
 
-
+    <style name="SpinnerTimePicker" parent="android:Widget.Material.Light.TimePicker">
+        <item name="android:timePickerMode">spinner</item>
+    </style>
     <style name="ButtonDefaultRadio">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -217,7 +220,7 @@
     </style>
 
     <style name="FormInputHalf">
-        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_width">160dp</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 

@@ -144,4 +144,14 @@
     <string name="horaTermino">Horário Termino</string>
     <string name="preenchecep">Por favor preencher os 8 digitos do CEP</string>
     <string name="password_event">Senha do evento</string>
+    <string name="my_wallet">Carteira</string>
+    <string name="description_event">Deixe aqui uma breve descrição do seu evento</string>
+    <string name="description_event_label">Descrição do evento</string>
+    <string name="address_event">Endereço do evento</string>
+    <string name="zip_code_not_found">Cep nao encontrado</string>
+    <string name="date_start_event_not_before_current_date">A data do evento, tem que ser no futuro</string>
+    <string name="date_end_event_not_before_date_start">Seu evento nao pode terminar antes da data de inicio</string>
+    <string name="info_event_schedule_end">Horario do termino</string>
+    <string name="schedule_end_not_before_schedule_start">Seu evento nao pode terminar antes do inicio</string>
+    <string name="schedule_start_not_before_current_time">Seu evento tem que começar no futuro</string>
 </resources>

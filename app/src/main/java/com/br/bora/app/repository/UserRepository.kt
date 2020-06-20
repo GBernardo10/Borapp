@@ -23,18 +23,25 @@ import retrofit2.Response
 
 class UserRepository {
 
-    fun createUser(user: CreateUser) {
+    fun createUser(user: CreateUser,v: View) {
         RetrofitInitializer.userService.createUser(user).enqueue(object : Callback<ResponseBody> {
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 Log.d("USUARIO", t.message.toString())
             }
 
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                if (!response.isSuccessful) return
-                Log.d("USUARIO", "USUARIO CADASTRADO")
+                when (response.code()) {
+                    201 -> {
+                        Snackbar.make(v, "Usuario CADASTRADO", Snackbar.LENGTH_LONG)
+                            .show()
+                    }
+                    else -> Snackbar.make(v, "usuario NAO CADASTRADO", Snackbar.LENGTH_LONG)
+                        .show()
+                }
             }
         })
     }
+
 
     fun auth(auth: AuthUser, activity: AuthActivity, v: View) {
         RetrofitInitializer.userService.auth(auth).enqueue(object : Callback<Token> {

@@ -8,16 +8,16 @@ import retrofit2.http.*
 
 interface EventService {
 
-    @GET("eventos")
+    @GET("eventos/")
     fun getEvents(): Call<List<Event.FindAll>>
 
     @GET("eventos/{id}")
     fun getEvent(@Path("id") id:Int?): Call<Event?>
 
-    @POST("eventos")
+    @POST("eventos/")
     fun createEvent(@Body request: CreateEvent): Call<ResponseBody>
 
-    @PUT("eventos")
+    @PUT("eventos/")
     fun changeEvento(@Body request: Event): Call<ResponseBody>
 
     @POST("eventos/{id}/{username}")

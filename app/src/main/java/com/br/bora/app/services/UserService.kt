@@ -10,7 +10,7 @@ import retrofit2.http.*
 
 interface UserService {
 
-    @POST("users")
+    @POST("users/")
     fun createUser(@Body request: CreateUser): Call<ResponseBody>
 
     /*@PUT("users")

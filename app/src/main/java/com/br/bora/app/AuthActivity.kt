@@ -36,16 +36,16 @@ class AuthActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
             Home()
-            /*val loginInput = findViewById<EditText>(R.id.login).text.toString()
-            val pwdInput = findViewById<EditText>(R.id.pass).text.toString()
-            val auth = AuthUser(User.Auth(loginInput, pwdInput))
-            sign(auth, this, it)*/
+//            val loginInput = findViewById<EditText>(R.id.login).text.toString()
+//            val pwdInput = findViewById<EditText>(R.id.pass).text.toString()
+//            val auth = AuthUser(User.Auth(loginInput, pwdInput))
+//            sign(auth, this, it)
         }
-
     }
 
     private fun sign(auth: AuthUser, activity: AuthActivity, view: View) {
         UserViewModel().auth(auth, activity, view)
+
     }
 
     fun irEsqueciSenha(v: View) {

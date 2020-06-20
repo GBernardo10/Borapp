@@ -16,11 +16,12 @@ import kotlinx.android.synthetic.main.activity_drawer_layout.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var saveData: SaveData
+    private lateinit var fragment: LoadFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drawer_layout)
-        val fragment = LoadFragment(R.id.main_frame, supportFragmentManager)
+        fragment = LoadFragment(R.id.main_frame, supportFragmentManager)
 
         val toolbar: MaterialToolbar = findViewById(R.id.action_bar)
         setSupportActionBar(toolbar)
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.d_profile -> {
-                Toast.makeText(this, "TESTE", Toast.LENGTH_SHORT).show()
+                fragment.loadFragment(ProfileFragment())
             }
             R.id.d_settings -> {
                 startActivity(Intent(this, SettingsActivity::class.java))

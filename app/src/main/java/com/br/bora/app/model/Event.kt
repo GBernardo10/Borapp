@@ -9,10 +9,12 @@ class Event {
         val owner: String,
         val startDay: String,
         val startEnd: String,
-        val rating: Double,
-        val roles: String?,
+        val zipcode:String,
+        val address:String? = "",
+        val streetNumber:String,
+        val privacy: String,
         val password: String,
-        val isPrivate: Boolean
+        val isPublic: Boolean
     )
     data class FindAll(
         val name: String,

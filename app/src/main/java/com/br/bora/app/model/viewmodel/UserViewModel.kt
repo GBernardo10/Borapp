@@ -13,8 +13,8 @@ import com.br.bora.app.request.CreateUser
 class UserViewModel : ViewModel() {
     private var repository: UserRepository = UserRepository()
 
-    fun createUser(user: CreateUser) {
-        return repository.createUser(user)
+    fun createUser(user: CreateUser,v: View) {
+        return repository.createUser(user,v)
     }
 
     fun auth(user: AuthUser, activity: AuthActivity, view: View) {

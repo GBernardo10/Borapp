@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -54,13 +55,21 @@ class RegisterUserActivity : AppCompatActivity() {
             val phoneInput = findViewById<MaskEditText>(R.id.phone_user).rawText.toString()
             val usernameInput = findViewById<EditText>(R.id.username).text.toString()
             val passwordInput = findViewById<EditText>(R.id.password_user).text.toString()
-            val user = CreateUser(User.Create(nameInput, mailInput, phoneInput, usernameInput, passwordInput))
-            createUser(user)
+            val user = CreateUser(
+                User.Create(
+                    nameInput,
+                    mailInput,
+                    phoneInput,
+                    usernameInput,
+                    passwordInput
+                )
+            )
+            createUser(user, it)
         }
     }
 
-    private fun createUser(user: CreateUser) {
-        return UserViewModel().createUser(user)
+    private fun createUser(user: CreateUser, v: View) {
+        return UserViewModel().createUser(user, v)
     }
 
     override fun onRequestPermissionsResult(

@@ -1,136 +1,326 @@
 package com.br.bora.app
 
 import android.app.Activity
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
+import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
+import android.widget.TimePicker
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.br.bora.app.model.Event
+import com.br.bora.app.databinding.ActivityAddEventBinding
 import com.br.bora.app.model.viewmodel.EventoViewModel
+import com.br.bora.app.model.viewmodel.ZipCodeViewModel
 import com.br.bora.app.request.CreateEvent
-import com.br.bora.app.services.config.RetrofitInitializer
+import com.br.bora.app.utils.DateUtils
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.radiobutton.MaterialRadioButton
+import com.santalu.maskedittext.MaskEditText
 import kotlinx.android.synthetic.main.activity_add_event.*
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.android.synthetic.main.activity_add_event.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AddEventActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAddEventBinding
+    private val permissionCode = 1000;
+    private val dateUtils = DateUtils()
+    private lateinit var scheduleStart: Date
+    private lateinit var scheduleEnd: Date
+    private lateinit var dateStart: Date
+    private lateinit var dateEnd: Date
+    private lateinit var cepInput: MaskEditText
+    private lateinit var dateStartInput: EditText
+    private lateinit var dateEndInput: EditText
+    private lateinit var scheduleStartInput: EditText
+    private lateinit var scheduleEndInput: EditText
+    private lateinit var titleInput: EditText
+    private lateinit var numberStreetInput: EditText
+    private lateinit var typePublicInput: MaterialRadioButton
+    private lateinit var typePrivateInput: MaterialRadioButton
+    private lateinit var passwordInput: EditText
+    private lateinit var isFreeInput: MaterialCheckBox
+    private lateinit var priceInput: EditText
+    private lateinit var labelPassword: TextView
 
-
-    private val PERMISSION_CODE = 1000;
-    var isPublic = true;
-    var isPago = false;
-    var preferencias: SharedPreferences? = null;
-    var isAlterar = false;
-
-
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_event)
-        setSupportActionBar(action_bar)
+        binding = ActivityAddEventBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.actionBar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        action_bar.title = getString(R.string.add_event)
-        action_bar.setTitleTextColor(resources.getColor(R.color.colorText))
+        binding.actionBar.title = getString(R.string.add_event)
+        binding.actionBar.setTitleTextColor(resources.getColor(R.color.colorText))
+        cepInput = binding.cepEvent
+        dateStartInput = binding.dateEventStart
+        dateEndInput = binding.dateEventEnd
+        scheduleStartInput = binding.scheduleStartEvent
+        scheduleEndInput = binding.scheduleEndEvent
+        titleInput = binding.titleEvent
+        numberStreetInput = binding.numberStreetEvent
+        typePublicInput = binding.typePublic
+        typePrivateInput = binding.typePrivate
+        passwordInput = binding.passwordEvent
+        isFreeInput = binding.eventIsFree
+        priceInput = binding.priceEvent
+        labelPassword = binding.labelPasswordEvent
 
-        type_private.setOnClickListener {
-            type_public.isChecked = false
-            type_private.isChecked = true
-            label_password_event.isVisible = true
-            password_event.isVisible = true
+        with(dateStartInput) {
+            showSoftInputOnFocus = false
+            isFocusableInTouchMode = false
+        }
+        with(dateEndInput) {
+            showSoftInputOnFocus = false
+            isFocusableInTouchMode = false
+        }
+        with(scheduleStartInput) {
+            showSoftInputOnFocus = false
+            isFocusableInTouchMode = false
+        }
+        with(scheduleEndInput) {
+            showSoftInputOnFocus = false
+            isFocusableInTouchMode = false
         }
 
-        type_public.setOnClickListener {
-            type_private.isChecked = false
-            type_public.isChecked = true
-            label_password_event.isVisible = false
-            password_event.isVisible = false
+        dateStartInput.setOnClickListener {
+            it.isFocusableInTouchMode = true
+            it.isFocusable = true
+            it.requestFocus()
+            DatePickerDialog(
+                this, dateSetListener(dateStartInput),
+                dateUtils.getCalendar().get(Calendar.YEAR),
+                dateUtils.getCalendar().get(Calendar.MONTH),
+                dateUtils.getCalendar().get(Calendar.DAY_OF_MONTH)
+            ).show()
         }
 
-        event_isFree.setOnCheckedChangeListener { _, isChecked ->
-            price_event.isVisible = !isChecked
+        dateEndInput.setOnClickListener {
+            it.isFocusableInTouchMode = true
+            it.isFocusable = true
+            it.requestFocus()
+            DatePickerDialog(
+                this, dateSetListener(dateEndInput),
+                dateUtils.getCalendar().get(Calendar.YEAR),
+                dateUtils.getCalendar().get(Calendar.MONTH),
+                dateUtils.getCalendar().get(Calendar.DAY_OF_MONTH)
+            ).show()
         }
+
+        scheduleStartInput.setOnClickListener {
+            it.isFocusableInTouchMode = true
+            it.isFocusable = true
+            it.requestFocus()
+            TimePickerDialog(
+                this,
+                timeSetListener(scheduleStartInput),
+                dateUtils.getCalendar().get(Calendar.HOUR),
+                dateUtils.getCalendar().get(Calendar.MINUTE),
+                true
+            ).show()
+        }
+
+        scheduleEndInput.setOnClickListener {
+            it.isFocusableInTouchMode = true
+            it.isFocusable = true
+            it.requestFocus()
+            TimePickerDialog(
+                this,
+                timeSetListener(scheduleEndInput),
+                dateUtils.getCalendar().get(Calendar.HOUR),
+                dateUtils.getCalendar().get(Calendar.MINUTE),
+                true
+            ).show()
+        }
+
+        dateStartInput.setOnFocusChangeListener { view, hasFocus ->
+            if (!hasFocus) {
+                view.isFocusableInTouchMode = false
+                view.isFocusable = false
+                if (dateStartInput.text.toString().isNotEmpty()) {
+                    dateStart = dateUtils.changeStringToDate(dateStartInput.text.toString())!!
+                    dateStartInput.error =
+                        if (!dateStart.before(dateUtils.getCurrentDate())) null
+                        else getString(R.string.date_start_event_not_before_current_date)
+                }
+            }
+        }
+
+        dateEndInput.setOnFocusChangeListener { view, hasFocus ->
+            if (!hasFocus) {
+                view.isFocusableInTouchMode = false
+                view.isFocusable = false
+                if (dateEndInput.text.toString().isNotEmpty()) {
+                    dateEnd = dateUtils.changeStringToDate(dateEndInput.text.toString())!!
+                    if (dateStartInput.text.isNotEmpty()) {
+                        dateEndInput.error =
+                            if (dateEnd.before(
+                                    dateUtils.changeStringToDate(
+                                        dateStartInput.text.toString()
+                                    )
+                                ) || dateEnd.before(
+                                    dateUtils.getCurrentDate()
+                                )
+                            )
+                                getString(R.string.date_end_event_not_before_date_start)
+                            else
+                                null
+                    }
+                }
+
+            }
+        }
+
+        scheduleStartInput.setOnFocusChangeListener { view, hasFocus ->
+            if (!hasFocus) {
+                view.isFocusableInTouchMode = false
+                view.isFocusable = false
+                if (scheduleStartInput.text.toString().isNotEmpty()) {
+                    scheduleStart =
+                        dateUtils.changeStringToTime(scheduleStartInput.text.toString())!!
+                    dateStart = dateUtils.changeStringToDate(dateStartInput.text.toString())!!
+                    if (!dateStart.before(dateUtils.getCurrentDate()) && !dateStart.after(dateUtils.getCurrentDate())) {
+                        scheduleStartInput.error =
+                            if (!scheduleStart.before(dateUtils.getCurrentTime())) null
+                            else getString(R.string.schedule_start_not_before_current_time)
+                    }
+                }
+
+            }
+        }
+
+        scheduleEndInput.setOnFocusChangeListener { view, hasFocus ->
+            if (!hasFocus) {
+                view.isFocusableInTouchMode = false
+                view.isFocusable = false
+                if (scheduleStartInput.text.toString()
+                        .isNotEmpty() && scheduleEndInput.text.toString().isNotEmpty()
+                ) {
+                    if (dateEndInput.text.toString().isNotEmpty() && dateStartInput.text.toString()
+                            .isNotEmpty()
+                    ) {
+                        scheduleStart =
+                            dateUtils.changeStringToTime(scheduleStartInput.text.toString())!!
+                        dateEnd =
+                            dateUtils.changeStringToDate(dateEndInput.text.toString())!!
+                        dateStart =
+                            dateUtils.changeStringToDate(dateStartInput.text.toString())!!
+                        scheduleEnd =
+                            dateUtils.changeStringToTime(scheduleEndInput.text.toString())!!
+                        if (!dateStart.after(dateEnd) && !dateStart.before(dateEnd)) {
+                            if (scheduleStartInput.text.isNotEmpty()) {
+                                scheduleEndInput.error =
+                                    if (scheduleEnd.before(scheduleStart)) getString(R.string.schedule_end_not_before_schedule_start)
+                                    else null
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+        cepInput.setOnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus) {
+                if (cepInput.text?.isNotEmpty()!!) {
+                    ZipCodeViewModel().findZipCode(cepInput.rawText.toString(), this, v)
+                }
+            }
+        }
+
+        typePrivateInput.setOnClickListener {
+            typePublicInput.isChecked = false
+            typePrivateInput.isChecked = true
+            labelPassword.isVisible = true
+            passwordInput.isVisible = true
+        }
+
+        typePublicInput.setOnClickListener {
+            typePrivateInput.isChecked = false
+            typePublicInput.isChecked = true
+            labelPassword.isVisible = false
+            passwordInput.isVisible = false
+        }
+
+        isFreeInput.setOnCheckedChangeListener { _, isChecked ->
+            priceInput.isVisible = !isChecked
+        }
+
+        icon_upload_image.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (checkSelfPermission(android.Manifest.permission.CAMERA)
+                    == PackageManager.PERMISSION_DENIED
+                ) {
+                    val permission = arrayOf(
+                        android.Manifest.permission.CAMERA
+                    )
+                    requestPermissions(permission, permissionCode);
+                } else {
+                    openCamera();
+                }
+            } else {
+                openCamera();
+            }
+        }
+
 
         btn_create_event.setOnClickListener {
-            val titleInput = findViewById<EditText>(R.id.title_event).text.toString()
-            val cepInput = findViewById<EditText>(R.id.cep_event).text.toString()
-            val numberStreetInput = findViewById<EditText>(R.id.number_street_event).text.toString()
-            val dateStartInput = findViewById<EditText>(R.id.date_event_start).text.toString()
-            val scheduleStartInput =
-                findViewById<EditText>(R.id.schedule_start_event).text.toString()
-            val dateEndInput = findViewById<EditText>(R.id.date_event_end).text.toString()
-            val scheduleEndInput = findViewById<EditText>(R.id.schedule_end_event).text.toString()
-            val typePublicInput = findViewById<MaterialRadioButton>(R.id.type_public).isChecked
-            val typePrivateInput = findViewById<MaterialRadioButton>(R.id.type_private).isChecked
-            val passwordInput = findViewById<EditText>(R.id.password_event).text.toString()
-            val isFreeInput = findViewById<MaterialCheckBox>(R.id.event_isFree).text.toString()
-            val priceInput = findViewById<EditText>(R.id.price_event).text.toString()
-            val event = CreateEvent(
-                Event.Create(
-                    titleInput,
-                    "gesuvs",
-                    dateStartInput,
-                    dateEndInput,
-                    0.0,
-                    null,
-                    passwordInput,
-                    typePrivateInput
-                )
-            )
-            createEvent(event, it)
+            if (!validacoes()) {
+                Toast.makeText(this, "Erro", Toast.LENGTH_LONG).show()
+            }
+
+
+//            val event = CreateEvent(
+//                Event.Create(
+//                    titleInput,
+//                    "Gesuvs",
+//                    dateStartInput,
+//                    dateEndInput,
+//                    cepInput.rawText.toString(),
+//                    "Rua valença",
+//                    numberStreetInput,
+//                    "public",
+//                    "",
+//                    true
+//                )
+//            )
+//            createEvent(event, it)
         }
-
-
-        //evento_etCep.setText("02042010");
-        /* val idEvento = intent.extras?.getInt("idEvento", 0)
-         if (idEvento != 0) {
-             getEvento(idEvento);
-             isAlterar = true;
-         }*/
     }
 
     private fun createEvent(event: CreateEvent, v: View) {
         EventoViewModel().createEvent(event, v)
     }
 
-
-    fun visibleValor(v: View) {
-        /*  if (evento_swIsPago.isChecked) {
-              evento_tvLabelValor.visibility = View.VISIBLE;
-              evento_etValor.visibility = View.VISIBLE;
-              isPago = true;
-          } else {
-              evento_tvLabelValor.visibility = View.GONE;
-              evento_etValor.visibility = View.GONE;
-              isPago = true;
-          }*/
+    private fun dateSetListener(editText: EditText): DatePickerDialog.OnDateSetListener? {
+        return DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
+            dateUtils.getCalendar().set(Calendar.YEAR, year)
+            dateUtils.getCalendar().set(Calendar.MONTH, monthOfYear)
+            dateUtils.getCalendar().set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            editText.setText(dateUtils.formatterDate().format(dateUtils.getCalendar().time))
+        }
     }
 
-    fun preencheCamposEvento(event: Event?) {
-//        evento_etNomeEvento.setText(event?.name)
-        //evento_etCep.setText(evento.cep)
-        //evento_etNumero.setText(evento.number);
-        //evento_etQuantidade.setText(evento.quantity)
-        //evento_etValor.setText(evento.valor);
-        //evento_etData.setText(evento.startDay.toString().substring(0, 9))
-        //evento_etHorario.setText(evento.startDay.toString().substring(11, 15))
-
-
-//        isPublic = event!!.isPublic;
-//        if (event!!.isPublic)
-//            evento_btnPublic.callOnClick()
-//        else
-//            evento_btnPrivate.callOnClick()
+    private fun timeSetListener(editText: EditText): TimePickerDialog.OnTimeSetListener {
+        return TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
+            dateUtils.getCalendar().set(Calendar.HOUR, hourOfDay)
+            dateUtils.getCalendar().set(Calendar.MINUTE, minute)
+            editText.setText(dateUtils.formatterTime().format(dateUtils.getCalendar().time))
+        }
     }
 
     fun openCamera() {
@@ -158,8 +348,8 @@ class AddEventActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         when (requestCode) {
-            PERMISSION_CODE -> {
-                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            permissionCode -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     openCamera();
                 } else {
                     Toast.makeText(this, "Permissão Negada", Toast.LENGTH_SHORT).show();
@@ -168,180 +358,58 @@ class AddEventActivity : AppCompatActivity() {
         }
     }
 
-    fun inializaTela() {
-        /*
-        evento_swIsPago.setOnCheckedChangeListener { componente, ligado ->
-            visibleValor(componente)
-        }
-        evento_btnPublic.setOnClickListener {
-            evento_btnPublic.setBackgroundColor(getColor(R.color.colorAccent))
-            evento_btnPrivate.setBackgroundColor(getColor(R.color.colorPrimary))
-            evento_etSenha.visibility = (View.GONE)
-            evento_tvLabelSenha.visibility = (View.GONE)
-            isPublic = true
-        }
-        evento_btnPrivate.setOnClickListener {
-            evento_btnPublic.setBackgroundColor(getColor(R.color.colorAccent))
-            evento_btnPrivate.setBackgroundColor(getColor(R.color.colorPrimary))
-            evento_etSenha.visibility = (View.VISIBLE)
-            evento_tvLabelSenha.visibility = (View.VISIBLE)
-            isPublic = false
-        }
-        icon_upload_image.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkSelfPermission(android.Manifest.permission.CAMERA)
-                    == PackageManager.PERMISSION_DENIED
-                ) {
-                    val permission = arrayOf(
-                        android.Manifest.permission.CAMERA
-                    )
-                    requestPermissions(permission, PERMISSION_CODE);
-                } else {
-                    openCamera();
-                }
-            } else {
-                openCamera();
-            }
-        }
-        evento_btCadastrar.setOnClickListener {
-            if (validacoes()) {
-                if (isAlterar) {
-                    //Pegar todos os campos e transformar em um obj de evento
-                    //alterarEvento()
-                } else {
-                    //Pegar todos os campos e transformar em um obj de evento
-                    //cadastrarEvento();
-                }
-            }
-        }
-        evento_btBuscaEndereco.setOnClickListener {
-            if (!evento_etCep.text.toString().isEmpty()) {
-                buscaEndereco(evento_etCep.text.toString())
-            } else {
-                evento_etCep.requestFocus();
-                evento_etCep.error = getString(R.string.preencherCep);
-            }
-        }
-    }*/
-    }
-
     fun validacoes(): Boolean {
-        /*
-    if (evento_etNomeEvento.text.isEmpty()) {
-        evento_etNomeEvento.requestFocus();
-        evento_etNomeEvento.error = getString(R.string.campoObrigatorio);
-        return false;
-    }
-    if (evento_etCep.text!!.isEmpty()) {
-        evento_etCep.requestFocus();
-        evento_etCep.error = getString(R.string.campoObrigatorio);
-        return false;
-    }
-    if (evento_etCep.text!!.length < 8) {
-        evento_etCep.requestFocus();
-        evento_etCep.error = getString(R.string.preenchecep);
-        return false;
-    }
-    if (evento_etNumero.text.isEmpty()) {
-        evento_etNumero.requestFocus();
-        evento_etNumero.error = getString(R.string.campoObrigatorio);
-        return false;
-    }
-    if (evento_etDataInicio.text.toString().isEmpty()) {
-        evento_etDataInicio.requestFocus();
-        evento_etDataInicio.error = getString(R.string.campoObrigatorio);
-        return false;
-    }
-    if (evento_etHorarioTermino.text.toString().isEmpty()) {
-        evento_etHorarioTermino.requestFocus();
-        evento_etHorarioTermino.error = getString(R.string.campoObrigatorio);
-        return false;
-    }
-    if (evento_etDataTermino.text.toString().isEmpty()) {
-        evento_etDataTermino.requestFocus();
-        evento_etDataTermino.error = getString(R.string.campoObrigatorio);
-        return false;
-    }
-    if (evento_etHorarioInicio.text.toString().isEmpty()) {
-        evento_etHorarioInicio.requestFocus();
-        evento_etHorarioInicio.error = getString(R.string.campoObrigatorio);
-        return false;
-    }
-    if (isPago) {
-        evento_etValor.requestFocus();
-        evento_etValor.error = getString(R.string.campoObrigatorio);
-        return false;
-    }
-    if (!isPublic) {
-        evento_etSenha.requestFocus();
-        evento_etSenha.error = getString(R.string.campoObrigatorio);
-        return false;
-    }
-    */
 
+        if (titleInput.text.isEmpty()) {
+            titleInput.requestFocus();
+            titleInput.error = getString(R.string.campoObrigatorio);
+            return false;
+        }
+        if (cepInput.text!!.isEmpty()) {
+            cepInput.requestFocus();
+            cepInput.error = getString(R.string.campoObrigatorio);
+            return false;
+        }
+        if (cepInput.text!!.length < 8) {
+            cepInput.requestFocus();
+            cepInput.error = getString(R.string.preenchecep);
+            return false;
+        }
+        if (numberStreetInput.text.isEmpty()) {
+            numberStreetInput.requestFocus();
+            numberStreetInput.error = getString(R.string.campoObrigatorio);
+            return false;
+        }
+        if (dateStartInput.text.toString().isEmpty()) {
+            dateStartInput.requestFocus();
+            dateStartInput.error = getString(R.string.campoObrigatorio);
+            return false;
+        }
+        if (scheduleEndInput.text.toString().isEmpty()) {
+            scheduleEndInput.requestFocus();
+            scheduleEndInput.error = getString(R.string.campoObrigatorio);
+            return false;
+        }
+        if (dateEndInput.text.toString().isEmpty()) {
+            dateEndInput.requestFocus();
+            dateEndInput.error = getString(R.string.campoObrigatorio);
+            return false;
+        }
+        if (scheduleEndInput.text.toString().isEmpty()) {
+            scheduleEndInput.requestFocus();
+            scheduleEndInput.error = getString(R.string.campoObrigatorio);
+            return false;
+        }
+        if (!isFreeInput.isChecked) {
+            priceInput.requestFocus();
+            priceInput.error = getString(R.string.campoObrigatorio);
+            return false;
+        }
+        if (!typePublicInput.isChecked) {
+            passwordInput.requestFocus();
+            passwordInput.error = getString(R.string.campoObrigatorio);
+            return false;
+        }
         return true;
     }
-
-
-    fun buscaEndereco(cep: String) {
-//        val retIn = RetrofitInitializer.eventService getRetrofitInstance().create(CepService::class.java)
-//        retIn.getEndereco(cep.replace("-", "")).enqueue(object : Callback<Cep> {
-//            override fun onResponse(call: Call<Cep>, response: Response<Cep>) {
-//                if (response.code() == 200) {
-//                    if (response.body()?.logradouro != null) {
-//                        evento_tvEndereco.text =
-//                            response.body()?.logradouro + " - " + response.body()?.bairro + " - " + response.body()?.localidade
-//                        evento_tvLabelEndereco.visibility = (View.VISIBLE);
-//                        evento_tvEndereco.visibility = (View.VISIBLE);
-//                        evento_tvLabelNumero.visibility = (View.VISIBLE);
-//                        evento_etNumero.visibility = (View.VISIBLE);
-//                    } else {
-//                        evento_etCep.requestFocus();
-//                        evento_etCep.error = getString(R.string.enderecoNaoEncontra);
-//                    }
-//
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<Cep>, t: Throwable) {
-//                Log.i("STATE", t.message.toString())
-//            }
-//        })
-    }
-
-    fun alterarEvento(event: Event) {
-        val retIn = RetrofitInitializer.eventService.changeEvento(event)
-
-        retIn.enqueue(object : Callback<ResponseBody> {
-            override fun onResponse(
-                call: Call<ResponseBody>,
-                response: Response<ResponseBody>
-            ) {
-                if (response.code() == 200) {
-
-                }
-            }
-
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                Log.i("STATE", t.message.toString())
-            }
-        })
-    }
-
-    fun getEvento(idEvento: Int?) {
-        val retIn = RetrofitInitializer.eventService.getEvent(idEvento)
-
-        retIn.enqueue(object : Callback<Event?> {
-            override fun onResponse(call: Call<Event?>, response: Response<Event?>) {
-                if (response.code() == 200) {
-                    preencheCamposEvento(response.body());
-                }
-            }
-
-            override fun onFailure(call: Call<Event?>, t: Throwable) {
-                Log.i("STATE", t.message.toString())
-            }
-        })
-    }
-
 }
