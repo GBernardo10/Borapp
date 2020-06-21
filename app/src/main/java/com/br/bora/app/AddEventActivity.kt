@@ -3,33 +3,48 @@ package com.br.bora.app
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.database.Cursor
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.util.AttributeSet
+import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.TimePicker
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.loader.content.CursorLoader
 import com.br.bora.app.databinding.ActivityAddEventBinding
-import com.br.bora.app.model.viewmodel.EventoViewModel
+import com.br.bora.app.model.viewmodel.EventViewModel
+import com.br.bora.app.model.viewmodel.UploadViewModel
 import com.br.bora.app.model.viewmodel.ZipCodeViewModel
 import com.br.bora.app.request.CreateEvent
+import com.br.bora.app.services.config.RetrofitInitializer
 import com.br.bora.app.utils.DateUtils
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.radiobutton.MaterialRadioButton
 import com.santalu.maskedittext.MaskEditText
 import kotlinx.android.synthetic.main.activity_add_event.*
-import kotlinx.android.synthetic.main.activity_add_event.view.*
-import java.text.SimpleDateFormat
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
 import java.util.*
 
 class AddEventActivity : AppCompatActivity() {
@@ -53,6 +68,12 @@ class AddEventActivity : AppCompatActivity() {
     private lateinit var isFreeInput: MaterialCheckBox
     private lateinit var priceInput: EditText
     private lateinit var labelPassword: TextView
+    private lateinit var mBitmap: Bitmap
+    private lateinit var fileUri: Uri
+    private lateinit var body: MultipartBody.Part
+    private lateinit var name: RequestBody
+    private var hasPhotoEvent: Boolean = false
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -260,7 +281,7 @@ class AddEventActivity : AppCompatActivity() {
             priceInput.isVisible = !isChecked
         }
 
-        icon_upload_image.setOnClickListener {
+        binding.iconUploadImage.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(android.Manifest.permission.CAMERA)
                     == PackageManager.PERMISSION_DENIED
@@ -278,10 +299,15 @@ class AddEventActivity : AppCompatActivity() {
         }
 
 
-        btn_create_event.setOnClickListener {
-            if (!validacoes()) {
-                Toast.makeText(this, "Erro", Toast.LENGTH_LONG).show()
+        binding.btnCreateEvent.setOnClickListener {
+            if (hasPhotoEvent) {
+                upload(fileUri)
+                UploadViewModel().uploadFile(body, name)
             }
+
+//            if (!validations()) {
+//                Toast.makeText(this, "Erro", Toast.LENGTH_LONG).show()
+//            }
 
 
 //            val event = CreateEvent(
@@ -302,8 +328,23 @@ class AddEventActivity : AppCompatActivity() {
         }
     }
 
+    private fun upload(uri: Uri) {
+        val filesDir: File = applicationContext.filesDir
+        val file = File(filesDir, uri.lastPathSegment!!)
+        val bos = ByteArrayOutputStream()
+        mBitmap.compress(Bitmap.CompressFormat.PNG, 0, bos)
+        val bitmap: ByteArray = bos.toByteArray()
+        val fos = FileOutputStream(file)
+        fos.write(bitmap)
+        fos.flush()
+        fos.close()
+        val reqFile = file.asRequestBody("image/${file.extension}".toMediaTypeOrNull())
+        body = MultipartBody.Part.createFormData("file", file.name, reqFile)
+        name = "file".toRequestBody("text/plain".toMediaTypeOrNull())
+    }
+
     private fun createEvent(event: CreateEvent, v: View) {
-        EventoViewModel().createEvent(event, v)
+        EventViewModel().createEvent(event, v)
     }
 
     private fun dateSetListener(editText: EditText): DatePickerDialog.OnDateSetListener? {
@@ -323,7 +364,7 @@ class AddEventActivity : AppCompatActivity() {
         }
     }
 
-    fun openCamera() {
+    private fun openCamera() {
         ImagePicker.with(this)
             //.crop(16f, 9f)    //Crop image with 16:9 aspect ratio
             .maxResultSize(1024, 1024)
@@ -332,13 +373,20 @@ class AddEventActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK) {
-            val fileUri = data?.data
-            icon_upload_image.setImageURI(fileUri);
-        } else if (resultCode == ImagePicker.RESULT_ERROR) {
-            Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(this, "Operação Cancelada", Toast.LENGTH_SHORT).show()
+        when (resultCode) {
+            Activity.RESULT_OK -> {
+                fileUri = data?.data!!
+                binding.iconUploadImage.setImageURI(fileUri)
+                val path = fileUri.path
+                mBitmap = BitmapFactory.decodeFile(path)
+                hasPhotoEvent = true
+            }
+            ImagePicker.RESULT_ERROR -> {
+                Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
+            }
+            else -> {
+                Toast.makeText(this, "Operação Cancelada", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -350,66 +398,66 @@ class AddEventActivity : AppCompatActivity() {
         when (requestCode) {
             permissionCode -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    openCamera();
+                    openCamera()
                 } else {
-                    Toast.makeText(this, "Permissão Negada", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Permissão Negada", Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
 
-    fun validacoes(): Boolean {
+    private fun validations(): Boolean {
 
         if (titleInput.text.isEmpty()) {
-            titleInput.requestFocus();
-            titleInput.error = getString(R.string.campoObrigatorio);
-            return false;
+            titleInput.requestFocus()
+            titleInput.error = getString(R.string.campoObrigatorio)
+            return false
         }
         if (cepInput.text!!.isEmpty()) {
-            cepInput.requestFocus();
-            cepInput.error = getString(R.string.campoObrigatorio);
-            return false;
+            cepInput.requestFocus()
+            cepInput.error = getString(R.string.campoObrigatorio)
+            return false
         }
         if (cepInput.text!!.length < 8) {
-            cepInput.requestFocus();
-            cepInput.error = getString(R.string.preenchecep);
-            return false;
+            cepInput.requestFocus()
+            cepInput.error = getString(R.string.preenchecep)
+            return false
         }
         if (numberStreetInput.text.isEmpty()) {
-            numberStreetInput.requestFocus();
-            numberStreetInput.error = getString(R.string.campoObrigatorio);
-            return false;
+            numberStreetInput.requestFocus()
+            numberStreetInput.error = getString(R.string.campoObrigatorio)
+            return false
         }
         if (dateStartInput.text.toString().isEmpty()) {
-            dateStartInput.requestFocus();
-            dateStartInput.error = getString(R.string.campoObrigatorio);
-            return false;
+            dateStartInput.requestFocus()
+            dateStartInput.error = getString(R.string.campoObrigatorio)
+            return false
         }
         if (scheduleEndInput.text.toString().isEmpty()) {
-            scheduleEndInput.requestFocus();
-            scheduleEndInput.error = getString(R.string.campoObrigatorio);
-            return false;
+            scheduleEndInput.requestFocus()
+            scheduleEndInput.error = getString(R.string.campoObrigatorio)
+            return false
         }
         if (dateEndInput.text.toString().isEmpty()) {
-            dateEndInput.requestFocus();
-            dateEndInput.error = getString(R.string.campoObrigatorio);
-            return false;
+            dateEndInput.requestFocus()
+            dateEndInput.error = getString(R.string.campoObrigatorio)
+            return false
         }
         if (scheduleEndInput.text.toString().isEmpty()) {
-            scheduleEndInput.requestFocus();
-            scheduleEndInput.error = getString(R.string.campoObrigatorio);
-            return false;
+            scheduleEndInput.requestFocus()
+            scheduleEndInput.error = getString(R.string.campoObrigatorio)
+            return false
         }
         if (!isFreeInput.isChecked) {
-            priceInput.requestFocus();
-            priceInput.error = getString(R.string.campoObrigatorio);
-            return false;
+            priceInput.requestFocus()
+            priceInput.error = getString(R.string.campoObrigatorio)
+            return false
         }
         if (!typePublicInput.isChecked) {
-            passwordInput.requestFocus();
-            passwordInput.error = getString(R.string.campoObrigatorio);
-            return false;
+            passwordInput.requestFocus()
+            passwordInput.error = getString(R.string.campoObrigatorio)
+            return false
         }
-        return true;
+        return true
     }
 }

@@ -11,12 +11,12 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class EventoViewModel : ViewModel() {
+class EventViewModel : ViewModel() {
     private var repository: EventRepository = EventRepository()
 
-    val eventosLiveData: MutableLiveData<List<Event.FindAll>> = MutableLiveData()
+    val eventsLiveData: MutableLiveData<List<Event.FindAll>> = MutableLiveData()
 
-    fun getEventos() {
+    fun getEvents() {
         RetrofitInitializer.eventService.getEvents()
             .enqueue(object : Callback<List<Event.FindAll>> {
                 override fun onFailure(call: Call<List<Event.FindAll>>, t: Throwable) {
@@ -26,26 +26,27 @@ class EventoViewModel : ViewModel() {
                     call: Call<List<Event.FindAll>>,
                     response: Response<List<Event.FindAll>>
                 ) {
-                    val eventos: MutableList<Event.FindAll> = mutableListOf()
+                    val events: MutableList<Event.FindAll> = mutableListOf()
                     response.body()?.let {
                         for (result in it) {
-                            val evento = Event.FindAll(
+                            val event = Event.FindAll(
                                 owner = result.owner,
                                 name = result.name,
                                 startDay = result.startDay,
                                 startEnd = result.startEnd,
                                 rating = result.rating,
-                                isPrivate = result.isPrivate
+                                isPublic = result.isPublic,
+                                photoUrl = result.photoUrl
                             )
-                            eventos.add(evento)
+                            events.add(event)
                         }
                     }
-                    eventosLiveData.value = eventos
+                    eventsLiveData.value = events
                 }
             })
     }
 
     fun createEvent(event: CreateEvent, v: View) {
-        return repository.cadastrarEvento(event, v)
+        return repository.registerEvent(event, v)
     }
 }

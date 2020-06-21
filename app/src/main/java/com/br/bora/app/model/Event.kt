@@ -9,20 +9,22 @@ class Event {
         val owner: String,
         val startDay: String,
         val startEnd: String,
-        val zipcode:String,
-        val address:String? = "",
-        val streetNumber:String,
+        val zipcode: String,
+        val address: String? = "",
+        val streetNumber: String,
         val privacy: String,
         val password: String,
         val isPublic: Boolean
     )
+
     data class FindAll(
         val name: String,
         val owner: String,
         val startDay: String?,
         val startEnd: String?,
         val rating: Double,
-        val isPrivate: Boolean
+        val isPublic: Boolean,
+        val photoUrl: String
     )
 }
 

@@ -12,7 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class EventRepository {
-    fun cadastrarEvento(event: CreateEvent, v: View) {
+    fun registerEvent(event: CreateEvent, v: View) {
         RetrofitInitializer.eventService.createEvent(event)
             .enqueue(object : Callback<ResponseBody> {
                 override fun onResponse(

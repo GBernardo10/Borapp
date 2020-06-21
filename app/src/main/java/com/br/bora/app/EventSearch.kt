@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.br.bora.app.model.Event
 import com.br.bora.app.model.adapter.EventoAdapter
-import com.br.bora.app.model.viewmodel.EventoViewModel
+import com.br.bora.app.model.viewmodel.EventViewModel
 import kotlinx.android.synthetic.main.fragment_search_eventos.*
 
 class EventSearch : Fragment() {
-    private lateinit var viewModel: EventoViewModel
+    private lateinit var viewModel: EventViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,14 +33,13 @@ class EventSearch : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        viewModel = ViewModelProviders.of(this).get(EventoViewModel::class.java)
-        viewModel.eventosLiveData.observe(viewLifecycleOwner, Observer {
-            it?.let { evento ->
+        viewModel = ViewModelProvider(this).get(EventViewModel::class.java)
+        viewModel.eventsLiveData.observe(viewLifecycleOwner, Observer {
+            it?.let { event ->
                 with(rcv_search_eventos) {
                     layoutManager =
                         StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-                    adapter = EventoAdapter(evento as MutableList<Event.FindAll>) {
+                    adapter = EventoAdapter(event as MutableList<Event.FindAll>) {
                         this@EventSearch.startActivity(
                             DetalheEventoActivity.getStartIntent(
                                 context,
@@ -52,7 +51,6 @@ class EventSearch : Fragment() {
                 }
             }
         })
-        viewModel.getEventos()
+        viewModel.getEvents()
     }
-
 }

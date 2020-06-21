@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.br.bora.app.R
 import com.br.bora.app.model.Event
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.fragment_card_evento.view.*
 
 class EventoAdapter(
@@ -32,7 +35,10 @@ class EventoAdapter(
     ) : RecyclerView.ViewHolder(itemView) {
         fun bind(event: Event.FindAll) {
             with(event) {
-                itemView.card_title.text = name
+                itemView.card_date.text = name
+                Glide.with(itemView.photo_event).load(photoUrl).placeholder(R.drawable.ic_logo)
+                    .error(R.drawable.ic_settings)
+                    .into(itemView.photo_event)
             }
             itemView.setOnClickListener {
                 onItemClickListener.invoke(event)

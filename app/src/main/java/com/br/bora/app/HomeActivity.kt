@@ -6,16 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.br.bora.app.model.Event
 import com.br.bora.app.model.adapter.EventoAdapter
-import com.br.bora.app.model.viewmodel.EventoViewModel
+import com.br.bora.app.model.viewmodel.EventViewModel
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : Fragment() {
 
-    private lateinit var viewModel: EventoViewModel
+    private lateinit var viewModel: EventViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,8 +40,8 @@ class HomeActivity : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(EventoViewModel::class.java)
-        viewModel.eventosLiveData.observe(viewLifecycleOwner, Observer {
+        viewModel = ViewModelProvider(this).get(EventViewModel::class.java)
+        viewModel.eventsLiveData.observe(viewLifecycleOwner, Observer {
             it?.let { event ->
                 with(rcv_home_event) {
                     layoutManager =
@@ -60,6 +61,6 @@ class HomeActivity : Fragment() {
                 }
             }
         })
-        viewModel.getEventos()
+        viewModel.getEvents()
     }
 }

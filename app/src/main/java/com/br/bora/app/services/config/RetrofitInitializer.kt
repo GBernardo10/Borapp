@@ -2,6 +2,7 @@ package com.br.bora.app.services.config
 
 import android.util.Log
 import com.br.bora.app.services.EventService
+import com.br.bora.app.services.UploadService
 import com.br.bora.app.services.UserService
 import com.br.bora.app.services.ZipCodeService
 import okhttp3.OkHttpClient
@@ -16,7 +17,9 @@ import javax.net.ssl.*
 
 
 object RetrofitInitializer {
-    private const val BASE_URL: String = "https://3.223.69.85/api/"
+    //    private const val BASE_URL: String = "https://3.223.69.85/api/"
+    private const val BASE_URL: String = "http://192.168.15.12:5555/"
+
 
     private val interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
         this.level = HttpLoggingInterceptor.Level.BODY
@@ -67,6 +70,7 @@ object RetrofitInitializer {
     val eventService: EventService = initRetrofit().create(EventService::class.java)
     val userService: UserService = initRetrofit().create(UserService::class.java)
     val zipCodeService: ZipCodeService = initRetrofit().create(ZipCodeService::class.java)
+    val uploadService: UploadService = initRetrofit().create(UploadService::class.java)
 }
 
 /*
