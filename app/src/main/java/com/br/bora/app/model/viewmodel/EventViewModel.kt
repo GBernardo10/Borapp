@@ -36,7 +36,8 @@ class EventViewModel : ViewModel() {
                                 startEnd = result.startEnd,
                                 rating = result.rating,
                                 isPublic = result.isPublic,
-                                photoUrl = result.photoUrl
+                                photoUrl = result.photoUrl,
+                                description =  result.description
                             )
                             events.add(event)
                         }

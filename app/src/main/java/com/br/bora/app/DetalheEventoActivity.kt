@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.br.bora.app.model.Event
 import kotlinx.android.synthetic.main.activity_detalhe_evento.*
+import java.io.Serializable
 
 class DetalheEventoActivity : AppCompatActivity() {
 
@@ -12,19 +14,22 @@ class DetalheEventoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhe_evento)
 
-        val owner = intent.getStringExtra(EXTRA_OWNER)
-        val name = intent.getStringExtra(EXTRA_NAME)
-        owner_details_evento.text = owner
-        name_details_evento.text = name
+        val event = intent.getSerializableExtra(EXTRA_EVENT) as Event.FindAll;
+        owner_details_evento.text = event.owner;
+        name_details_evento.text = event.name;
+        //adress_detail_event.text = event.
+        date_detail_event.text = event.startDay;
+        //value_detail_event.text = event.value
+        description_detail_event.text = event.description;
+        //data_create_detail_event.text = event.
+        //category_detail_event.text = event
     }
 
     companion object {
-        private const val EXTRA_OWNER = "EXTRA_OWNER"
-        private const val EXTRA_NAME = "EXTRA_NAME"
-        fun getStartIntent(context: Context, owner: String, name: String): Intent {
+        private const val EXTRA_EVENT = "EXTRA_EVENT"
+        fun getStartIntent(context: Context, event: Event.FindAll): Intent {
             return Intent(context, DetalheEventoActivity::class.java).apply {
-                putExtra(EXTRA_OWNER, owner)
-                putExtra(EXTRA_NAME, name)
+                putExtra(EXTRA_EVENT, event as Serializable)
             }
         }
     }

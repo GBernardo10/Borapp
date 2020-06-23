@@ -43,8 +43,7 @@ class EventSearch : Fragment() {
                         this@EventSearch.startActivity(
                             DetalheEventoActivity.getStartIntent(
                                 context,
-                                it.owner,
-                                it.name
+                                it
                             )
                         )
                     }

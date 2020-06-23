@@ -24,7 +24,9 @@ class Event {
         val startEnd: String?,
         val rating: Double,
         val isPublic: Boolean,
-        val photoUrl: String
+        val photoUrl: String,
+        val description : String
+
     )
 }
 

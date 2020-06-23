@@ -53,8 +53,7 @@ class HomeActivity : Fragment() {
                         this@HomeActivity.startActivity(
                             DetalheEventoActivity.getStartIntent(
                                 context,
-                                it.owner,
-                                it.name
+                                it
                             )
                         )
                     }
