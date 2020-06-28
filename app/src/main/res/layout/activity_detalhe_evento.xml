@@ -138,12 +138,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/data_create_detail_event"
                 android:layout_marginTop="2dp"
-                android:text="Esporte | Futebol | Futsal"
                 android:textColor="@color/colorAccent"
                 android:textSize="15sp" />
 
             <Button
-                android:id="@+id/bora_detail_event"
+                android:id="@+id/btn_bora_detail_event"
                 style="@style/Button"
                 android:layout_width="150dp"
                 android:layout_below="@id/category_detail_event"
@@ -155,7 +154,7 @@
                 android:id="@+id/balance_detail_event"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/bora_detail_event"
+                android:layout_below="@+id/btn_bora_detail_event"
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
