@@ -18,7 +18,7 @@ import javax.net.ssl.*
 
 object RetrofitInitializer {
     //    private const val BASE_URL: String = "https://3.223.69.85/api/"
-    private const val BASE_URL: String = "http://192.168.15.12:5555/"
+    private const val BASE_URL: String = "https://3.223.69.85/api/"
 
 
     private val interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor().apply {

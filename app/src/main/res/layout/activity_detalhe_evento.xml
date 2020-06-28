@@ -28,8 +28,7 @@
                 android:layout_toEndOf="@id/ivCirculo"
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="Futebas do Bolivia" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/title_owner_detail_event"
@@ -51,8 +50,7 @@
                 android:layout_below="@+id/name_details_evento"
                 android:layout_toEndOf="@+id/title_owner_detail_event"
                 android:textColor="@android:color/white"
-                android:textSize="15sp"
-                tools:text="Boliva123" />
+                android:textSize="15sp" />
 
             <RatingBar
                 android:id="@+id/average_details_event"
@@ -64,7 +62,8 @@
                 android:layout_toRightOf="@id/ivCirculo"
                 android:progressTint="#FFC107"
                 android:secondaryProgressTint="#FFEB3B"
-                android:stepSize="0.5"/>
+                android:stepSize="0.5"
+                android:isIndicator="true"/>
 
             <TextView
                 android:id="@+id/adress_detail_event"
@@ -74,8 +73,7 @@
                 android:layout_marginTop="6dp"
                 android:textAlignment="center"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="Rua Elite dos bravos, 53 - Vila Invernada - SP" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/value_detail_event"
@@ -84,8 +82,7 @@
                 android:layout_below="@+id/adress_detail_event"
                 android:textColor="@android:color/holo_green_light"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="R$ 20,00" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/date_detail_event"
@@ -95,8 +92,7 @@
                 android:textAlignment="viewEnd"
                 android:textColor="@color/colorAccent"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="12/06" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/title_description_detail_event"
@@ -123,7 +119,6 @@
                         android:id="@+id/description_detail_event"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
                         android:textSize="15sp" />
                 </LinearLayout>
             </ScrollView>
@@ -135,8 +130,7 @@
                 android:layout_below="@id/sv_description_detail_event"
                 android:layout_marginTop="7dp"
                 android:textColor="@android:color/white"
-                android:textSize="15sp"
-                tools:text="Este evento foi criado em 01/03/2019" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/category_detail_event"
@@ -165,8 +159,7 @@
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:textSize="15sp"
-                tools:text="* seu saldo R$ 14,00" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/title_participant_detail_event"

@@ -14,13 +14,13 @@ class DetalheEventoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhe_evento)
 
-        val event = intent.getSerializableExtra(EXTRA_EVENT) as Event.FindAll;
+        val event = intent.getSerializableExtra("a") as Event.FindAll;
         owner_details_evento.text = event.owner;
         name_details_evento.text = event.name;
         //adress_detail_event.text = event.
-        date_detail_event.text = event.startDay;
+        //date_detail_event.text = event.startDay;
         //value_detail_event.text = event.value
-        description_detail_event.text = event.description;
+        //description_detail_event.text = event.description;
         //data_create_detail_event.text = event.
         //category_detail_event.text = event
     }
@@ -29,7 +29,7 @@ class DetalheEventoActivity : AppCompatActivity() {
         private const val EXTRA_EVENT = "EXTRA_EVENT"
         fun getStartIntent(context: Context, event: Event.FindAll): Intent {
             return Intent(context, DetalheEventoActivity::class.java).apply {
-                putExtra(EXTRA_EVENT, event as Serializable)
+
             }
         }
     }
