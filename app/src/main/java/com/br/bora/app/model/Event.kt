@@ -6,6 +6,7 @@ import kotlin.properties.Delegates
 
 class Event : Serializable {
 
+    lateinit var id: String
     lateinit var name: String
     lateinit var owner: String
     lateinit var description: String

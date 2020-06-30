@@ -37,7 +37,10 @@ class EventViewModel : ViewModel() {
                                 rating = result.rating,
                                 isPublic = result.isPublic,
                                 photoUrl = result.photoUrl,
-                                description =  result.description
+                                address= result.address,
+                                zipcode =  result.zipcode,
+                                streetNumber = result.streetNumber,
+                                description = result.description
                             )
                             events.add(event)
                         }
@@ -49,5 +52,9 @@ class EventViewModel : ViewModel() {
 
     fun createEvent(event: CreateEvent, v: View) {
         return repository.registerEvent(event, v)
+    }
+
+    fun participarEvento(id: Int?, username: String?, v: View){
+        return repository.participarEvento(id,username,v);
     }
 }

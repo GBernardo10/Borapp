@@ -4,16 +4,20 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.br.bora.app.databinding.ActivityDetailsEventoBinding
+import android.view.View
+import com.br.bora.app.databinding.ActivityDetalheEventoBinding
 import com.br.bora.app.model.Event
+import com.br.bora.app.model.viewmodel.EventViewModel
 import kotlinx.android.synthetic.main.activity_detalhe_evento.*
 
 class DetailsEventoActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityDetailsEventoBinding
+    private lateinit var binding: ActivityDetalheEventoBinding
+    var username: String? = ""
+    var idEvent: Int? = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailsEventoBinding.inflate(layoutInflater)
+        binding = ActivityDetalheEventoBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val event: Event = intent.getSerializableExtra(EXTRA_EVENT) as Event
 
@@ -22,18 +26,29 @@ class DetailsEventoActivity : AppCompatActivity() {
             //titleEvent.text = event.name
             owner_details_evento.text = event.owner;
             name_details_evento.text = event.name;
-            adress_detail_event.text = java.lang.String.format("%s %s %s",event.address + event.streetNumber + event.zipcode)
+            adress_detail_event.text = java.lang.String.format("%s %s %s",event.address,event.streetNumber, event.zipcode)
             date_detail_event.text = event.startDay;
             //value_detail_event.text = event.startDay
             description_detail_event.text = event.description;
-            data_create_detail_event.text = event
-            //category_detail_event.text = event
+            //data_create_detail_event.text =
+            //category_detail_event.text = event;
+            idEvent = event.id.toInt();
+            balance_detail_event.text = getString(R.string.balance_event_description,event);
+            average_details_event.rating = event.rating.toFloat();
+            if(event.owner == username){
+                btn_bora_detail_event.visibility = View.GONE;
+                balance_detail_event.visibility = View.GONE;
+            }
         }
-
+        idEvent
         btn_bora_detail_event.setOnClickListener{
 
         }
 
+    }
+
+    private fun participarEvento(id: Int?, username: String?,v: View){
+        EventViewModel().participarEvento(id,username,v);
     }
 
     companion object {

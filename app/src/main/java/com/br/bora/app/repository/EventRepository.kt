@@ -33,7 +33,29 @@ class EventRepository {
                     Log.i("STATE", t.message.toString())
                 }
             })
+    }
 
+    fun participarEvento(id: Int?, username: String?, v: View) {
+        RetrofitInitializer.eventService.participarEvento(id, username)
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+                ) {
+                    when (response.code()) {
+                        200 -> {
+                            Snackbar.make(v, "", Snackbar.LENGTH_LONG)
+                                .show();
+                        }
+                        else -> Snackbar.make(v, "", Snackbar.LENGTH_LONG)
+                            .show();
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    Log.i("STATE", t.message.toString())
+                }
+            })
     }
 
 }
