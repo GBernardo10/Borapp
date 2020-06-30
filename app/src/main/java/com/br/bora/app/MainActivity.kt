@@ -1,12 +1,26 @@
 package com.br.bora.app
 
+import android.app.SearchManager
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
+import androidx.core.view.MenuItemCompat
+import androidx.lifecycle.Observer
+import com.br.bora.app.model.User
+import com.br.bora.app.repository.UserRepository
+import com.br.bora.app.response.Token
 import com.br.bora.app.utils.LoadFragment
 import com.br.bora.app.utils.SaveData
 import com.google.android.material.appbar.MaterialToolbar
@@ -17,11 +31,32 @@ import kotlinx.android.synthetic.main.activity_drawer_layout.*
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var saveData: SaveData
     private lateinit var fragment: LoadFragment
+    private lateinit var user: User
+    private lateinit var repository: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drawer_layout)
         fragment = LoadFragment(R.id.main_frame, supportFragmentManager)
+        saveData = SaveData(applicationContext)
+        repository = UserRepository()
+        user = User()
+        val username = saveData.getStore("auth")
+        val token = saveData.getStore("token")
+
+
+        if (username != null) {
+            if (token != null) {
+                repository.userLiveData.observe(this, Observer {
+                    with(user) {
+                        name = it.name
+                        this.username = it.username
+                        mail = it.mail
+                    }
+                })
+                repository.findByUsername(username, token, this)
+            }
+        }
 
         val toolbar: MaterialToolbar = findViewById(R.id.action_bar)
         setSupportActionBar(toolbar)
@@ -50,17 +85,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         main_nav.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_home -> {
+//                    search_events.visibility = View.GONE
                     fragment.loadFragment(HomeActivity())
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.nav_search -> {
+//                    search_events.visibility = View.VISIBLE
                     fragment.loadFragment(EventSearch())
                     return@setOnNavigationItemSelectedListener true
                 }
-                R.id.nav_notification -> {
+                /*R.id.nav_notification -> {
                     fragment.loadFragment(NotificationFragment())
                     return@setOnNavigationItemSelectedListener true
-                }
+                }*/
                 else -> {
                     return@setOnNavigationItemSelectedListener false
                 }
@@ -68,6 +105,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
     }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

@@ -16,4 +16,14 @@ class SaveData(context: Context) {
     fun loadDarkModeState(): Boolean? {
         return sharedPreferences.getBoolean("dark", false)
     }
+
+    fun store(key: String, value: String) {
+        val editor: SharedPreferences.Editor? = sharedPreferences.edit()
+        editor?.putString(key, value)
+        editor?.apply()
+    }
+
+    fun getStore(key: String): String? {
+        return sharedPreferences.getString(key, "")
+    }
 }

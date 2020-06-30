@@ -11,11 +11,11 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.fragment_card_evento.view.*
 
-class EventoAdapter(
+class MyEventsAdapter(
     private val events: MutableList<Event.FindAll>,
     private val onItemClickListener: ((event: Event.FindAll) -> Unit)
 ) :
-    RecyclerView.Adapter<EventoAdapter.EventoViewHolder>() {
+    RecyclerView.Adapter<MyEventsAdapter.EventoViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventoViewHolder {
         val view = LayoutInflater.from(parent.context)

@@ -12,6 +12,7 @@
     <color name="colorItemMenuTabBarActive">@color/colorPrimaryDark</color>
     <color name="ic_logo_launcher_background">#1e191d</color>
     <color name="colorNavigationBackground">@android:color/white</color>
+    <color name="colorBtnBackgroundDisabled">#31282e</color>
 
 
 </resources>

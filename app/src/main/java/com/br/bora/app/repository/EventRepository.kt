@@ -1,9 +1,11 @@
 package com.br.bora.app.repository
 
+import android.content.Context
 import android.util.Log
 import android.view.View
 import com.br.bora.app.model.Event
 import com.br.bora.app.request.CreateEvent
+import com.br.bora.app.request.ParticipateEvent
 import com.br.bora.app.services.config.RetrofitInitializer
 import com.google.android.material.snackbar.Snackbar
 import okhttp3.ResponseBody
@@ -36,4 +38,26 @@ class EventRepository {
 
     }
 
+    fun participateEvent(id: String, guest: ParticipateEvent, v: View) {
+        val context: Context
+        RetrofitInitializer.eventService.participarEvento(id, guest)
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                }
+
+                override fun onResponse(
+                    call: Call<ResponseBody>,
+                    response: Response<ResponseBody>
+                ) {
+                    if (response.isSuccessful) {
+                        when (response.code()) {
+                            201 -> {
+                                Snackbar.make(v, "Evento confirmado", Snackbar.LENGTH_LONG)
+                                    .show()
+                            }
+                        }
+                    }
+                }
+            })
+    }
 }

@@ -17,7 +17,10 @@ interface UserService {
     fun userEdit(@Body request: RequestUser): Call<ResponseBody>*/
 
     @GET("users/{username}")
-    fun userByMail(username: String?): Call<User>
+    fun findUserByUsername(
+        @Path("username") username: String,
+        @Header("authorization") token: String
+    ): Call<User.UserInfo>
 
     @POST("users/auth")
     fun auth(@Body request: AuthUser): Call<Token>

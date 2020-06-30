@@ -10,9 +10,9 @@
         android:title="@string/search"
         android:icon="@drawable/ic_search"/>
 
-    <item
+    <!--<item
         android:id="@+id/nav_notification"
         android:title="@string/notification"
-        android:icon="@drawable/ic_public"/>
+        android:icon="@drawable/ic_public"/>-->
 
 </menu>

@@ -2,11 +2,8 @@ package com.br.bora.app
 
 import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.app.ActivityCompat
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.snackbar.Snackbar.LENGTH_LONG
 import com.google.zxing.Result
@@ -33,7 +30,7 @@ class ScannerActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
 
     private fun processRawResult(text: String?) {
         if (!text.isNullOrBlank() || !text.isNullOrEmpty())
-            startActivity(Intent(this,DetalheEventoActivity::class.java))
+            startActivity(Intent(this,DetailsEventoActivity::class.java))
         else{
             showSnack()
         }

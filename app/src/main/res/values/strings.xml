@@ -154,4 +154,5 @@
     <string name="info_event_schedule_end">Horario do termino</string>
     <string name="schedule_end_not_before_schedule_start">Seu evento nao pode terminar antes do inicio</string>
     <string name="schedule_start_not_before_current_time">Seu evento tem que começar no futuro</string>
+    <string name="event_not_found">Nenhum evento encontrado</string>
 </resources>

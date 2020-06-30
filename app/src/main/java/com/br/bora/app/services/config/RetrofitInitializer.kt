@@ -11,14 +11,15 @@ import org.apache.http.conn.ssl.SSLSocketFactory.SSL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.security.SecureRandom
-import java.security.cert.CertificateException
 import java.security.cert.X509Certificate
 import javax.net.ssl.*
 
 
 object RetrofitInitializer {
     //    private const val BASE_URL: String = "https://3.223.69.85/api/"
-    private const val BASE_URL: String = "http://192.168.15.12:5555/"
+//    private const val BASE_URL: String = "http://192.168.15.14:5555/"
+//    private const val BASE_URL: String = "http://192.168.99.113/api/"
+    private const val BASE_URL: String = "https://3.223.69.85/api/"
 
 
     private val interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor().apply {

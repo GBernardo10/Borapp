@@ -1,11 +1,10 @@
 package com.br.bora.app.model
 
 import java.io.Serializable
-import kotlin.properties.Delegates
 
 
 class Event : Serializable {
-
+    lateinit var id: String
     lateinit var name: String
     lateinit var owner: String
     lateinit var description: String
@@ -14,7 +13,7 @@ class Event : Serializable {
     var streetNumber: Int = 0
     lateinit var startDay: String
     lateinit var startEnd: String
-    var rating: Double = 0.0
+    var rating: Float = 0F
     var isPublic: Boolean = true
     lateinit var photoUrl: String
 
@@ -27,13 +26,16 @@ class Event : Serializable {
         val streetNumber: Int,
         val startDay: String,
         val startEnd: String,
+        val startTime: String,
+        val endTime: String,
         val password: String,
         val isPublic: Boolean,
         val isFree: Boolean,
-        val price: String
+        val price: Int
     )
 
     data class FindAll(
+        val id: String,
         val name: String,
         val owner: String,
         val description: String?,
@@ -42,9 +44,19 @@ class Event : Serializable {
         val streetNumber: Int?,
         val startDay: String?,
         val startEnd: String?,
-        val rating: Double,
+        val rating: Float,
         val isPublic: Boolean,
         val photoUrl: String?
+    )
+
+    data class participateEvent(
+        val username: String
+    )
+
+    data class participateFromEvent(
+        val id: String,
+        val eventFk: String,
+        val username: String
     )
 }
 

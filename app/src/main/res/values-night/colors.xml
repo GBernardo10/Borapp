@@ -10,6 +10,7 @@
     <color name="colorEditText">#bcbabc</color>
     <color name="colorText">#bcbabc</color>
     <color name="colorNavigationBackground">@color/colorBackground</color>
+    <color name="colorBtnBackgroundDisabled">#31282e</color>
 
 
 </resources>

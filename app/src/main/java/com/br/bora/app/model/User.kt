@@ -1,8 +1,15 @@
 package com.br.bora.app.model
 
 import com.google.gson.Gson
+import java.io.Serializable
 
-class User {
+class User : Serializable {
+
+    var name: String? = ""
+    var mail: String? = ""
+    var phone: String? = ""
+    var username: String? = ""
+
 
     data class Create(
         val name: String?,
@@ -10,6 +17,17 @@ class User {
         val phone: String?,
         var username: String?,
         var password: String?
+    )
+
+    data class UserInfo(
+        var name: String?,
+        var mail: String?,
+        var phone: String?,
+        var username: String?
+    )
+
+    data class Participantes(
+        val username: String?
     )
 
 

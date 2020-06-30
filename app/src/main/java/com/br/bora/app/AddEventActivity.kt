@@ -3,6 +3,7 @@ package com.br.bora.app
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.ClipDescription
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
@@ -22,17 +23,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.loader.content.CursorLoader
 import com.br.bora.app.databinding.ActivityAddEventBinding
+import com.br.bora.app.model.Event
 import com.br.bora.app.model.viewmodel.EventViewModel
 import com.br.bora.app.model.viewmodel.UploadViewModel
 import com.br.bora.app.model.viewmodel.ZipCodeViewModel
 import com.br.bora.app.request.CreateEvent
 import com.br.bora.app.services.config.RetrofitInitializer
 import com.br.bora.app.utils.DateUtils
+import com.br.bora.app.utils.SaveData
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.radiobutton.MaterialRadioButton
 import com.santalu.maskedittext.MaskEditText
 import kotlinx.android.synthetic.main.activity_add_event.*
+import okhttp3.Address
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -49,6 +53,7 @@ import java.util.*
 
 class AddEventActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddEventBinding
+    private lateinit var mSaveData: SaveData
     private val permissionCode = 1000;
     private val dateUtils = DateUtils()
     private lateinit var scheduleStart: Date
@@ -56,6 +61,8 @@ class AddEventActivity : AppCompatActivity() {
     private lateinit var dateStart: Date
     private lateinit var dateEnd: Date
     private lateinit var cepInput: MaskEditText
+    private lateinit var addressInput: EditText
+    private lateinit var descriptionInput: EditText
     private lateinit var dateStartInput: EditText
     private lateinit var dateEndInput: EditText
     private lateinit var scheduleStartInput: EditText
@@ -85,12 +92,16 @@ class AddEventActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.actionBar.title = getString(R.string.add_event)
         binding.actionBar.setTitleTextColor(resources.getColor(R.color.colorText))
+        mSaveData = SaveData(applicationContext)
+        val username = mSaveData.getStore("auth") ?: "null"
         cepInput = binding.cepEvent
+        addressInput = binding.addressEvent
         dateStartInput = binding.dateEventStart
         dateEndInput = binding.dateEventEnd
         scheduleStartInput = binding.scheduleStartEvent
         scheduleEndInput = binding.scheduleEndEvent
         titleInput = binding.titleEvent
+        descriptionInput = binding.descriptionEvent
         numberStreetInput = binding.numberStreetEvent
         typePublicInput = binding.typePublic
         typePrivateInput = binding.typePrivate
@@ -279,6 +290,7 @@ class AddEventActivity : AppCompatActivity() {
 
         isFreeInput.setOnCheckedChangeListener { _, isChecked ->
             priceInput.isVisible = !isChecked
+            priceInput.text.clear()
         }
 
         binding.iconUploadImage.setOnClickListener {
@@ -294,37 +306,66 @@ class AddEventActivity : AppCompatActivity() {
                     openCamera();
                 }
             } else {
-                openCamera();
+                openCamera()
             }
         }
 
 
         binding.btnCreateEvent.setOnClickListener {
+            var price = 0
+            if (!isFreeInput.isChecked)
+                if (priceInput.text.isEmpty() || priceInput.text.toString().toInt() <= 0)
+                    priceInput.error = "Evento pago, deve informar valor"
+
+            if (priceInput.text.toString().isNotEmpty()) {
+                price = priceInput.text.toString().toInt()
+            }
+
+
             if (hasPhotoEvent) {
                 upload(fileUri)
                 UploadViewModel().uploadFile(body, name)
             }
+//
+////            if (!validations()) {
+////                Toast.makeText(this, "Erro", Toast.LENGTH_LONG).show()
+////            }
+//
+            /*
+             cepInput = binding.cepEvent
+        dateStartInput = binding.dateEventStart
+        dateEndInput = binding.dateEventEnd
+        scheduleStartInput = binding.scheduleStartEvent
+        scheduleEndInput = binding.scheduleEndEvent
+        titleInput = binding.titleEvent
+        numberStreetInput = binding.numberStreetEvent
+        typePublicInput = binding.typePublic
+        typePrivateInput = binding.typePrivate
+        passwordInput = binding.passwordEvent
+        isFreeInput = binding.eventIsFree
+        priceInput = binding.priceEvent
+        labelPassword = binding.labelPasswordEvent
+             */
 
-//            if (!validations()) {
-//                Toast.makeText(this, "Erro", Toast.LENGTH_LONG).show()
-//            }
-
-
-//            val event = CreateEvent(
-//                Event.Create(
-//                    titleInput,
-//                    "Gesuvs",
-//                    dateStartInput,
-//                    dateEndInput,
-//                    cepInput.rawText.toString(),
-//                    "Rua valença",
-//                    numberStreetInput,
-//                    "public",
-//                    "",
-//                    true
-//                )
-//            )
-//            createEvent(event, it)
+            val event = CreateEvent(
+                Event.Create(
+                    titleInput.text.toString(),
+                    username,
+                    descriptionInput.text.toString(),
+                    cepInput.rawText.toString(),
+                    addressInput.text.toString(),
+                    numberStreetInput.text.toString().toInt(),
+                    dateStartInput.text.toString(),
+                    dateEndInput.text.toString(),
+                    scheduleStartInput.text.toString(),
+                    scheduleEndInput.text.toString(),
+                    passwordInput.text.toString(),
+                    typePublicInput.isChecked,
+                    isFreeInput.isChecked,
+                    price
+                )
+            )
+            createEvent(event, it)
         }
     }
 

@@ -1,7 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlinx-serialization'
 apply plugin: 'kotlin-android-extensions'
+
 
 android {
     compileSdkVersion 29
@@ -52,6 +54,8 @@ android {
 }
 
 dependencies {
+    def paging_version = "2.1.2"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -84,6 +88,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0"
+    implementation "androidx.paging:paging-runtime:$paging_version"
+    implementation "androidx.paging:paging-rxjava2:$paging_version"
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
     testImplementation 'junit:junit:4.13'
     testImplementation 'org.mockito:mockito-inline:2.8.47'
     testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0'

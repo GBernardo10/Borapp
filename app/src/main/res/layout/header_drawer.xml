@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="180dp"
+    android:id="@+id/header_drawer_nav_view"
     android:background="@drawable/headerdrawer"
     android:padding="10dp">
 

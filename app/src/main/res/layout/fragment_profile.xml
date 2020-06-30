@@ -6,35 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/header_profile"
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
                 android:layout_alignParentTop="true"
-                android:background="@drawable/headerdrawer"
-                app:cardCornerRadius="0dp"
-                app:shapeAppearance="@drawable/headerdrawer">
 
-                <TextView
-                    android:id="@+id/username"
+                app:cardCornerRadius="0dp"
+                >
+                <RelativeLayout
+                    android:background="@drawable/headerdrawer"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:elevation="20dp"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
-                    tools:text="Guilherme Jesus" />
+                    android:layout_height="wrap_content">
+
+                </RelativeLayout>
 
                 <RatingBar
                     android:id="@+id/rating_user"
@@ -55,38 +48,29 @@
                     android:layout_gravity="bottom|end"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="20dp"
+                    android:contentDescription="TODO"
                     app:srcCompat="@drawable/ic_favorite_light" />
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_profile_pic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/header_profile"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="17dp"
-                android:layout_marginTop="20dp"
-                app:cardBackgroundColor="@color/colorAccent"
-                app:cardCornerRadius="40dp">
 
                 <ImageView
                     android:id="@+id/pic_profile"
                     android:layout_width="94dp"
                     android:layout_height="94dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
                     android:contentDescription="TODO"
                     android:src="@drawable/ic_person" />
             </com.google.android.material.card.MaterialCardView>
+
 
             <TextView
                 android:id="@+id/name_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/header_profile"
-                android:layout_alignStart="@id/card_profile_pic"
-                android:layout_marginStart="113dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="-98dp"
+                android:text="Guilherme Jesus"
                 android:textSize="18sp"
                 tools:text="Guilherme Jesus" />
 
@@ -96,6 +80,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/name_user"
                 android:layout_alignStart="@id/name_user"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="7dp"
                 android:text="Editar usuario"
                 android:textColor="@color/colorAccent"
@@ -106,31 +92,47 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/name_user"
-                android:layout_alignEnd="@id/label_edit_user_profile"
+                android:visibility="gone"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="11dp"
-                android:layout_marginEnd="-35dp"
+                android:layout_toEndOf="@id/label_edit_user_profile"
                 android:src="@drawable/ic_edit_24dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:text="Meus eventos"
-                android:layout_marginTop="50dp"
-                android:layout_below="@id/card_profile_pic" />
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout_profile"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_below="@id/edit_user_icon"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                app:tabGravity="fill"
+                app:tabIconTint="@color/colorAccent"
+                app:tabIndicatorColor="@color/colorAccent"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/colorAccent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="25dp"
-                android:text="Eventos que partcipei"
-                android:layout_below="@id/card_profile_pic"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="50dp"/>
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/my_events"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_border_light"
+                    android:text="Meus eventos" />
 
+                <!--<com.google.android.material.tabs.TabItem
+                    android:id="@+id/events_confirmed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:icon="@drawable/ic_confirmation_light"
+                    android:text="Eventos que participei" />-->
+            </com.google.android.material.tabs.TabLayout>
 
+            <FrameLayout
+                android:id="@+id/frame_my_events"
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:layout_below="@id/tab_layout_profile"
+                 />
         </RelativeLayout>
     </ScrollView>
-
 </FrameLayout>

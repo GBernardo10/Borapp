@@ -35,11 +35,11 @@ class AuthActivity : AppCompatActivity() {
         }*/
 
         btnLogin.setOnClickListener {
-            Home()
-//            val loginInput = findViewById<EditText>(R.id.login).text.toString()
-//            val pwdInput = findViewById<EditText>(R.id.pass).text.toString()
-//            val auth = AuthUser(User.Auth(loginInput, pwdInput))
-//            sign(auth, this, it)
+//            Home()
+            val loginInput = findViewById<EditText>(R.id.login).text.toString()
+            val pwdInput = findViewById<EditText>(R.id.pass).text.toString()
+            val auth = AuthUser(User.Auth(loginInput, pwdInput))
+            sign(auth, this, it)
         }
     }
 

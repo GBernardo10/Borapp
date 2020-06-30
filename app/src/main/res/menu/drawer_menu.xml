@@ -9,11 +9,11 @@
             android:icon="@drawable/ic_person_light"
             android:title="@string/my_profile" />
 
-        <item
+  <!--      <item
             android:id="@+id/d_wallet"
             android:checkable="false"
             android:icon="@drawable/ic_account_light"
-            android:title="@string/my_wallet" />
+            android:title="@string/my_wallet" />-->
     </group>
 
     <item android:title="@string/controls">
