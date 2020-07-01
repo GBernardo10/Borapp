@@ -45,10 +45,10 @@ class DetailsEventoActivity : AppCompatActivity() {
         viewModel.getPartipantes(event.id)
         val username = mSaveData.getStore("auth")!!
 
-        if (username.toUpperCase(Locale.ROOT) == event.owner.toUpperCase(Locale.ROOT)) {
-            binding.btnBora.isEnabled = false
-            binding.btnBora.setBackgroundColor(resources.getColor(R.color.colorBtnBackgroundDisabled))
-        }
+//        if (username.toUpperCase(Locale.ROOT) == event.owner.toUpperCase(Locale.ROOT)) {
+//            binding.btnBora.isEnabled = false
+//            binding.btnBora.setBackgroundColor(resources.getColor(R.color.colorBtnBackgroundDisabled))
+//        }
 
         with(binding) {
             ownerEvent.text = event.owner

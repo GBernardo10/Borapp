@@ -128,14 +128,6 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/cadastrar" />
 
-            <com.santalu.maskedittext.MaskEditText
-                android:id="@+id/teste_phone"
-                style="@style/EditText"
-                android:layout_below="@+id/btn_register_user"
-
-                />
-
-
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

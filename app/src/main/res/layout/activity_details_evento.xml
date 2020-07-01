@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
     tools:context=".DetailsEventoActivity">
 
     <RelativeLayout style="@style/RelativeBody">
@@ -12,6 +13,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:contentDescription="TODO"
+            android:src="@drawable/ic_logo"
             tools:src="@drawable/ic_logo" />
 
         <TextView
@@ -37,6 +39,7 @@
 
         <TextView
             android:id="@+id/owner_event"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/title_event"
@@ -51,6 +54,7 @@
             style="?attr/ratingBarStyleIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_below="@id/owner_event"
             android:layout_alignStart="@id/label_owner_event"
             android:elevation="10dp"
